@@ -1,0 +1,72 @@
+.footer{
+    margin: 0 1     0px;
+}
+
+.footerAtas{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerKiri{
+    margin-left: 65px;
+    font-weight: 400;
+    font-size: small;
+    line-height: 1;
+}
+
+.footerKiri .footerOren{
+    color: #ff8000;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.footerKanan{
+    display: flex;
+    justify-content: space-around;
+    flex: 0.5;
+    font-size: small;
+    line-height: 1;
+}
+
+.footerKanan .footerOren{
+    color: #ff8000;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.footerLogo{
+    height: 10px;
+    width: 10px;
+}
+
+.sosmed{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.fb, .twt, .ig{
+    display: flex;
+    align-items: center;
+}
+
+.footerEnd{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+.footerEndKanan{
+    display: flex;
+    gap: 30px;
+    font-size: small;
+}
+
+.copyright{
+    margin-left: 15px;
+    font-family: DM Sans;
+    font-size: small;
+    color: #1E2833;
+    opacity: 0.5;
+}
+

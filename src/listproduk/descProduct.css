@@ -1,0 +1,53 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@500;900&display=swap');
+
+.kontainer {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 100px;
+}
+
+.SofaBesar {
+    height: 350px;
+    /* margin-left: 30px; */
+    
+   
+
+}
+
+.sofayangnyaman {
+    font-weight: 900;
+    font-family: Playfair Display;
+    font-size: 40px;
+}
+
+.sofa {
+    color: #FF8000;
+    
+}
+
+.textparagraf p {
+    color: #828282;
+    font-size: 20px;
+}
+
+.list {
+    display: flex;
+    font-size: 20px;
+    gap: 40px;
+}
+
+ul {
+    padding-left: 15px;
+}
+
+.learnmore p {
+    background-color: #FF8000;
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 10px 0;
+    color: white;
+    font-size: 30px;
+}
+

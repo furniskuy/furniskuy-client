@@ -1,0 +1,26 @@
+.statusBar{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 30px;
+    font-weight: 500;
+    font-size: 25px;
+    background-color: white;
+    margin: 0 30px;
+    border-radius: 5px;
+}
+
+.statusSelected{
+    border-bottom: 2px solid #ff8000;
+    /* padding: 0 10px; */
+}
+
+.statusNotSelected{
+    border: none;
+    /* padding: 0 10px; */
+}
+
+.statusBar div{
+    padding: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+}

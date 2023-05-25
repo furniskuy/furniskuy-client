@@ -1,5 +1,5 @@
 // import React from 'react'
-import "./ulasan.css";
+import "./Ulasan.css";
 import PPulasan1 from "../assets/PPulasan1.png";
 import PPulasan2 from "../assets/PPulasan2.png";
 import PPulasan3 from "../assets/PPulasan3.png";
@@ -17,7 +17,7 @@ function Ulasan() {
               {" "}
               <span className="penilaianprdk"> Penilaian Produk </span>
             </p>
-            <p>Ulasan Klien</p>
+            <p>Ulasan Customers</p>
           </div>
         </div>
         <div className="multicardulasan">

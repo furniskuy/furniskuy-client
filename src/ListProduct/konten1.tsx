@@ -1,4 +1,4 @@
-import './konten1.css';
+import './Konten1.css';
 import bangkuSofa from '../assets/Bangku Sofa.png';
 
 function Konten1() {

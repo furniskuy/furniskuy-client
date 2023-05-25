@@ -1,5 +1,5 @@
 // import React from 'react'
-import "./productkonten.css";
+import "./Productkonten.css";
 import produk1 from "../assets/Produk1.png";
 import logokeranjang from "../assets/logo keranjang.png";
 import tandapanah from "../assets/tandapanah.png";

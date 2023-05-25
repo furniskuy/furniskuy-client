@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@500;900&display=swap');
+
+
+.productHeader {
+    display: flex;
+    justify-content: space-between;
+    /* flex: 1;  */
+}
+
+.Kategori {
+    display: flex;
+    gap: 50px;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.PHKiri {
+    display: flex;
+    /* flex: 1; */
+    justify-content: space-between;
+    gap: 100px;
+    align-items:center;
+
+}
+
+.product {
+    font-family: Playfair Display;
+    font-weight: 900;
+    font-size: 28px;
+}
+
+.LihatSemua {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.BarKategoriProduct {
+    display: flex;
+    gap: 30px;
+    font-size: 17px;
+}
+
+.BarKategoriProduct div {
+    padding: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.GambarProduct {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    /* gap: 10px; */
+    /* flex: 1; */
+}
+
+.cardProduct {
+    background-color: white ;
+    width: 250px;
+    padding: 20px;
+    border-radius: 15px;
+    height: 300px;
+    
+    
+}
+
+.namaProduk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex: 0,5; */
+}
+
+.tandapanah {
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.daftarProduk {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+}
+
+.divGambar {
+    width: 70%;
+    height: 230px;
+   
+}
+
+.imgprdk {
+    /* display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center; */
+    /* vertical-align:middle; */
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.statusSelected{
+    border-bottom: 2px solid #ff8000;
+    /* padding: 0 10px; */
+}
+
+.statusNotSelected{
+    border: none;
+    color: rgba(165, 165, 168, 1); 
+    /* padding: 0 10px; */
+}

@@ -1,6 +1,6 @@
 // import React from 'react';
-import "./Status.css";
 import { Dispatch, SetStateAction } from "react";
+import styles from "./Status.module.css";
 
 const Status = ({
   halaman,
@@ -11,9 +11,11 @@ const Status = ({
 }) => {
   return (
     <>
-      <div className="statusBar">
+      <div className={styles["statusBar"]}>
         <div
-          className={halaman === 1 ? "statusSelected" : "statusNotSelected"}
+          className={
+            styles[halaman === 1 ? "statusSelected" : "statusNotSelected"]
+          }
           onClick={() => {
             setHalaman(1);
           }}
@@ -21,7 +23,9 @@ const Status = ({
           Semua
         </div>
         <div
-          className={halaman === 2 ? "statusSelected" : "statusNotSelected"}
+          className={
+            styles[halaman === 2 ? "statusSelected" : "statusNotSelected"]
+          }
           onClick={() => {
             setHalaman(2);
           }}
@@ -29,7 +33,9 @@ const Status = ({
           Belum Bayar
         </div>
         <div
-          className={halaman === 3 ? "statusSelected" : "statusNotSelected"}
+          className={
+            styles[halaman === 3 ? "statusSelected" : "statusNotSelected"]
+          }
           onClick={() => {
             setHalaman(3);
           }}
@@ -37,7 +43,9 @@ const Status = ({
           Sedang Dikemas
         </div>
         <div
-          className={halaman === 4 ? "statusSelected" : "statusNotSelected"}
+          className={
+            styles[halaman === 4 ? "statusSelected" : "statusNotSelected"]
+          }
           onClick={() => {
             setHalaman(4);
           }}
@@ -45,7 +53,9 @@ const Status = ({
           Dikirim
         </div>
         <div
-          className={halaman === 5 ? "statusSelected" : "statusNotSelected"}
+          className={
+            styles[halaman === 5 ? "statusSelected" : "statusNotSelected"]
+          }
           onClick={() => {
             setHalaman(5);
           }}
@@ -53,7 +63,9 @@ const Status = ({
           Selesai
         </div>
         <div
-          className={halaman === 6 ? "statusSelected" : "statusNotSelected"}
+          className={
+            styles[halaman === 6 ? "statusSelected" : "statusNotSelected"]
+          }
           onClick={() => {
             setHalaman(6);
           }}

@@ -1,11 +1,12 @@
 // import React from 'react';
-import "./Content.css";
-import KursiUnik from "../assets/KursiUnik.png";
 import KursiMinimalis from "../assets/KursiMinimalis.png";
-import SofaVintage from "../assets/SofaVintage.png";
-import MejaMinimalis from "../assets/MejaMinimalis.png";
+import KursiUnik from "../assets/KursiUnik.png";
 import MejaKayu from "../assets/MejaKayu.png";
+import MejaMinimalis from "../assets/MejaMinimalis.png";
 import RakMejaTV from "../assets/RakMejaTV.png";
+import SofaVintage from "../assets/SofaVintage.png";
+
+import styles from "./Content.module.css";
 
 const Content = ({ halaman }: { halaman: number }) => {
   const ListBarang = [
@@ -74,65 +75,71 @@ const Content = ({ halaman }: { halaman: number }) => {
           countContent++;
 
           return (
-            <div className="content" key={index}>
-              <div className="kiri">
-                <div className="kiriAtas">
-                  <div className="gambar">
+            <div className={styles["content"]} key={index}>
+              <div className={styles["kiri"]}>
+                <div className={styles["kiriAtas"]}>
+                  <div className={styles["gambar"]}>
                     {<img src={barang.gambarBarang} />}
                   </div>
-                  <div className="namaBarang">
+                  <div className={styles["namaBarang"]}>
                     <p>{barang.namaBarang}</p>
                     <p>{barang.quantity}</p>
                   </div>
                 </div>
                 {halaman !== 1 ? (
-                  <div className="statusPesanan">
+                  <div className={styles["statusPesanan"]}>
                     <p>{barang.statusPesanan}</p>
                   </div>
                 ) : (
                   <></>
                 )}
               </div>
-              <div className="kanan">
-                <div className="hargaBarang">
+              <div className={styles["kanan"]}>
+                <div className={styles["hargaBarang"]}>
                   <p>{barang.hargaBarang}</p>
                 </div>
-                <div className="totalPesanan">
+                <div className={styles["totalPesanan"]}>
                   <p>
                     Total Pesanan :
-                    <span className="totalBayar">{barang.totalHarga}</span>
+                    <span className={styles["totalBayar"]}>
+                      {barang.totalHarga}
+                    </span>
                   </p>
                 </div>
                 {halaman === 1 ? (
                   barang.status === 2 ? (
-                    <div className="status2">
+                    <div className={styles["status2"]}>
                       <p>Menunggu Pembayaran</p>
                     </div>
                   ) : barang.status === 3 ? (
-                    <div className="status3">
+                    <div className={styles["status3"]}>
                       <p>Diproses</p>
                     </div>
                   ) : barang.status === 4 ? (
-                    <div className="status4">
+                    <div className={styles["status4"]}>
                       <p>Dikirim</p>
                     </div>
                   ) : barang.status === 5 ? (
-                    <div className="status5">
+                    <div className={styles["status5"]}>
                       <p>Diterima</p>
                     </div>
                   ) : barang.status === 6 ? (
-                    <div className="status6">
+                    <div className={styles["status6"]}>
                       <p>Dibatalkan</p>
                     </div>
                   ) : (
                     <></>
                   )
                 ) : (
-                  <div className="button">
-                    <button className="tombol chatPenjual">
+                  <div className={styles["button"]}>
+                    <button
+                      className={`${styles["tombol"]} ${styles["chatPenjual"]}`}
+                    >
                       <p>Chat Penjual</p>
                     </button>
-                    <button className="tombol batalkanPesanan">
+                    <button
+                      className={`${styles["tombol"]} ${styles["batalkanPesanan"]}`}
+                    >
                       <p>Batalkan Pesanan</p>
                     </button>
                   </div>
@@ -144,7 +151,7 @@ const Content = ({ halaman }: { halaman: number }) => {
 
         if (index === ListBarang.length - 1 && countContent === 0) {
           return (
-            <div className="emptyContent">
+            <div className={styles["emptyContent"]}>
               <h1>Anda Belum Memiliki Pesanan</h1>
             </div>
           );

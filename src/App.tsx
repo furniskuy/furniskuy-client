@@ -1,18 +1,12 @@
-import { useState } from "react";
-import "./App.css";
-import Header from "./ListOrder/Header";
-import Status from "./ListOrder/Status";
-import Content from "./ListOrder/Content";
+import { Outlet } from "react-router-dom";
 import Footer from "./ListOrder/Footer";
 
-function App() {
-  const [halaman, setHalaman] = useState(1);
+import "./App.css";
 
+function App() {
   return (
-    <div className="container">
-      <Header />
-      <Status halaman={halaman} setHalaman={setHalaman} />
-      <Content halaman={halaman} />
+    <div>
+      <Outlet />
       <Footer />
     </div>
   );

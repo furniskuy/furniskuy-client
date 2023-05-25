@@ -1,9 +1,9 @@
 import { useState } from "react";
-import "./App.css";
-import Header from "./ListOrder/Header";
-import Status from "./ListOrder/Status";
-import Content from "./ListOrder/Content";
-import Footer from "./ListOrder/Footer";
+import "./ListOrder.css";
+import Header from "./Header";
+import Status from "./Status";
+import Content from "./Content";
+import Footer from "./Footer";
 
 function App() {
   const [halaman, setHalaman] = useState(1);

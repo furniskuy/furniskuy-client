@@ -8,7 +8,7 @@ export const ListOrder = () => {
   const [halaman, setHalaman] = useState(1);
 
   return (
-    <div className="listOrder container">
+    <div className="container">
       <Header />
       <Status halaman={halaman} setHalaman={setHalaman} />
       <Content halaman={halaman} />

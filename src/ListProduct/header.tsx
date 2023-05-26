@@ -1,4 +1,4 @@
-import "./header.css";
+import "./Header.css";
 import logo from "../assets/logo.png";
 import search from "../assets/search.png";
 import menu from "../assets/menu.png";

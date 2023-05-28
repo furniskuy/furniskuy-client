@@ -19,10 +19,8 @@ const Header = () => {
         </div>
         <div className={styles["cartIcon"]}>
           <FaShoppingCart size={30} id="cart-icon" />
+          <div className={styles["cartCounter"]}>2</div>
         </div>
-      </div>
-      <div className={styles["cartCounter"]}>
-        <span>1</span>
       </div>
     </>
   );

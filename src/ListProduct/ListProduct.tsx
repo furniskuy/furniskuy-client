@@ -6,7 +6,7 @@ import Ulasan from "./ulasan";
 
 export const ListProduct = () => {
   return (
-    <div className="listProduct container">
+    <div className="">
       <Header />
       <Konten1 />
       <DescProduct />

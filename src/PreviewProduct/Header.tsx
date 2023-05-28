@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { HiArrowLeft } from "react-icons/hi";
 import { FaShoppingCart } from "react-icons/fa";
 import Logo from "../assets/Furniskuy.png";

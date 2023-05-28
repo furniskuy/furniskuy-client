@@ -19,6 +19,7 @@ export const Home: FunctionComponent = () => {
           <div className="col-6">
             <Link to="/preview">
               <button className="btn btn-primary">Product Preview</button>
+            </Link>
             <Link to="/keranjang">
               <button className="btn btn-primary">Keranjang</button>
             </Link>

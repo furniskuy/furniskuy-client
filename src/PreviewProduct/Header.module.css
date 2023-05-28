@@ -1,0 +1,24 @@
+.logo{
+    margin-left: 65px;
+    padding-top: 30px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cartIcon{
+    margin-right: 100px;
+}
+
+.arrowIcon{
+    margin-left: 100px;
+}
+
+.cartCounter{
+    color: #FF7A00;
+    margin-left: 1250px;
+    bottom: 100px;
+    position: relative;
+}

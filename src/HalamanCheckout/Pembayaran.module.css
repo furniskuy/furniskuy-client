@@ -1,0 +1,37 @@
+.boxBank{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 70px;
+}
+
+.buttonBNI{
+    background-color: white;
+    border: #0014C7 solid 0.5px;
+    border-radius: 30px;
+}
+
+.bankBNI{
+    margin: 20px 30px;
+}
+
+.buttonBRI{
+    background-color: #00529C;
+    border: #0014C7 solid 0.5px;
+    border-radius: 30px;
+}
+
+.bankBRI{
+    margin: 20px 20px;
+}
+
+.buttonBCA{
+    background-color: #0060AF;
+    border: #0014C7 solid 0.5px;
+    border-radius: 30px;
+}
+
+.bankBCA{
+    margin: 20px 30px;
+}

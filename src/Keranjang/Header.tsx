@@ -1,11 +1,11 @@
 // import React from 'react'
 import Logo from "../assets/Furniskuy.png";
-import './Header.css';
+import styles from './Header.module.css';
 
 function Header() {
   return (
     <>
-    <div className='namajudul'>
+    <div className={styles.namajudul}>
       <img src={Logo} alt="" />
       <div>
         <p>Keranjang Saya</p>

@@ -1,19 +1,19 @@
-// import React from 'react'
+// import React from }react}
 import Produk3 from '../assets/Produk3.png'
 import Produk5 from '../assets/Produk5.png'
-import './Checkout.css'
+import styles from './Checkout.module.css'
 
 const Checkout = () => {
     return (
         <>
             <div>
-                <div className='tabelCheckout'>
+                <div className={styles.tabelCheckout}>
 
 
                     <table>
                         <tr>
                             <td>
-                                <input type="checkbox" name="" id="" className='checkboxInput' />
+                                <input type="checkbox" name="" id="" className={styles.checkboxInput} />
                             </td>
                             <td>
                                 <img src={Produk3} alt="" />
@@ -22,10 +22,10 @@ const Checkout = () => {
                                 <p>Sofa Ruang TV - BlACK</p>
                             </td>
                             <td>
-                                <p className='harga'>Rp.2.000.000</p>
+                                <p className={styles.harga}>Rp.2.000.000</p>
                             </td>
                             <td>
-                                <p className='borderbtn'>- 1 +</p>
+                                <p className={styles.borderbtn}>- 1 +</p>
                             </td>
                             <td>
                                 <p>Hapus</p>
@@ -34,7 +34,7 @@ const Checkout = () => {
 
                         <tr>
                             <td>
-                                <input type="checkbox" name="" id="" className='checkboxInput' />
+                                <input type="checkbox" name="" id="" className={styles.checkboxInput} />
                             </td>
                             <td>
                                 <img src={Produk5} alt="" />
@@ -43,10 +43,10 @@ const Checkout = () => {
                                 <p>Bed Set - GREY</p>
                             </td>
                             <td>
-                                <p className='harga'>Rp.4 .000.000</p>
+                                <p className={styles.harga}>Rp.4 .000.000</p>
                             </td>
                             <td>
-                                <p className='borderbtn'>- 1 +</p>
+                                <p className={styles.borderbtn}>- 1 +</p>
                             </td>
                             <td>
                                 <p>Hapus</p>
@@ -54,19 +54,19 @@ const Checkout = () => {
                         </tr>
                     </table>
                 </div>
-                <div className='voucher'>
-                    <input type="text" placeholder='Masukan Kode Voucher' className='InputVoucher' />
-                    <button className='btnpakai'>PAKAI</button>
+                <div className={styles.voucher}>
+                    <input type="text" placeholder='Masukan Kode Voucher' className={styles.InputVoucher} />
+                    <button className={styles.btnpakai}>PAKAI</button>
                 </div>
-                <div className='jmlhrgcheckout'>
-                    <div className='jmlprdk'>
-                        <input type="checkbox" name="" id="" className='checkboxInput' />
+                <div className={styles.jmlhrgcheckout}>
+                    <div className={styles.jmlprdk}>
+                        <input type="checkbox" name="" id="" className={styles.checkboxInput} />
                         <p>Pilih Semua (2) :</p>
                     </div>
 
-                    <div className='hrgcheck'>
-                        <p className='harga'>Rp.6.000.000</p>
-                        <button className='btncheckout'>Checkout</button >
+                    <div className={styles.hrgcheck}>
+                        <p className={styles.harga}>Rp.6.000.000</p>
+                        <button className={styles.btncheckout}>Checkout</button >
                     </div>
                 </div>
             </div>

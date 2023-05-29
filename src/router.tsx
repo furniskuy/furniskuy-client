@@ -5,6 +5,7 @@ import { Home } from "./Home";
 import { ListOrder } from "./ListOrder/ListOrder";
 import { ListProduct } from "./ListProduct/ListProduct";
 import { Keranjang } from "./Keranjang/Keranjang";
+import {CetakInvoice} from "./CetakInvoice/CetakInvoice";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { path: "/orders", element: <ListOrder /> },
       { path: "/products", element: <ListProduct /> },
       { path: "/keranjang", element: <Keranjang /> },
+      { path: "/CetakInvoice", element: <CetakInvoice /> },
     ],
   },
 ]);

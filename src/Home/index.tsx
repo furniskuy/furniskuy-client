@@ -21,6 +21,11 @@ export const Home: FunctionComponent = () => {
               <button className="btn btn-primary">Keranjang</button>
             </Link>
           </div>
+          <div className="col-6">
+            <Link to="/CetakInvoice">
+              <button className="btn btn-primary">CetakInvoice</button>
+            </Link>
+          </div>
         </div>
       </div>
     </>

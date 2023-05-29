@@ -6,6 +6,7 @@ import { ListOrder } from "./ListOrder/ListOrder";
 import { ListProduct } from "./ListProduct/ListProduct";
 import { PreviewProduct } from "./PreviewProduct/PreviewProduct";
 import { Keranjang } from "./Keranjang/Keranjang";
+import { HalamanCheckout } from "./HalamanCheckout/HalamanCheckout";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "/products", element: <ListProduct /> },
       { path: "/preview", element: <PreviewProduct /> },
       { path: "/keranjang", element: <Keranjang /> },
+      { path: "/halamanCheckout", element: <HalamanCheckout /> },
     ],
   },
 ]);

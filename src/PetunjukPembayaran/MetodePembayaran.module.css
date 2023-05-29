@@ -1,0 +1,41 @@
+.outerATM{
+    margin-left: 65px;
+    display: flex;
+    align-items: center;
+    gap: 825px;
+}
+
+.tulisanATM{
+    color: #838383;
+    font-size: large;
+}
+
+.outerMobile{
+    margin-top: 50px;
+    margin-left: 65px;
+    display: flex;
+    align-items: center;
+    gap: 803px;
+}
+
+.tulisanMobile{
+    color: #838383;
+    font-size: large;
+}
+
+.tataCaraMobile{
+    margin-left: 100px;
+}
+
+.outerIB{
+    margin: 50px 0;
+    margin-left: 65px;
+    display: flex;
+    align-items: center;
+    gap: 715px;
+}
+
+.tulisanIB{
+    color: #838383;
+    font-size: large;
+}

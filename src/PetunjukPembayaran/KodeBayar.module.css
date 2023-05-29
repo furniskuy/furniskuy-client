@@ -1,0 +1,22 @@
+.boxKodeBayar{
+    display: flex;
+    margin-left: 65px;
+    gap: 250px;
+    align-items: center;
+}
+
+.VA{
+    font-weight: 800;
+    font-size: x-large;
+}
+
+.buttonSalin{
+    background-color: white;
+    border-radius: 25px;
+    border: solid 0.5px;
+    padding: 1px 30px;
+}
+
+.tulisanButton{
+    font-weight: 600;
+}

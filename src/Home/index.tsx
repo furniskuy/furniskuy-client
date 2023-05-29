@@ -17,6 +17,8 @@ export const Home: FunctionComponent = () => {
             </Link>
           </div>
           <div className="col-6">
+            <Link to="/petunjukpembayaran">
+              <button className="btn btn-primary">Petunjuk Pembayaran</button>
             <Link to="/preview">
               <button className="btn btn-primary">Product Preview</button>
             </Link>

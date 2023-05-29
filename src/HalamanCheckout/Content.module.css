@@ -1,0 +1,30 @@
+.content{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    gap: 50px;
+}
+
+.namaBarang{
+    font-size: large;
+    padding-bottom: 50px;
+}
+
+.quantity-harga{
+    display: flex;
+    gap: 500px;
+}
+
+.harga{
+    color: #FF8000;
+}
+
+.content2{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}

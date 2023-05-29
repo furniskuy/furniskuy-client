@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
+    width: 100%;
+    margin: 10px 30px 0 30px;
 }
 
 .searchBar{
@@ -12,9 +14,13 @@
     font-size: 18px;
 }
 
+.gambar{
+    margin-right: 50px;
+}
 .gambar *{
     padding: 0 15px;
     height: 20px;
+   
 }
 
 .statusSelected{

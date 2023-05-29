@@ -1,0 +1,11 @@
+.namaharga{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.harga-product{
+    color: #006FBA;
+    font-size: x-large;
+    font-weight: 500;
+}

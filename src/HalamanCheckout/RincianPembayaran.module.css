@@ -1,0 +1,14 @@
+.header{
+    margin-top: 100px;
+    margin-left: 300px;
+}
+
+.boxRincian{
+    display: flex;
+    justify-content: center;
+    gap: 640px;
+}
+
+.totalHarga{
+    color: #FF8000;
+}

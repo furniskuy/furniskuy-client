@@ -1,0 +1,33 @@
+.boxVoucher{
+    display: flex;
+    gap: 10px;
+    margin-right: 300px;
+    justify-content: end;
+}
+
+.kodeVoucher{
+    background-color: #E6E6E6;
+    border-radius: 15px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+.notifVoucher{
+    font-size: small;
+    color: #006FBA;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.buttonVoucher{
+    margin-top: 17px;
+    border: solid 0.5px;
+    border-radius: 15px;
+    background-color: #B7B7B7;
+    padding: 3px 20px;
+    box-shadow: 0 1px 2px;
+}
+
+.tulisan{
+    font-weight: 600;
+}

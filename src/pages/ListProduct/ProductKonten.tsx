@@ -6,12 +6,17 @@ import styles from "./Productkonten.module.css";
 
 import { getImageUrl } from "@/util/image";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ProductKonten() {
   const [halaman, setHalaman] = useState(0);
   const [kategori, setKategori] = useState(0);
 
   const inventarisQuery = useInventaris({ limit: 8 });
+
+  const addToCart = (id: number) => {
+    console.log(id);
+  };
 
   return (
     <>
@@ -119,23 +124,29 @@ function ProductKonten() {
                   <div className={styles["divGambar"]}>
                     <img
                       src={getImageUrl(item.image)}
-                      alt="ah"
+                      alt={item.nama}
                       className={styles["imgprdk"]}
                     />
                   </div>
-                  <img src={logokeranjang} alt="ahh" />
-                </div>
-                <div className={styles["namaProduk"]}>
-                  <div>
-                    <p>{item.nama}</p>
-                    <p>{item.harga}</p>
-                  </div>
                   <img
-                    src={tandapanah}
-                    alt="ahhh"
-                    className={styles["tandapanah"]}
+                    onClick={() => addToCart(item.id)}
+                    src={logokeranjang}
+                    alt="keranjang"
                   />
                 </div>
+                <Link to={"/produk/" + item.id}>
+                  <div className={styles["namaProduk"]}>
+                    <div>
+                      <p>{item.nama}</p>
+                      <p>{item.harga}</p>
+                    </div>
+                    <img
+                      src={tandapanah}
+                      alt="ahhh"
+                      className={styles["tandapanah"]}
+                    />
+                  </div>
+                </Link>
               </div>
             ))}
         </div>

@@ -1,13 +1,17 @@
-import Logo from "@/assets/Furniskuy.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { HiArrowLeft } from "react-icons/hi2";
+import { Link } from "react-router-dom";
+
+import Logo from "@/assets/Furniskuy.png";
 import styles from "./Header.module.css";
 
 const Header = () => {
   return (
     <>
       <div>
-        <img src={Logo} className={styles["logo"]} />
+        <Link to="/">
+          <img src={Logo} className={styles["logo"]} />
+        </Link>
       </div>
       <div className={styles["header"]}>
         <div className={styles["arrowIcon"]}>

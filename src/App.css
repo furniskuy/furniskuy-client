@@ -8,3 +8,9 @@ body {
   font-family: Poppins;
   background-color: #f6f6f6;
 }
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}

@@ -16,7 +16,7 @@ const router = createHashRouter([
       { index: true, element: <ListProduct /> },
       { path: "/orders", element: <ListOrder /> },
       { path: "/petunjukpembayaran", element: <PetunjukPembayaran /> },
-      { path: "/preview", element: <PreviewProduct /> },
+      { path: "/produk/:id", element: <PreviewProduct /> },
       { path: "/keranjang", element: <Keranjang /> },
       { path: "/halamanCheckout", element: <HalamanCheckout /> },
     ],

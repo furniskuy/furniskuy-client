@@ -1,6 +1,6 @@
+import PP1 from "@/assets/ProfilePictRate1.png";
+import PP2 from "@/assets/ProfilePictRate2.png";
 import { FaStar } from "react-icons/fa";
-import PP1 from "../assets/ProfilePictRate1.png";
-import PP2 from "../assets/ProfilePictRate2.png";
 import styles from "./DescComment.module.css";
 
 const DescComment = () => {

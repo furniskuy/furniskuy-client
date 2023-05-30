@@ -1,4 +1,4 @@
-import SofaBesar from "../assets/Sofa Besar.png";
+import SofaBesar from "@/assets/Sofa Besar.png";
 import styles from "./DescProduct.module.css";
 
 function DescProduct() {

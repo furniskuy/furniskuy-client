@@ -9,5 +9,3 @@ export const Keranjang = () => {
     </div>
   );
 };
-
-export default Keranjang;

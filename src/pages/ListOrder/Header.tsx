@@ -1,4 +1,4 @@
-import Logo from "../assets/Furniskuy.png";
+import Logo from "@/assets/Furniskuy.png";
 import styles from "./Header.module.css";
 
 const Header = () => {

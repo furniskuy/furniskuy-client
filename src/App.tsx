@@ -1,13 +1,17 @@
-import { Outlet } from "react-router-dom";
-import Footer from "./ListOrder/Footer";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+import { Layout } from "./components/Layout";
 
 import "./App.css";
 
+const queryClient = new QueryClient();
+
 export const App = () => {
   return (
-    <div>
-      <Outlet />
-      <Footer />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Layout />
+      <ReactQueryDevtools initialIsOpen={true} />
+    </QueryClientProvider>
   );
 };

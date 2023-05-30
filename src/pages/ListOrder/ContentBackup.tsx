@@ -1,4 +1,4 @@
-import MejaKayu from "../assets/MejaKayu.png";
+import MejaKayu from "@/assets/MejaKayu.png";
 import "./Content.css";
 
 const ContentBackup = () => {

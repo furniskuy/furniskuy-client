@@ -1,13 +1,8 @@
-import produk1 from "../assets/Produk1.png";
-import produk2 from "../assets/Produk2.png";
-import produk3 from "../assets/Produk3.png";
-import produk4 from "../assets/Produk4.png";
-import produk5 from "../assets/Produk5.png";
-import produk6 from "../assets/Produk6.png";
-import produk7 from "../assets/Produk7.png";
-import produk8 from "../assets/Produk8.png";
-import logokeranjang from "../assets/logo keranjang.png";
-import tandapanah from "../assets/tandapanah.png";
+import { useInventaris } from "@/api/inventaris";
+
+import produk1 from "@/assets/Produk1.png";
+import logokeranjang from "@/assets/logo keranjang.png";
+import tandapanah from "@/assets/tandapanah.png";
 import styles from "./Productkonten.module.css";
 
 import { useState } from "react";
@@ -15,6 +10,8 @@ import { useState } from "react";
 function ProductKonten() {
   const [halaman, setHalaman] = useState(0);
   const [kategori, setKategori] = useState(0);
+
+  const inventarisQuery = useInventaris({ limit: 8 });
 
   return (
     <>
@@ -111,7 +108,34 @@ function ProductKonten() {
           </div>
         </div>
         <div className={styles["daftarProduk"]}>
-          <div className={styles["cardProduct"]}>
+          {inventarisQuery.isLoading && <div>Loading...</div>}
+
+          {inventarisQuery.isError && <div>Error...</div>}
+
+          {inventarisQuery.isSuccess &&
+            inventarisQuery.data?.data.map((item) => (
+              <div className={styles["cardProduct"]}>
+                <div className={styles["GambarProduct"]}>
+                  <div className={styles["divGambar"]}>
+                    <img src={produk1} alt="ah" className={styles["imgprdk"]} />
+                  </div>
+                  <img src={logokeranjang} alt="ahh" />
+                </div>
+                <div className={styles["namaProduk"]}>
+                  <div>
+                    <p>{item.nama}</p>
+                    <p>{item.harga}</p>
+                  </div>
+                  <img
+                    src={tandapanah}
+                    alt="ahhh"
+                    className={styles["tandapanah"]}
+                  />
+                </div>
+              </div>
+            ))}
+
+          {/* <div className={styles["cardProduct"]}>
             <div className={styles["GambarProduct"]}>
               <div className={styles["divGambar"]}>
                 <img src={produk1} alt="ah" className={styles["imgprdk"]} />
@@ -269,7 +293,7 @@ function ProductKonten() {
                 className={styles["tandapanah"]}
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

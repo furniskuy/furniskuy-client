@@ -1,9 +1,9 @@
-import KursiMinimalis from "../assets/KursiMinimalis.png";
-import KursiUnik from "../assets/KursiUnik.png";
-import MejaKayu from "../assets/MejaKayu.png";
-import MejaMinimalis from "../assets/MejaMinimalis.png";
-import RakMejaTV from "../assets/RakMejaTV.png";
-import SofaVintage from "../assets/SofaVintage.png";
+import KursiMinimalis from "@/assets/KursiMinimalis.png";
+import KursiUnik from "@/assets/KursiUnik.png";
+import MejaKayu from "@/assets/MejaKayu.png";
+import MejaMinimalis from "@/assets/MejaMinimalis.png";
+import RakMejaTV from "@/assets/RakMejaTV.png";
+import SofaVintage from "@/assets/SofaVintage.png";
 
 import styles from "./Content.module.css";
 

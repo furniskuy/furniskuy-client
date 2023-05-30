@@ -1,7 +1,7 @@
+import logo from "@/assets/logo.png";
+import menu from "@/assets/menu.png";
+import search from "@/assets/search.png";
 import { useState } from "react";
-import logo from "../assets/logo.png";
-import menu from "../assets/menu.png";
-import search from "../assets/search.png";
 import styles from "./Header.module.css";
 
 function Header() {

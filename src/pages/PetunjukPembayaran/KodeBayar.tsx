@@ -1,4 +1,4 @@
-import LogoKodeBayar from "../assets/46.png";
+import LogoKodeBayar from "@/assets/46.png";
 import styles from "./KodeBayar.module.css";
 
 const KodeBayar = () => {

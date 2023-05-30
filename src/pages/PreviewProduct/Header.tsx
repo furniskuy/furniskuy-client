@@ -1,6 +1,6 @@
+import Logo from "@/assets/Furniskuy.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { HiArrowLeft } from "react-icons/hi2";
-import Logo from "../assets/Furniskuy.png";
 import styles from "./Header.module.css";
 
 const Header = () => {

@@ -1,9 +1,9 @@
-import BGulasan1 from "../assets/BGulasan1.png";
-import BGulasan2 from "../assets/BGulasan2.png";
-import BGulasan3 from "../assets/BGulasan3.png";
-import PPulasan1 from "../assets/PPulasan1.png";
-import PPulasan2 from "../assets/PPulasan2.png";
-import PPulasan3 from "../assets/PPulasan3.png";
+import BGulasan1 from "@/assets/BGulasan1.png";
+import BGulasan2 from "@/assets/BGulasan2.png";
+import BGulasan3 from "@/assets/BGulasan3.png";
+import PPulasan1 from "@/assets/PPulasan1.png";
+import PPulasan2 from "@/assets/PPulasan2.png";
+import PPulasan3 from "@/assets/PPulasan3.png";
 import styles from "./Ulasan.module.css";
 
 function Ulasan() {

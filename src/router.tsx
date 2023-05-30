@@ -1,12 +1,12 @@
 import { createHashRouter } from "react-router-dom";
 
 import { App } from "./App";
-import { HalamanCheckout } from "./HalamanCheckout/HalamanCheckout";
-import { Keranjang } from "./Keranjang/Keranjang";
-import { ListOrder } from "./ListOrder/ListOrder";
-import { ListProduct } from "./ListProduct/ListProduct";
-import { PetunjukPembayaran } from "./PetunjukPembayaran/PetunjukPembayaran";
-import { PreviewProduct } from "./PreviewProduct/PreviewProduct";
+import { HalamanCheckout } from "./pages/HalamanCheckout/HalamanCheckout";
+import { Keranjang } from "./pages/Keranjang/Keranjang";
+import { ListOrder } from "./pages/ListOrder/ListOrder";
+import { ListProduct } from "./pages/ListProduct/ListProduct";
+import { PetunjukPembayaran } from "./pages/PetunjukPembayaran/PetunjukPembayaran";
+import { PreviewProduct } from "./pages/PreviewProduct/PreviewProduct";
 
 const router = createHashRouter([
   {

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Desc.module.css";
 
 const Desc = () => {

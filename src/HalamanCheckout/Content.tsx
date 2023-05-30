@@ -1,7 +1,6 @@
-import React from "react";
-import styles from "./Content.module.css";
-import SofaRuangTV from "../assets/SofaRuangTV.png";
 import BedSet from "../assets/BedSet.png";
+import SofaRuangTV from "../assets/SofaRuangTV.png";
+import styles from "./Content.module.css";
 
 const Content = () => {
   return (

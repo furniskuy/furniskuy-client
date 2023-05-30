@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./Alamat.module.css";
 import { HiMapPin } from "react-icons/hi2";
+import styles from "./Alamat.module.css";
 
 const Alamat = () => {
   return (

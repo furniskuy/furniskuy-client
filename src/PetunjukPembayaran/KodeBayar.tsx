@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./KodeBayar.module.css";
 import LogoKodeBayar from "../assets/46.png";
+import styles from "./KodeBayar.module.css";
 
 const KodeBayar = () => {
   return (

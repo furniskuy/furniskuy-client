@@ -1,13 +1,12 @@
-// import React from "react";
-import Header from "./Header";
-import GambarProduct from "./GambarProduct";
-import NamaHargaProduct from "./NamaHargaProduct";
+import { useState } from "react";
+import ButtonAddtoCart from "./ButtonAddtoCart";
 import ButtonDescRating from "./ButtonDescRating";
 import Desc from "./Desc";
 import DescComment from "./DescComment";
+import GambarProduct from "./GambarProduct";
+import Header from "./Header";
+import NamaHargaProduct from "./NamaHargaProduct";
 import Rating from "./Rating";
-import ButtonAddtoCart from "./ButtonAddtoCart";
-import { useState } from "react";
 
 export const PreviewProduct = () => {
   const [tombol, setTombol] = useState(1);

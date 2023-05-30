@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./NamaHargaProduct.module.css";
 
 const NamaHargaProduct = () => {

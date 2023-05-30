@@ -1,9 +1,8 @@
-import React from "react";
-import Header from "./Header";
 import DeadlineBayar from "./DeadlineBayar";
-import KodeBayar from "./KodeBayar";
-import Keterangan from "./Keterangan";
+import Header from "./Header";
 import HeaderPembayaran from "./HeaderPembayaran";
+import Keterangan from "./Keterangan";
+import KodeBayar from "./KodeBayar";
 import MetodePembayaran from "./MetodePembayaran";
 
 export const PetunjukPembayaran = () => {

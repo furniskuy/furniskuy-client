@@ -1,8 +1,8 @@
-import DescProduct from "./descProduct";
-import Header from "./header";
-import Konten1 from "./konten1";
-import ProductKonten from "./productkonten";
-import Ulasan from "./ulasan";
+import DescProduct from "./DescProduct";
+import Header from "./Header";
+import Konten1 from "./Konten1";
+import ProductKonten from "./ProductKonten";
+import Ulasan from "./Ulasan";
 
 export const ListProduct = () => {
   return (

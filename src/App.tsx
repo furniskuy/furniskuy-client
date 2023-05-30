@@ -3,13 +3,11 @@ import Footer from "./ListOrder/Footer";
 
 import "./App.css";
 
-function App() {
+export const App = () => {
   return (
     <div>
       <Outlet />
       <Footer />
     </div>
   );
-}
-
-export default App;
+};

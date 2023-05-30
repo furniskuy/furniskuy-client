@@ -1,4 +1,3 @@
-// import React from 'react';
 import KursiMinimalis from "../assets/KursiMinimalis.png";
 import KursiUnik from "../assets/KursiUnik.png";
 import MejaKayu from "../assets/MejaKayu.png";

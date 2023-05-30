@@ -1,14 +1,13 @@
-// import React from 'react'
-import Header from './Header';
-import Checkout from './Checkout';
+import Checkout from "./Checkout";
+import Header from "./Header";
 
 export const Keranjang = () => {
   return (
     <div>
-        <Header />
-        <Checkout />
-        </div>
-  )
-}
+      <Header />
+      <Checkout />
+    </div>
+  );
+};
 
 export default Keranjang;

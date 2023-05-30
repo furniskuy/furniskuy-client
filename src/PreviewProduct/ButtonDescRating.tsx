@@ -1,4 +1,3 @@
-// import React from "react";
 import { Dispatch, SetStateAction } from "react";
 import styles from "./ButtonDescRating.module.css";
 

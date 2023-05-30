@@ -1,8 +1,7 @@
-import React from "react";
-import styles from "./Pembayaran.module.css";
+import BCA from "../assets/BCA.png";
 import BNI from "../assets/BNI.png";
 import BRI from "../assets/BRI.png";
-import BCA from "../assets/BCA.png";
+import styles from "./Pembayaran.module.css";
 
 const Pembayaran = () => {
   return (

@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./Rating.module.css";
 import { FaStar } from "react-icons/fa";
+import styles from "./Rating.module.css";
 
 const Rating = () => {
   return (

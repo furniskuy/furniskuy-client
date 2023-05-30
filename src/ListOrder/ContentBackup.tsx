@@ -1,6 +1,5 @@
-// import React from 'react';
-import "./Content.css";
 import MejaKayu from "../assets/MejaKayu.png";
+import "./Content.css";
 
 const ContentBackup = () => {
   return (

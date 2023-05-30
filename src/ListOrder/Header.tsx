@@ -1,4 +1,3 @@
-// import React from "react";
 import Logo from "../assets/Furniskuy.png";
 import styles from "./Header.module.css";
 

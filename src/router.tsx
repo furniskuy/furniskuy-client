@@ -1,23 +1,21 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
-import App from "./App";
-import { Home } from "./Home";
+import { App } from "./App";
+import { HalamanCheckout } from "./HalamanCheckout/HalamanCheckout";
+import { Keranjang } from "./Keranjang/Keranjang";
 import { ListOrder } from "./ListOrder/ListOrder";
 import { ListProduct } from "./ListProduct/ListProduct";
 import { PetunjukPembayaran } from "./PetunjukPembayaran/PetunjukPembayaran";
 import { PreviewProduct } from "./PreviewProduct/PreviewProduct";
-import { Keranjang } from "./Keranjang/Keranjang";
-import { HalamanCheckout } from "./HalamanCheckout/HalamanCheckout";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <ListProduct /> },
       { path: "/orders", element: <ListOrder /> },
-      { path: "/products", element: <ListProduct /> },
-      { path: "/petunjukpembayaran", element: <PetunjukPembayaran />},
+      { path: "/petunjukpembayaran", element: <PetunjukPembayaran /> },
       { path: "/preview", element: <PreviewProduct /> },
       { path: "/keranjang", element: <Keranjang /> },
       { path: "/halamanCheckout", element: <HalamanCheckout /> },

@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./MetodePembayaran.module.css";
 import { SlArrowRight } from "react-icons/sl";
+import styles from "./MetodePembayaran.module.css";
 
 const MetodePembayaran = () => {
   return (

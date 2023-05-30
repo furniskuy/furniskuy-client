@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./DeadlineBayar.module.css";
 
 const DeadlineBayar = () => {

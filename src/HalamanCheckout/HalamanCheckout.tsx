@@ -1,15 +1,14 @@
-// import React from "react";
-import Header from "./Header";
 import Alamat from "./Alamat";
 import Content from "./Content";
-import HeaderPengiriman from "./HeaderPengiriman";
-import Pengiriman from "./Pengiriman";
-import Subtotal from "./Subtotal";
-import Voucher from "./Voucher";
+import Header from "./Header";
 import HeaderPembayaran from "./HeaderPembayaran";
+import HeaderPengiriman from "./HeaderPengiriman";
 import Pembayaran from "./Pembayaran";
+import Pengiriman from "./Pengiriman";
 import RincianPembayaran from "./RincianPembayaran";
+import Subtotal from "./Subtotal";
 import TotalButtonPesanan from "./TotalButtonPesanan";
+import Voucher from "./Voucher";
 
 export const HalamanCheckout = () => {
   return (

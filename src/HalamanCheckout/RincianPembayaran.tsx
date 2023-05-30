@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./RincianPembayaran.module.css";
 
 const RincianPembayaran = () => {

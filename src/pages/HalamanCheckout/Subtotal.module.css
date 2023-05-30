@@ -1,0 +1,12 @@
+.subTotal{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 800px;
+    align-items: center;
+    gap: 90px;
+}
+
+.hargaTotal{
+    color: #FF8000;
+    font-size: large;
+}

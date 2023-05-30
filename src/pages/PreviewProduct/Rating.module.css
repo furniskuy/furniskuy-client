@@ -1,0 +1,14 @@
+.ulasan{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.rate{
+    margin-left: 75px;
+}
+
+.star{
+    margin: 22px 50px;
+    color: #F6973F;
+}

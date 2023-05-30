@@ -1,0 +1,19 @@
+.boxPengiriman{
+    display: flex;
+    background-color: white;
+    padding-left: 30px;
+    align-items: center;
+    border-radius: 30px;
+    height: fit-content;
+    border: solid 1px;
+    margin: 0 300px;   
+    gap: 500px; 
+}
+
+.tanggal{
+    color: #838383;
+}
+
+.ongkir{
+    font-size: large;
+}

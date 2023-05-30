@@ -1,0 +1,15 @@
+.outerButton{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.buttonAddtoCart{
+    background-color: #006FBA;
+    padding: 5px 80px   ;
+    color: #FFB56A;
+    border-style: hidden;
+    border-radius: 80px;
+    font-size: large;
+    font-weight: 800;
+}

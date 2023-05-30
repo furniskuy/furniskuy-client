@@ -13,7 +13,7 @@ export type ApiResponse<T> = {
 export type Inventaris = {
   id: number;
   nama: string;
-  // image: string;
+  image: string;
   jumlah: number;
   harga: number;
   id_supplier: number;

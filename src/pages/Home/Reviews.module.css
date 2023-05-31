@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@500;900&display=swap");
+
+.cardReviewListContainer {
+  margin-top: 100px;
+}
+
+.reviewList {
+  margin-top: 50px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.reviewHeader {
+  margin-bottom: 32px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.reviewListTitle {
+  font-weight: 900;
+  font-size: 36px;
+  color: #ff8000;
+  margin-bottom: 4px;
+}
+
+.reviewListSubtitle {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 42px;
+  text-transform: capitalize;
+  color: #121216;
+}
+
+.cardReview {
+  margin-bottom: 100px;
+  padding: 18px;
+  max-height: 60vh;
+
+  border-radius: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cardContent {
+  height: 100%;
+  min-height: calc(60vh - 18px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.photocard {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.reviewerPhoto {
+  border: 10px solid white;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.reviewContent {
+  margin-top: -25px;
+  padding: 24px 24px;
+
+  border-radius: 5px;
+  background-color: white;
+
+  font-weight: 400;
+  color: #1e1e1e;
+}
+
+.reviewContent p {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+
+.reviewerName {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.reviewerProfession {
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.reviewText {
+  font-size: 14px;
+  margin-bottom: 18px;
+}

@@ -1,22 +1,25 @@
-import SofaBesar from "@/assets/Sofa Besar.png";
-import styles from "./DescProduct.module.css";
+import styles from "./KeyFeatures.module.css";
 
-function DescProduct() {
+export const KeyFeatures = () => {
   return (
     <>
-      <div className={styles["kontainer"]}>
-        <img src={SofaBesar} alt="Sofa Besar" className="SofaBesar" />
-
-        <div className={styles["description"]}>
-          <div className={styles["sofayangnyaman"]}>
+      <div className={styles["featuredContainer"]}>
+        <div>
+          <img
+            src="https://sbwasjlgfngcwfkvqqin.supabase.co/storage/v1/object/public/furniskuy/public/uploads/key-feature.png"
+            alt="Product Featured"
+            className={styles["featuredImage"]}
+          />
+        </div>
+        <div className={styles["featuredContent"]}>
+          <div className={styles["featuredTitle"]}>
             <p>
-              {" "}
-              <span className={styles["sofa"]}> Sofa </span> Yang Nyaman
+              <span color="primary"> Sofa </span> Yang Nyaman
             </p>
           </div>
-          <div className={styles["textparagraf"]}>
+          <div className={styles["featuredSubtitle"]}>
             <p>
-              Find all Your furniture needs foe anything, All furniture for
+              Find all Your furniture needs for anything, All furniture for
               offices, home, businesses and more
             </p>
           </div>
@@ -43,6 +46,4 @@ function DescProduct() {
       </div>
     </>
   );
-}
-
-export default DescProduct;
+};

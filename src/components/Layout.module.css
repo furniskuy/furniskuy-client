@@ -1,7 +1,8 @@
 .layoutContainer {
-  margin: 56px;
+  position: relative;
 }
 
 .contentContainer {
+  margin: 56px;
   min-height: 125vh;
 }

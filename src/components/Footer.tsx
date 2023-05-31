@@ -1,7 +1,7 @@
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import styles from "./Footer.module.css";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <>
       <div className={styles["footer"]}>
@@ -68,5 +68,3 @@ const Footer = () => {
     </>
   );
 };
-
-export default Footer;

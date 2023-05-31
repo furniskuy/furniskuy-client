@@ -1,8 +1,17 @@
-.boxDeadline{
-    margin-left: 65px;
-    color: #838383;
+.boxDeadline p {
+  color: #838383;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 45px;
+  text-transform: capitalize;
+
+  margin: 0px;
 }
 
-.jam{
-    color: black;
+.boxDeadline p:first-child {
+  margin-bottom: 28px;
+}
+
+.jam {
+  color: black;
 }

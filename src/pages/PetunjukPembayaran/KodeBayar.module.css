@@ -1,22 +1,32 @@
-.boxKodeBayar{
-    display: flex;
-    margin-left: 65px;
-    gap: 250px;
-    align-items: center;
+.boxKodeBayar {
+  margin: 45px 0px 70px;
+  max-width: 50vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.VA{
-    font-weight: 800;
-    font-size: x-large;
+.VA {
+  font-weight: 800;
+  font-size: x-large;
 }
 
-.buttonSalin{
-    background-color: white;
-    border-radius: 25px;
-    border: solid 0.5px;
-    padding: 1px 30px;
+.buttonSalin {
+  background-color: white;
+  border-radius: 25px;
+  border: solid 0.5px;
+  padding: 1px 30px;
 }
 
-.tulisanButton{
-    font-weight: 600;
+.tulisanButton {
+  font-weight: 600;
+}
+
+.outerKet {
+  color: #838383;
+  font-size: 30px;
+  line-height: 45px;
+  text-transform: capitalize;
+  margin-bottom: 70px;
 }

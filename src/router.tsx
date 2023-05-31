@@ -15,10 +15,10 @@ const router = createHashRouter([
     children: [
       { index: true, element: <ListProduct /> },
       { path: "/orders", element: <ListOrder /> },
-      { path: "/petunjukpembayaran", element: <PetunjukPembayaran /> },
       { path: "/produk/:id", element: <PreviewProduct /> },
       { path: "/keranjang", element: <Keranjang /> },
-      { path: "/halamanCheckout", element: <HalamanCheckout /> },
+      { path: "/checkout", element: <HalamanCheckout /> },
+      { path: "/checkout/:id", element: <PetunjukPembayaran /> },
     ],
   },
 ]);

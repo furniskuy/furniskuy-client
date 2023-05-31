@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 
 html,
 body {
@@ -13,4 +12,19 @@ a {
   color: inherit;
   cursor: pointer;
   text-decoration: none;
+}
+
+pre {
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,41 +1,36 @@
-.outerATM{
-    margin-left: 65px;
-    display: flex;
-    align-items: center;
-    gap: 825px;
+.metodeHeader h2 {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 45px;
+  text-transform: capitalize;
 }
 
-.tulisanATM{
-    color: #838383;
-    font-size: large;
+.metodeContainer {
+  margin-top: 48px;
+  max-width: 50vw;
 }
 
-.outerMobile{
-    margin-top: 50px;
-    margin-left: 65px;
-    display: flex;
-    align-items: center;
-    gap: 803px;
+.metodeOuter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
 }
 
-.tulisanMobile{
-    color: #838383;
-    font-size: large;
+.metodeName {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 45px;
+  text-transform: capitalize;
 }
 
-.tataCaraMobile{
-    margin-left: 100px;
+.metodeTataCara {
+  margin-top: 24px;
+  padding-left: 12px;
 }
 
-.outerIB{
-    margin: 50px 0;
-    margin-left: 65px;
-    display: flex;
-    align-items: center;
-    gap: 715px;
-}
-
-.tulisanIB{
-    color: #838383;
-    font-size: large;
+.metodeTataCara p {
+  margin: 0;
+  font-size: 25px;
 }

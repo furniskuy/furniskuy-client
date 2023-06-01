@@ -1,24 +1,21 @@
+import { QuantityButtons } from "@/components/QuantityButtons";
+import { useState } from "react";
+
 export const ProductAction = () => {
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <div className="column">
-      <div className="row" style={{ gap: 32 }}>
-        <p>Kuantitas</p>
-        <div className="row" style={{ gap: 16 }}>
-          <button color="accent" className="btn btn-add-count">
-            -
-          </button>
-          <p className="countText">1</p>
-          <button color="accent" className="btn btn-add-count">
-            +
-          </button>
-        </div>
-        <p>tersisa 3 buah</p>
-      </div>
+      <QuantityButtons
+        quantity={quantity}
+        setQuantity={setQuantity}
+        maxQuantity={10}
+      />
 
       <button
         color="primary"
         className="btn btn-outline"
-        style={{ marginTop: 46 }}
+        style={{ marginTop: 46, width: "fit-content" }}
       >
         Masukan Keranjang
       </button>

@@ -1,38 +1,25 @@
-.descCommentOuter{
-    background-color: white;
-    border-radius: 5px;
-    gap: 100px;
-    margin: 40px 275px;
-    padding: 20px 20px;
-    font-size: medium;
+.descCommentOuter {
+  background-color: white;
+  border-radius: 5px;
+  gap: 100px;
+  padding: 20px 20px;
+  font-size: medium;
 }
 
-.commentBox{
-    display: flex;
+.commentBox {
+  display: flex;
 }
 
-.profilePict{
-    width: 50px;
-    height: 50px;
+.profilePict {
+  width: 50px;
+  height: 50px;
 }
 
-.namaRating{
-    margin: 10px 20px;
+.namaRating {
+  margin: 10px 20px;
 }
 
-.star{
-    display: flex;
-    color: #F6973F;
-}
-
-.tanggal{
-    margin-left: 70px;
-}
-
-.table{
-    margin-left: 68px;
-}
-
-.comment{
-    margin-left: 70px;
+.star {
+  display: flex;
+  color: #f6973f;
 }

@@ -3,6 +3,7 @@
 * {
   z-index: 1;
   margin: 0px;
+  padding: 0px;
 }
 
 html,
@@ -43,10 +44,13 @@ pre {
 }
 
 .addCount .countText {
+  width: 2rem;
+
   font-weight: 600;
   font-size: 16px;
   line-height: 130%;
   color: #121216;
+  text-align: center;
 }
 
 .btn {
@@ -64,7 +68,7 @@ pre {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: white;
+  color: #fdeedb;
 
   border-radius: 4px;
   background-color: #006fba;
@@ -79,4 +83,34 @@ pre {
 
   border: 2px solid #ff8000;
   border-radius: 12px;
+}
+
+.btn-toggle-wrapper {
+  margin-bottom: 36px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+
+  background: #dedede;
+  border-radius: 12px;
+}
+
+.btn-toggle-content {
+  padding: 17px 24px;
+  width: 100%;
+
+  font-weight: 600;
+  font-size: 16px;
+  color: #717179;
+
+  background-color: #dedede;
+  border-radius: 12px;
+}
+
+.btn-toggle-content.active {
+  color: #fdeedb;
+
+  background-color: #006fba;
 }

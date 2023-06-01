@@ -1,28 +1,32 @@
-import { FunctionComponent } from "react";
+import { useState } from "react";
+import { ProductDescription } from "./ProductDescription";
+import { ProductReview } from "./ProductReview";
 
-import { Inventaris } from "@/types/api";
-import { idrFormat } from "@/util/number";
+export const ProductContent = () => {
+  const [showDescription, setShowDescription] = useState(true);
 
-import Rating from "@/components/Rating";
-import styles from "./ProductContent.module.css";
-
-type Props = {
-  product: Inventaris;
-};
-
-export const ProductContent: FunctionComponent<Props> = ({ product }) => {
   return (
-    <div className={styles["productContentContainer"]}>
-      <div className={styles["productName"]}>
-        <h2>{product.nama}</h2>
+    <div>
+      <div
+        className="btn-toggle-wrapper"
+        onClick={() => setShowDescription((prev) => !prev)}
+      >
+        <button
+          className={
+            "btn btn-toggle-content " + (showDescription ? "active" : "")
+          }
+        >
+          Deskripsi
+        </button>
+        <button
+          className={
+            "btn btn-toggle-content " + (!showDescription ? "active" : "")
+          }
+        >
+          Penilaian
+        </button>
       </div>
-      <div className={styles["productPrice"]}>
-        <p>{idrFormat(product.harga)}</p>
-      </div>
-      <div className="rating row" style={{ gap: 24, marginTop: 4 }}>
-        Ulasan: 5.0
-        <Rating />
-      </div>
+      {showDescription ? <ProductDescription /> : <ProductReview />}
     </div>
   );
 };

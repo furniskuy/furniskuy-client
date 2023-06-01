@@ -1,6 +1,6 @@
-import styles from "./Desc.module.css";
+import styles from "./ProductDescription.module.css";
 
-const Desc = () => {
+export const ProductDescription = () => {
   return (
     <>
       <div className={styles["descOuter"]}>
@@ -50,5 +50,3 @@ const Desc = () => {
     </>
   );
 };
-
-export default Desc;

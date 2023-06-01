@@ -6,6 +6,7 @@ import { getImageUrl } from "@/util/image";
 
 import logokeranjang from "@/assets/logo keranjang.png";
 import tandapanah from "@/assets/tandapanah.png";
+import { idrFormat } from "@/util/number";
 import styles from "./ProductListing.module.css";
 
 const KategoriProduct = ["Semua", "Sofa", "Kasur", "Kursi", "Meja", "Rak"];
@@ -66,7 +67,9 @@ export const ProductListing = () => {
                   <div className={styles["cardContent"]}>
                     <div>
                       <p className={styles["productName"]}>{item.nama}</p>
-                      <p className={styles["productPrice"]}>{item.harga}</p>
+                      <p className={styles["productPrice"]}>
+                        {idrFormat(item.harga)}
+                      </p>
                     </div>
                     <div className={styles["arrowProduct"]}>
                       <img src={tandapanah} alt="arrow" />

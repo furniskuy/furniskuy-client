@@ -37,7 +37,7 @@ export const Reviews = () => {
     <>
       <div className={styles["cardReviewListContainer"]}>
         <div className={styles["PenilaianProduk"]}>
-          <div className={styles.reviewHeader}>
+          <div className={styles.reviewListHeader}>
             <p className={styles.reviewListTitle}> Penilaian Produk</p>
             <p className={styles.reviewListSubtitle}>Ulasan Customers</p>
           </div>

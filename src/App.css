@@ -24,6 +24,14 @@ pre {
   font-size: 25px;
 }
 
+*[color="primary"] {
+  color: #ff8000;
+}
+
+*[color="accent"] {
+  color: #006fba;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -34,6 +42,41 @@ pre {
   flex-direction: column;
 }
 
-*[color="primary"] {
+.addCount .countText {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  color: #121216;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+}
+
+.btn-add-count {
+  width: 24px;
+  height: 24px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+
+  border-radius: 4px;
+  background-color: #006fba;
+}
+
+.btn-outline {
+  padding: 12px 24px;
+
+  font-weight: 600;
+  font-size: 16px;
   color: #ff8000;
+
+  border: 2px solid #ff8000;
+  border-radius: 12px;
 }

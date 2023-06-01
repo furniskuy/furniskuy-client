@@ -21,7 +21,6 @@
 }
 
 .kategoriItem div {
-  padding: 5px 10px;
   cursor: pointer;
   user-select: none;
 }
@@ -30,6 +29,7 @@
   font-weight: 700;
   font-size: 24px;
   color: #ff8000;
+  border-bottom: 2px solid #ff8000;
 }
 
 .statusNotSelected {
@@ -63,6 +63,8 @@
 
 .productImage {
   width: 70%;
+  min-width: 203px;
+  min-height: 203px;
 }
 
 .productImage {

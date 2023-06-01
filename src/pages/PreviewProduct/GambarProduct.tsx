@@ -1,13 +1,15 @@
-import KursiMinimalis from "@/assets/KursiMinimalis.png";
+import { FunctionComponent } from "react";
 import styles from "./GambarProduct.module.css";
 
-const GambarProduct = () => {
+type Props = {
+  image: string;
+};
+
+const GambarProduct: FunctionComponent<Props> = ({ image }) => {
   return (
-    <>
-      <div>
-        <img src={KursiMinimalis} className={styles["product-pict"]} />
-      </div>
-    </>
+    <div>
+      <img src={image} className={styles["productImage"]} />
+    </div>
   );
 };
 

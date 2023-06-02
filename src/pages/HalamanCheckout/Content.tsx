@@ -8,7 +8,7 @@ import SofaRuangTV from "@/assets/SofaRuangTV.png";
 import styles from "./Content.module.css";
 
 export const Content = () => {
-  const inventarisQuery = useInventaris({ limit: 2 m });
+  const inventarisQuery = useInventaris({ limit: 2 });
 
   return (
     <>

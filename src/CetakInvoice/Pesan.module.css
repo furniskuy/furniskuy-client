@@ -1,0 +1,8 @@
+.Pesan {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 120px;
+    color: #838383;
+    font-weight: 600;
+}

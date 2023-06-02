@@ -21,8 +21,6 @@ const router = createHashRouter([
       { path: "/preview", element: <PreviewProduct /> },
       { path: "/produk/:id", element: <PreviewProduct /> },
       { path: "/keranjang", element: <Keranjang /> },
-      { path: "/checkout", element: <HalamanCheckout /> },
-      { path: "/checkout/:id", element: <PetunjukPembayaran /> },
     ],
   },
 ]);

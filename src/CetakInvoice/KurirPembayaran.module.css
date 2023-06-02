@@ -1,0 +1,14 @@
+.KurirMetode {
+    display: flex;
+    gap: 300px;
+    justify-content: center;
+}
+
+.Toket {
+    color: #838383;
+    font-weight: 600;
+}
+
+.JNE {
+    font-weight: 600;
+}

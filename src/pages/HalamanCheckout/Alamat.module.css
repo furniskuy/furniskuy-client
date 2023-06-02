@@ -1,0 +1,25 @@
+.boxAlamat{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    height: fit-content;
+    border: solid 1px;
+    margin: 0 300px;
+}
+
+.nama-noTelp{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapPin{
+    color: #006FBA;
+}
+
+.noTelp{
+    color: #838383;
+}

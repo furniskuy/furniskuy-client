@@ -1,0 +1,74 @@
+.tabelCheckout {
+  display: flex;
+  justify-content: center;
+}
+
+.tabelCheckout > table td {
+  padding: 0 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.checkboxInput {
+  height: 25px;
+  width: 25px;
+}
+
+.voucher {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 130px;
+  gap: 20px;
+}
+
+.InputVoucher {
+  height: fit-content;
+  background-color: #e6e6e6;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.btnpakai {
+  background-color: #b7b7b7;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.jmlprdk {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.hrgcheck {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.jmlhrgcheckout {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 120px 30px 135px;
+  align-items: center;
+}
+
+.btncheckout {
+  background-color: #ff8000;
+  padding: 10px 20px;
+  height: fit-content;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.harga {
+  color: #cb8b2a;
+}
+
+.borderbtn {
+  border-bottom: 1px solid black;
+}

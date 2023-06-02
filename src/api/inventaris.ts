@@ -21,11 +21,12 @@ export const useInventaris = (
 };
 
 export const useInventarisById = (
-  id: string,
+  id: string | undefined,
   queryOptions?: UseQueryOptions<ApiResponse<Inventaris>, unknown>
 ) => {
   return useQuery<ApiResponse<Inventaris>>({
-    queryKey: inventarisKey.byId(id),
+    enabled: !!id,
+    queryKey: inventarisKey.byId(id as string),
     queryFn: () => api.get(`${baseURL}/${id}`),
     ...queryOptions,
   });

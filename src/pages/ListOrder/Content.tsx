@@ -7,12 +7,22 @@ import SofaVintage from "@/assets/SofaVintage.png";
 
 import styles from "./Content.module.css";
 
+type Barang = {
+  gambarBarang: string;
+  namaBarang: string;
+  deskripsiPesanan: string;
+  hargaBarang: string;
+  quantity: string;
+  totalHarga: string;
+  status: number;
+};
+
 const Content = ({ halaman }: { halaman: number }) => {
-  const ListBarang = [
+  const ListBarang: Barang[] = [
     {
       gambarBarang: KursiUnik,
       namaBarang: "Kursi Unik - PINK",
-      statusPesanan: "Pesanan telah dibatalkan.",
+      deskripsiPesanan: "Pesanan telah dibatalkan.",
       hargaBarang: "Rp 550.000",
       quantity: "x1",
       totalHarga: "Rp 650.000",
@@ -21,7 +31,7 @@ const Content = ({ halaman }: { halaman: number }) => {
     {
       gambarBarang: KursiMinimalis,
       namaBarang: "Kursi Minimalis - GREY",
-      statusPesanan: "Pesanan telah diterima oleh yang bersangkutan.",
+      deskripsiPesanan: "Pesanan telah diterima oleh yang bersangkutan.",
       hargaBarang: "Rp 1.300.000",
       quantity: "x1",
       totalHarga: "Rp 1.350.000",
@@ -30,7 +40,7 @@ const Content = ({ halaman }: { halaman: number }) => {
     {
       gambarBarang: SofaVintage,
       namaBarang: "Sofa Vintage - YELLOW",
-      statusPesanan: "Menunggu Paket diserahkan ke pihak jasa kirim.",
+      deskripsiPesanan: "Menunggu Paket diserahkan ke pihak jasa kirim.",
       hargaBarang: "Rp 1.500.000",
       quantity: "x1",
       totalHarga: "Rp 1.500.000 ",
@@ -39,7 +49,7 @@ const Content = ({ halaman }: { halaman: number }) => {
     {
       gambarBarang: MejaMinimalis,
       namaBarang: "Meja Minimalis - BROWN",
-      statusPesanan: "Menunggu pembayaran dilakukan.",
+      deskripsiPesanan: "Menunggu pembayaran dilakukan.",
       hargaBarang: "Rp 200.000",
       quantity: "x1",
       totalHarga: "Rp 250.000",
@@ -48,7 +58,7 @@ const Content = ({ halaman }: { halaman: number }) => {
     {
       gambarBarang: MejaKayu,
       namaBarang: "Meja Kayu - BROWN",
-      statusPesanan: "Sedang dalam perjalanan. Menuju alamat tujuan.",
+      deskripsiPesanan: "Sedang dalam perjalanan. Menuju alamat tujuan.",
       hargaBarang: "Rp 600.000",
       quantity: "x2",
       totalHarga: "Rp 1.275.000 ",
@@ -57,7 +67,7 @@ const Content = ({ halaman }: { halaman: number }) => {
     {
       gambarBarang: RakMejaTV,
       namaBarang: "Rak Meja TV - BROWN",
-      statusPesanan: "Pesanan telah diterima oleh yang bersangkutan.",
+      deskripsiPesanan: "Pesanan telah diterima oleh yang bersangkutan.",
       hargaBarang: "Rp 750.000",
       quantity: "x1",
       totalHarga: "Rp 800.000 ",
@@ -66,6 +76,15 @@ const Content = ({ halaman }: { halaman: number }) => {
   ];
 
   let countContent = 0;
+
+  const STATUS_MAPPING = [
+    "Semua",
+    "Menunggu Pembayaran",
+    "Sedang Dikemas",
+    "Dikirim",
+    "Selesai",
+    "Dibatalkan",
+  ];
 
   return (
     <>
@@ -87,7 +106,7 @@ const Content = ({ halaman }: { halaman: number }) => {
                 </div>
                 {halaman !== 1 ? (
                   <div className={styles["statusPesanan"]}>
-                    <p>{barang.statusPesanan}</p>
+                    <p>{barang.deskripsiPesanan}</p>
                   </div>
                 ) : (
                   <></>
@@ -106,29 +125,9 @@ const Content = ({ halaman }: { halaman: number }) => {
                   </p>
                 </div>
                 {halaman === 1 ? (
-                  barang.status === 2 ? (
-                    <div className={styles["status2"]}>
-                      <p>Menunggu Pembayaran</p>
-                    </div>
-                  ) : barang.status === 3 ? (
-                    <div className={styles["status3"]}>
-                      <p>Diproses</p>
-                    </div>
-                  ) : barang.status === 4 ? (
-                    <div className={styles["status4"]}>
-                      <p>Dikirim</p>
-                    </div>
-                  ) : barang.status === 5 ? (
-                    <div className={styles["status5"]}>
-                      <p>Diterima</p>
-                    </div>
-                  ) : barang.status === 6 ? (
-                    <div className={styles["status6"]}>
-                      <p>Dibatalkan</p>
-                    </div>
-                  ) : (
-                    <></>
-                  )
+                  <div className={styles["status" + barang.status]}>
+                    <p>{STATUS_MAPPING[barang.status - 1]}</p>
+                  </div>
                 ) : (
                   <div className={styles["button"]}>
                     <button

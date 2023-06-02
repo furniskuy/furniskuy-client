@@ -1,0 +1,105 @@
+.accentRectangle {
+  top: -56px;
+  right: -56px;
+  width: 45vw;
+  height: 60vh;
+  position: absolute;
+  background-color: #f5c89a;
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.container > div {
+  flex: 6;
+  width: 100%;
+}
+
+.gambarSofa {
+  width: 100%;
+  height: 80vh;
+  max-height: 670px;
+  object-fit: contain;
+}
+
+.bestBadge {
+  padding: 12px 24px;
+  width: fit-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 100px;
+  background: #5881ea;
+}
+
+.bestBadge p {
+  margin: 0px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.slogan {
+  margin-top: 24px;
+
+  font-weight: 700;
+  font-size: 64px;
+  color: #121216;
+}
+
+.sloganSubtitle {
+  margin-top: 24px;
+
+  font-size: 20px;
+  color: #717179;
+}
+
+.orderButton {
+  padding: 12px 32px;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background: #ff8000;
+  border-radius: 20px 0px;
+}
+
+.orderButton p {
+  margin: 0px;
+
+  font-weight: 600;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.statsContainer {
+  display: flex;
+  gap: 1rem;
+  margin: 46px 0px;
+}
+
+.counter {
+  font-weight: 600;
+  font-size: 30px;
+  color: #575757;
+}
+
+.counterName {
+  font-weight: 500;
+  font-size: 20px;
+  color: #828282;
+}

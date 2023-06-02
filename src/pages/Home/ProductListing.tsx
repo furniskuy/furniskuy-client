@@ -6,7 +6,7 @@ import { getImageUrl } from "@/util/image";
 import { idrFormat } from "@/util/number";
 
 import AddToCartIcon from "@/assets/add-to-cart-icon.png";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import styles from "./ProductListing.module.css";
 
 const KategoriProduct = ["Semua", "Sofa", "Kasur", "Kursi", "Meja", "Rak"];
@@ -72,7 +72,7 @@ export const ProductListing = () => {
                       </p>
                     </div>
                     <div className={styles["arrowProduct"]}>
-                      <FaArrowRight />
+                      <FaArrowLeft />
                     </div>
                   </div>
                 </Link>

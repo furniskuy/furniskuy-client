@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@500;900&display=swap");
+
+.productHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 140px;
+  margin-bottom: 24px;
+}
+
+.productListingTitle {
+  font-weight: 900;
+  font-size: 36px;
+  color: #121216;
+}
+
+.kategoriItem {
+  display: flex;
+  gap: 30px;
+  font-size: 17px;
+  margin-bottom: 32px;
+}
+
+.kategoriItem div {
+  cursor: pointer;
+  user-select: none;
+}
+
+.statusSelected {
+  font-weight: 700;
+  font-size: 24px;
+  color: #ff8000;
+  border-bottom: 2px solid #ff8000;
+}
+
+.statusNotSelected {
+  font-size: 24px;
+  color: #717179;
+}
+
+.daftarProduk {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+.cardProduct {
+  background-color: white;
+  padding: 18px;
+  border-radius: 12px;
+
+  min-height: 25vh;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 4px;
+
+  height: 80%;
+}
+
+.productImage {
+  width: 70%;
+  min-width: 203px;
+  min-height: 203px;
+}
+
+.productImage {
+  max-width: 203px;
+  max-height: 203px;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productName {
+  color: #121216;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.productPrice {
+  color: #4e5a37;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.arrowProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px;
+  background: #ffffff;
+  border: 0.6px solid #717179;
+  border-radius: 5px;
+}
+
+.arrowProduct img {
+  height: 24px;
+  width: 24px;
+}

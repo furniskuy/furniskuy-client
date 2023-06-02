@@ -1,0 +1,36 @@
+.metodeHeader h2 {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 45px;
+  text-transform: capitalize;
+}
+
+.metodeContainer {
+  margin-top: 48px;
+  max-width: 50vw;
+}
+
+.metodeOuter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+}
+
+.metodeName {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 45px;
+  text-transform: capitalize;
+}
+
+.metodeTataCara {
+  margin-top: 24px;
+  padding-left: 12px;
+}
+
+.metodeTataCara p {
+  margin: 0;
+  font-size: 25px;
+}

@@ -1,0 +1,81 @@
+.footer {
+  background: #ffffff;
+  padding: 56px;
+}
+
+.footerAtas {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerKiri {
+  font-size: 15px;
+  line-height: 160%;
+  color: #121216;
+}
+
+.footerKiri p:first-child {
+  margin-bottom: 24px;
+}
+
+.footerKiri .footerOren {
+  font-weight: 700;
+  font-size: 32px;
+  color: #ff8000;
+}
+
+.footerKanan {
+  display: flex;
+  justify-content: space-around;
+  flex: 0.5;
+  font-size: small;
+  line-height: 1;
+}
+
+.footerKanan .footerOren {
+  color: #ff8000;
+  font-weight: 400;
+  font-size: medium;
+}
+
+.footerItem > p:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.footerLogo {
+  height: 10px;
+  width: 10px;
+}
+
+.sosmed {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.fb,
+.twt,
+.ig {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footerEnd {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 104px;
+}
+
+.footerEndKanan {
+  display: flex;
+  gap: 30px;
+  font-size: small;
+}
+
+.copyright {
+  font-family: DM Sans;
+  font-size: small;
+  color: #1e2833;
+  opacity: 0.5;
+}

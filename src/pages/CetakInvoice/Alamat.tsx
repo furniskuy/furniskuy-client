@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Alamat.module.css";
 
 const Alamat = () => {
@@ -33,7 +32,6 @@ const Alamat = () => {
             <td>Email</td>
             <td>: Jeromepolin@gmail.com</td>
           </tr>
-         
         </table>
       </div>
     </>

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./StatusPesanan.module.css";
 
 const StatusPesanan = () => {

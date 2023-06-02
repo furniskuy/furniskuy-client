@@ -1,10 +1,6 @@
 import { useInventaris } from "@/api/inventaris";
 import { getImageUrl } from "@/util/image";
 import { idrFormat } from "@/util/number";
-import { Link } from "react-router-dom";
-
-import BedSet from "@/assets/BedSet.png";
-import SofaRuangTV from "@/assets/SofaRuangTV.png";
 import styles from "./Content.module.css";
 
 const Content = () => {

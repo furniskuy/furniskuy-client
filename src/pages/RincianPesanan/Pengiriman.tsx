@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Pengiriman.module.css";
 
 const Pengiriman = () => {

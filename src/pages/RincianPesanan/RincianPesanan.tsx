@@ -1,9 +1,8 @@
-import React from "react";
-import StatusPesanan from "./StatusPesanan";
-import Pengiriman from "./Pengiriman";
 import AlamatPengiriman from "./AlamatPengiriman";
-import ProdukPesanan from "./ProdukPesanan";
 import MetodeBayar from "./MetodeBayar";
+import Pengiriman from "./Pengiriman";
+import ProdukPesanan from "./ProdukPesanan";
+import StatusPesanan from "./StatusPesanan";
 
 export const RincianPesanan = () => {
   return (

@@ -1,4 +1,4 @@
-import Checkout from "./Checkout";
+import { Checkout } from "./Checkout";
 import Header from "./Header";
 
 export const Keranjang = () => {

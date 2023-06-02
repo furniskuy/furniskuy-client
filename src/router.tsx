@@ -1,5 +1,6 @@
 import { createHashRouter } from "react-router-dom";
 
+import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
 import { App } from "./App";
 import { HalamanCheckout } from "./pages/HalamanCheckout/HalamanCheckout";
 import { Home } from "./pages/Home/Home";
@@ -15,6 +16,9 @@ const router = createHashRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "/orders", element: <ListOrder /> },
+      { path: "/rincianpesanan", element: <RincianPesanan /> },
+      { path: "/petunjukpembayaran", element: <PetunjukPembayaran /> },
+      { path: "/preview", element: <PreviewProduct /> },
       { path: "/produk/:id", element: <PreviewProduct /> },
       { path: "/keranjang", element: <Keranjang /> },
       { path: "/checkout", element: <HalamanCheckout /> },

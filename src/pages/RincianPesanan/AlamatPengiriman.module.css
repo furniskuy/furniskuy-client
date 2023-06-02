@@ -1,0 +1,15 @@
+.outerAlamat{
+    margin-left: 65px;
+    margin-top: 40px;
+}
+
+.nama-noTelp{
+    display: flex;
+    gap: 400px;
+    margin-top: -20px;
+}
+
+
+.noTelp{
+    color: #838383;
+}

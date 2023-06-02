@@ -1,0 +1,65 @@
+.DaftarPesanan {
+    margin-top: 50px;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+       
+}
+
+.head {
+    width: 70%;
+    margin-right: 30px;
+   
+}
+
+.header1 {
+    display: flex;
+    justify-content: space-between;
+    flex: 3;
+    padding: 0 10px;
+    font-weight: 600;   
+    
+}
+
+.header1 p {
+    flex: 3;
+}
+
+.tabel1 td {
+    font-weight: 600;
+    border-bottom: underline;
+}
+
+.underline {
+    
+    border-bottom: 1px solid #FFC34F;
+    
+}
+
+.Subtotal {
+    display: flex;
+    justify-content: end;
+    
+
+}
+
+
+
+.tabel2 td {
+    font-weight: 600;
+   
+     border-spacing: -20px 0;
+}
+
+.tabel2 {
+   
+    border-spacing: 50px 20px;
+}
+
+
+
+.headeriistimewa {
+   border-bottom:  5px solid #FFC34F;
+
+}
+

@@ -5,15 +5,17 @@ const Alamat = () => {
   return (
     <>
       <div className={styles["boxAlamat"]}>
-        <div className={styles["nama-noTelp"]}>
-          <div className={styles["mapPin"]}>
-            <HiMapPin size="30" />
-          </div>
-          <div className={styles["nama"]}>
-            <p>Jerome</p>
-          </div>
-          <div className={styles["noTelp"]}>
-            <p>081247986534</p>
+        <div className={styles["mapPin"]}>
+          <HiMapPin size="50" />
+        </div>
+        <div className={styles["boxnama-noTelp"]}>
+          <div className={styles["nama-noTelp"]}>
+            <div className={styles["nama"]}>
+              <p>Jerome</p>
+            </div>
+            <div className={styles["noTelp"]}>
+              <p>081247986534</p>
+            </div>
           </div>
           <div className={styles["alamat"]}>
             <p>

@@ -1,31 +1,32 @@
-import BedSet from "../assets/BedSet.png";
-import SofaRuangTV from "../assets/SofaRuangTV.png";
+import { useInventaris } from "@/api/inventaris";
+import { getImageUrl } from "@/util/image";
+import { idrFormat } from "@/util/number";
 import styles from "./ProdukPesanan.module.css";
 
 const ProdukPesanan = () => {
+  const inventarisQuery = useInventaris({ limit: 2 });
+
   return (
     <>
       <h2 className={styles["header"]}>Produk Pesanan</h2>
-      <div className={styles["outerPesanan"]}>
-        <img src={SofaRuangTV} className={styles["gambar"]} />
-        <div className={styles["nama-jumlah"]}>
-          <p>Sofa Ruang TV - BLACK</p>
-          <p>x1</p>
-        </div>
-        <div className={styles["harga"]}>
-          <p>Rp 2.000.000</p>
-        </div>
-      </div>
-      <div className={styles["outerPesanan"]}>
-        <img src={BedSet} className={styles["gambar2"]} />
-        <div className={styles["nama-jumlah2"]}>
-          <p>Bed Set - GREY</p>
-          <p>x1</p>
-        </div>
-        <div className={styles["harga2"]}>
-          <p>Rp 4.000.000</p>
-        </div>
-      </div>
+
+      {inventarisQuery.isLoading && <p>Loading...</p>}
+
+      {inventarisQuery.isError && <p>Error...</p>}
+
+      {inventarisQuery.isSuccess &&
+        inventarisQuery.data?.data.map((item) => (
+          <div className={styles["outerPesanan"]}>
+            <img src={getImageUrl(item.image)} className={styles["gambar"]} />
+            <div className={styles["nama-jumlah"]}>
+              <p>{item.nama}</p>
+              <p>x1</p>
+            </div>
+            <div className={styles["harga"]}>
+              <p>{idrFormat(item.harga)}</p>
+            </div>
+          </div>
+        ))}
     </>
   );
 };

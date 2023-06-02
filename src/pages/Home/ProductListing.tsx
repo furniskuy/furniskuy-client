@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 import { useInventaris } from "@/api/inventaris";
 import { getImageUrl } from "@/util/image";
-
-import logokeranjang from "@/assets/logo keranjang.png";
-import tandapanah from "@/assets/tandapanah.png";
 import { idrFormat } from "@/util/number";
+
+import logokeranjang from "@/assets/add-to-card-icon.png";
+import { FaArrowRight } from "react-icons/fa";
 import styles from "./ProductListing.module.css";
 
 const KategoriProduct = ["Semua", "Sofa", "Kasur", "Kursi", "Meja", "Rak"];
@@ -72,7 +72,7 @@ export const ProductListing = () => {
                       </p>
                     </div>
                     <div className={styles["arrowProduct"]}>
-                      <img src={tandapanah} alt="arrow" />
+                      <FaArrowRight />
                     </div>
                   </div>
                 </Link>

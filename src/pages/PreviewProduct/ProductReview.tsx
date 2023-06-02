@@ -1,4 +1,4 @@
-import PP1 from "@/assets/ProfilePictRate1.png";
+import PPulasan1 from "@/assets/PPulasan1.png";
 import Rating from "@/components/Rating";
 
 import styles from "./ProductReview.module.css";
@@ -8,7 +8,7 @@ export const ProductReview = () => {
     <div className={styles["descCommentOuter"]}>
       <div className={styles["commentBox"]}>
         <div>
-          <img src={PP1} className={styles["profilePict"]} />
+          <img src={PPulasan1} className={styles["profilePict"]} />
         </div>
         <div className={styles["namaRating"]}>
           <div className={styles["nama"]}>

@@ -1,6 +1,4 @@
-import Produk3 from "@/assets/Produk3.png";
-import Produk5 from "@/assets/Produk5.png";
-
+import { productPlaceHolderURL } from "@/util/image";
 import styles from "./Checkout.module.css";
 
 export const Checkout = () => {
@@ -19,7 +17,7 @@ export const Checkout = () => {
                 />
               </td>
               <td>
-                <img src={Produk3} alt="" />
+                <img src={productPlaceHolderURL} alt="" />
               </td>
               <td>
                 <p>Sofa Ruang TV - BlACK</p>
@@ -45,7 +43,7 @@ export const Checkout = () => {
                 />
               </td>
               <td>
-                <img src={Produk5} alt="" />
+                <img src={productPlaceHolderURL} alt="" />
               </td>
               <td>
                 <p>Bed Set - GREY</p>

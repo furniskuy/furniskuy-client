@@ -7,7 +7,7 @@ import BedSet from "@/assets/BedSet.png";
 import SofaRuangTV from "@/assets/SofaRuangTV.png";
 import styles from "./Content.module.css";
 
-export const Content = () => {
+const Content = () => {
   const inventarisQuery = useInventaris({ limit: 2 });
 
   return (
@@ -20,13 +20,16 @@ export const Content = () => {
         inventarisQuery.data?.data.map((item) => (
           <div className={styles["content"]}>
             <div className={styles["gambar"]}>
-              <img src={SofaRuangTV} className={styles["gambar-content"]} />
+              <img
+                src={getImageUrl(item.image)}
+                className={styles["gambar-content"]}
+              />
             </div>
             <div className={styles["namaBarang"]}>
-              <p>Sofa Ruang TV - BLACK</p>
+              <p>{item.nama}</p>
               <div className={styles["quantity-harga"]}>
                 <p>x1</p>
-                <p className={styles["harga"]}>Rp 2.000.000</p>
+                <p className={styles["harga"]}>{idrFormat(item.harga)} </p>
               </div>
             </div>
           </div>
@@ -34,3 +37,5 @@ export const Content = () => {
     </>
   );
 };
+
+export default Content;

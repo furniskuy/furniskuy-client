@@ -6,7 +6,7 @@
 .boxRincian{
     display: flex;
     justify-content: center;
-    gap: 640px;
+    gap: 530px;
 }
 
 .totalHarga{

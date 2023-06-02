@@ -5,10 +5,10 @@ const Voucher = () => {
     <>
       <div className={styles["boxVoucher"]}>
         <div>
-          <p className={styles["kodeVoucher"]}>Skuy127</p>
+          <input className={styles["kodeVoucher"]}type="text" placeholder="SKUY127"/>
           <p className={styles["notifVoucher"]}>Voucher berhasil digunakan</p>
         </div>
-        <div>
+        <div className={styles["boxButton"]}>
           <button className={styles["buttonVoucher"]}>
             <span className={styles["tulisan"]}>PAKAI</span>
           </button>

@@ -55,7 +55,7 @@ export const ProductListing = () => {
                 <div className={styles["cardHeader"]}>
                   <div></div>
                   <div className={styles["productImage"]}>
-                    <img src={getImageUrl(item.image)} alt={item.nama} />
+                    <img src={getImageUrl(item.nama)} />
                   </div>
                   <img
                     onClick={() => addToCart(item.id)}

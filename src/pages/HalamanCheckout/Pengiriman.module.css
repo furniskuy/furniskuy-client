@@ -2,16 +2,22 @@
     display: flex;
     background-color: white;
     padding-left: 30px;
+    justify-content: center;
     align-items: center;
-    border-radius: 30px;
+    border-radius: 15px;
     height: fit-content;
     border: solid 1px;
-    margin: 0 300px;   
-    gap: 500px; 
+    margin: 0 300px;
+    gap: 350px;
+}
+
+.paket{
+    margin: 10px 0;
 }
 
 .tanggal{
     color: #838383;
+    margin: 5px 0;
 }
 
 .ongkir{

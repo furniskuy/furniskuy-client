@@ -5,8 +5,8 @@ import { useInventaris } from "@/api/inventaris";
 import { getImageUrl } from "@/util/image";
 import { idrFormat } from "@/util/number";
 
-import logokeranjang from "@/assets/add-to-cart-icon.png";
-import { FaArrowRight } from "react-icons/fa";
+import AddToCartIcon from "@/assets/add-to-cart-icon.png";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import styles from "./ProductListing.module.css";
 
 const KategoriProduct = ["Semua", "Sofa", "Kasur", "Kursi", "Meja", "Rak"];
@@ -59,7 +59,7 @@ export const ProductListing = () => {
                   </div>
                   <img
                     onClick={() => addToCart(item.id)}
-                    src={logokeranjang}
+                    src={AddToCartIcon}
                     alt="keranjang"
                   />
                 </div>

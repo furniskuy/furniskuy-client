@@ -3,8 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 50px;
-    gap: 50px;
+    gap: 10px;
 }
 
 .namaBarang{
@@ -14,17 +13,9 @@
 
 .quantity-harga{
     display: flex;
-    gap: 500px;
+    gap: 400px;
 }
 
 .harga{
     color: #FF8000;
-}
-
-.content2{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
 }

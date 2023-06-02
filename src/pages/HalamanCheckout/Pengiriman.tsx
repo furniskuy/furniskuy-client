@@ -4,7 +4,7 @@ const Pengiriman = () => {
   return (
     <>
       <div className={styles["boxPengiriman"]}>
-        <div>
+        <div className={styles["paket"]}>
           <p>Reguler</p>
           <p className={styles["tanggal"]}>Perkiraan Diterima Tanggal 27 Mei</p>
         </div>

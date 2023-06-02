@@ -4,7 +4,7 @@ const TotalButtonPesanan = () => {
   return (
     <>
       <div className={styles["boxTotal-Button"]}>
-        <h2>Total: </h2>
+        <h3>Total: </h3>
         <p className={styles["totalHarga"]}>Rp 6.092.000</p>
         <button className={styles["buttonBuatPesanan"]}>
           <span>Buat Pesanan</span>

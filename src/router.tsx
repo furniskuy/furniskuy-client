@@ -1,13 +1,13 @@
 import { createHashRouter } from "react-router-dom";
 
-import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
 import { App } from "./App";
-import { HalamanCheckout } from "./pages/HalamanCheckout/HalamanCheckout";
 import { Home } from "./pages/Home/Home";
+import { Checkout } from "./pages/Keranjang/Checkout";
 import { Keranjang } from "./pages/Keranjang/Keranjang";
 import { ListOrder } from "./pages/ListOrder/ListOrder";
 import { PetunjukPembayaran } from "./pages/PetunjukPembayaran/PetunjukPembayaran";
 import { PreviewProduct } from "./pages/PreviewProduct/PreviewProduct";
+import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
 
 const router = createHashRouter([
   {
@@ -17,10 +17,10 @@ const router = createHashRouter([
       { index: true, element: <Home /> },
       { path: "/orders", element: <ListOrder /> },
       { path: "/rincianpesanan", element: <RincianPesanan /> },
-      { path: "/petunjukpembayaran", element: <PetunjukPembayaran /> },
-      { path: "/preview", element: <PreviewProduct /> },
+      { path: "/petunjuk-pembayaran/:id", element: <PetunjukPembayaran /> },
       { path: "/produk/:id", element: <PreviewProduct /> },
       { path: "/keranjang", element: <Keranjang /> },
+      { path: "/checkout", element: <Checkout /> },
     ],
   },
 ]);

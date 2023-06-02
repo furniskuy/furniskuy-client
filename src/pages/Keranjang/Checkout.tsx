@@ -3,7 +3,7 @@ import Produk5 from "@/assets/Produk5.png";
 
 import styles from "./Checkout.module.css";
 
-const Checkout = () => {
+export const Checkout = () => {
   return (
     <>
       <div>
@@ -90,5 +90,3 @@ const Checkout = () => {
     </>
   );
 };
-
-export default Checkout;

@@ -1,17 +1,30 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Outlet } from "react-router-dom";
 
-import { Layout } from "./components/Layout";
+import { AuthProvider } from "./context/AuthProvider";
+import { LayoutProvider } from "./context/LayoutProvider";
 
 import "./App.css";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      staleTime: 1000 * 60 * 5,
+    },
+  },
+});
 
 export const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Layout />
-      <ReactQueryDevtools initialIsOpen={true} />
-    </QueryClientProvider>
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <LayoutProvider>
+          <Outlet />
+        </LayoutProvider>
+        <ReactQueryDevtools initialIsOpen={true} />
+      </QueryClientProvider>
+    </AuthProvider>
   );
 };

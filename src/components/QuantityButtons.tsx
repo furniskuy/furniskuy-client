@@ -1,9 +1,9 @@
-import { Dispatch, FunctionComponent, SetStateAction } from "react";
+import { FunctionComponent } from "react";
 
 type Props = {
   quantity: number;
   maxQuantity: number;
-  setQuantity: Dispatch<SetStateAction<number>>;
+  setQuantity: (value: number) => void;
 };
 
 export const QuantityButtons: FunctionComponent<Props> = ({
@@ -13,31 +13,23 @@ export const QuantityButtons: FunctionComponent<Props> = ({
 }) => {
   const onAdd = () => {
     if (quantity === maxQuantity) return;
-    setQuantity((prev) => prev + 1);
+    setQuantity(quantity + 1);
   };
 
   const onSubtract = () => {
     if (quantity === 1) return;
-    setQuantity((prev) => prev - 1);
+    setQuantity(quantity - 1);
   };
 
   return (
-    <div className="row" style={{ gap: 32 }}>
-      <p>Kuantitas</p>
-      <div className="row" style={{ gap: 16 }}>
-        <button
-          onClick={onSubtract}
-          color="accent"
-          className="btn btn-add-count"
-        >
-          -
-        </button>
-        <p className="countText">{quantity}</p>
-        <button onClick={onAdd} color="accent" className="btn btn-add-count">
-          +
-        </button>
-      </div>
-      <p>tersisa 3 buah</p>
+    <div className="row" style={{ gap: 16 }}>
+      <button onClick={onSubtract} color="accent" className="btn btn-add-count">
+        -
+      </button>
+      <p className="countText">{quantity}</p>
+      <button onClick={onAdd} color="accent" className="btn btn-add-count">
+        +
+      </button>
     </div>
   );
 };

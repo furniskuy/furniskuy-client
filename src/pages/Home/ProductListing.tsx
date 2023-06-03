@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import { useInventaris } from "@/api/inventaris";
-import { getImageUrl } from "@/util/image";
-import { idrFormat } from "@/util/number";
 
-import AddToCartIcon from "@/assets/add-to-cart-icon.png";
-import { FaArrowLeft } from "react-icons/fa";
+import { useAddKeranjangItem } from "@/api/keranjang";
+import { Inventaris } from "@/types/api";
+import { CardProduct } from "./CardProduct";
 import styles from "./ProductListing.module.css";
 
 const KategoriProduct = ["Semua", "Sofa", "Kasur", "Kursi", "Meja", "Rak"];
@@ -16,8 +14,13 @@ export const ProductListing = () => {
 
   const inventarisQuery = useInventaris({ limit: 8 });
 
-  const addToCart = (id: number) => {
-    console.log(id);
+  const addToCart = useAddKeranjangItem();
+
+  const handleAddToCart = (product: Inventaris) => {
+    addToCart.mutate({
+      id_barang: product.id,
+      jumlah: 1,
+    });
   };
 
   return (
@@ -33,6 +36,7 @@ export const ProductListing = () => {
         <div className={styles["kategoriItem"]}>
           {KategoriProduct.map((item, index) => (
             <div
+              key={index}
               className={
                 styles[
                   kategori === index ? "statusSelected" : "statusNotSelected"
@@ -50,33 +54,12 @@ export const ProductListing = () => {
           {inventarisQuery.isError && <div>Error...</div>}
 
           {inventarisQuery.isSuccess &&
-            inventarisQuery.data?.data.map((item) => (
-              <div className={styles["cardProduct"]}>
-                <div className={styles["cardHeader"]}>
-                  <div></div>
-                  <div className={styles["productImage"]}>
-                    <img src={getImageUrl(item.image)} alt={item.nama} />
-                  </div>
-                  <img
-                    onClick={() => addToCart(item.id)}
-                    src={AddToCartIcon}
-                    alt="keranjang"
-                  />
-                </div>
-                <Link to={"/produk/" + item.id}>
-                  <div className={styles["cardContent"]}>
-                    <div>
-                      <p className={styles["productName"]}>{item.nama}</p>
-                      <p className={styles["productPrice"]}>
-                        {idrFormat(item.harga)}
-                      </p>
-                    </div>
-                    <div className={styles["arrowProduct"]}>
-                      <FaArrowLeft />
-                    </div>
-                  </div>
-                </Link>
-              </div>
+            inventarisQuery.data?.data.map((item, index) => (
+              <CardProduct
+                key={index}
+                product={item}
+                addToCart={() => handleAddToCart(item)}
+              />
             ))}
         </div>
       </div>

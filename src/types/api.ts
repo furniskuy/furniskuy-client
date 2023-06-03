@@ -21,6 +21,40 @@ export type Inventaris = {
 };
 
 export type Keranjang = {
-  harga: number;
+  id: number;
+  id_pembeli: number;
   jumlah: number;
+  barang: Inventaris;
+};
+
+export type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+export type Pembeli = {
+  id: number;
+  nama: string;
+  jenis_kelamin: string;
+  alamat: string;
+  no_hp: string;
+  user: User;
+};
+
+export type LoginPayload = {
+  email: string;
+  password: string;
+};
+
+export type AuthSignResponse = {
+  access_token: string;
+  user: User;
+};
+
+export type RegisterPayload = {
+  name: string;
+  email: string;
+  password: string;
+  password_confirmation: string;
 };

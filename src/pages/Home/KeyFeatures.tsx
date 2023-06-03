@@ -39,9 +39,6 @@ export const KeyFeatures = () => {
               </ul>
             </div>
           </div>
-          <div className={styles["learnmore"]}>
-            <p>Learn more</p>
-          </div>
         </div>
       </div>
     </>

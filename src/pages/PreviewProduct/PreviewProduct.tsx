@@ -1,11 +1,12 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { useInventarisById } from "@/api/inventaris";
 import { getImageUrl } from "@/util/image";
 
-import { LayoutContext } from "@/components/Layout";
+import { useAddKeranjangItem } from "@/api/keranjang";
 import { Loading } from "@/components/Loading";
+import { useLayout } from "@/context/LayoutProvider";
 import { ProductAction } from "./ProductAction";
 import { ProductContent } from "./ProductContent";
 import { ProductDetailImage } from "./ProductDetailImage";
@@ -13,16 +14,25 @@ import { ProductHead } from "./ProductHead";
 
 export const PreviewProduct = () => {
   const { id } = useParams<{ id: string }>();
-  const layoutContext = useContext(LayoutContext);
+  const layout = useLayout();
 
   const { data: product, isLoading } = useInventarisById(id);
+  const addToCart = useAddKeranjangItem();
+
+  const handleAddToCart = (quantity: number) => {
+    if (!product) return;
+    addToCart.mutate({
+      id_barang: product?.data.id,
+      jumlah: quantity,
+    });
+  };
 
   useEffect(() => {
-    layoutContext?.setHeaderBack(true);
+    layout?.setHeaderBack(true);
     return () => {
-      layoutContext?.setHeaderBack(false);
+      layout?.setHeaderBack(false);
     };
-  }, [layoutContext]);
+  }, [layout]);
 
   if (!product || isLoading) return <Loading />;
 
@@ -35,7 +45,10 @@ export const PreviewProduct = () => {
         <ProductDetailImage image={getImageUrl(product.data.image)} />
         <div className="column" style={{ gap: 24 }}>
           <ProductHead product={product.data} />
-          <ProductAction />
+          <ProductAction
+            addToCart={handleAddToCart}
+            loading={addToCart.isLoading}
+          />
         </div>
       </div>
       <ProductContent />

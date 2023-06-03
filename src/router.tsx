@@ -4,7 +4,7 @@ import { App } from "./App";
 import { AuthLayout } from "./components/AuthLayout";
 import { GuestLayout } from "./components/GuestLayout";
 import { Home } from "./pages/Home/Home";
-import { Checkout } from "./pages/Keranjang/Checkout";
+import { KeranjangList } from "./pages/Keranjang/KerangjangList";
 import { Keranjang } from "./pages/Keranjang/Keranjang";
 import { ListOrder } from "./pages/ListOrder/ListOrder";
 import { Login } from "./pages/Login/Login";
@@ -22,7 +22,7 @@ const router = createHashRouter([
           { index: true, element: <Home /> },
           { path: "/produk/:id", element: <PreviewProduct /> },
           { path: "/keranjang", element: <Keranjang /> },
-          { path: "/checkout", element: <Checkout /> },
+          { path: "/checkout", element: <KeranjangList /> },
           { path: "/rincianpesanan", element: <RincianPesanan /> },
           { path: "/petunjuk-pembayaran/:id", element: <PetunjukPembayaran /> },
           { path: "/orders", element: <ListOrder /> },

@@ -21,6 +21,7 @@ export const ProductAction: FunctionComponent<Props> = ({
           quantity={quantity}
           setQuantity={setQuantity}
           maxQuantity={10}
+          disabled={loading}
         />
 
         <p>tersisa 3 buah</p>

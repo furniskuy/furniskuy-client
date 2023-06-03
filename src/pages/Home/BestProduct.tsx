@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
-
 import { Inventaris } from "@/types/api";
 
+import { FunctionComponent } from "react";
 import styles from "./BestProduct.module.css";
 
-export const BestProduct = () => {
+type Props = {
+  action: () => void;
+};
+
+export const BestProduct: FunctionComponent<Props> = ({ action }) => {
   const bestProduct: Inventaris = {
     id: 1,
     nama: "Bangku Sofa",
@@ -52,11 +55,13 @@ export const BestProduct = () => {
             </p>
           </div>
 
-          <Link to={"/produk/" + bestProduct.id}>
-            <div className={styles["orderButton"]}>
-              <p>Order Now</p>
-            </div>
-          </Link>
+          <div
+            className={styles["orderButton"]}
+            style={{ cursor: "pointer" }}
+            onClick={action}
+          >
+            <p>Order Now</p>
+          </div>
         </div>
         <div className={styles["gambar"]}>
           <img

@@ -12,6 +12,8 @@
 .checkboxInput {
   height: 25px;
   width: 25px;
+  border: 2px solid #dedede;
+  border-radius: 8px;
 }
 
 .voucher {

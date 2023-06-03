@@ -13,7 +13,6 @@ export const ProductListing = () => {
   const [kategori, setKategori] = useState(0);
 
   const inventarisQuery = useInventaris({ limit: 8 });
-
   const addToCart = useAddKeranjangItem();
 
   const handleAddToCart = (product: Inventaris) => {
@@ -24,45 +23,43 @@ export const ProductListing = () => {
   };
 
   return (
-    <>
-      <div>
-        <div className={styles["productHeader"]}>
-          <div className={styles["productListingTitle"]}>
-            <p>
-              Produk <span color="primary">Terlaris</span>
-            </p>
-          </div>
-        </div>
-        <div className={styles["kategoriItem"]}>
-          {KategoriProduct.map((item, index) => (
-            <div
-              key={index}
-              className={
-                styles[
-                  kategori === index ? "statusSelected" : "statusNotSelected"
-                ]
-              }
-              onClick={() => setKategori(index)}
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-        <div className={styles["daftarProduk"]}>
-          {inventarisQuery.isLoading && <div>Loading...</div>}
-
-          {inventarisQuery.isError && <div>Error...</div>}
-
-          {inventarisQuery.isSuccess &&
-            inventarisQuery.data?.data.map((item, index) => (
-              <CardProduct
-                key={index}
-                product={item}
-                addToCart={() => handleAddToCart(item)}
-              />
-            ))}
+    <div>
+      <div className={styles["productHeader"]}>
+        <div className={styles["productListingTitle"]}>
+          <p>
+            Produk <span color="primary">Terlaris</span>
+          </p>
         </div>
       </div>
-    </>
+      <div className={styles["kategoriItem"]}>
+        {KategoriProduct.map((item, index) => (
+          <div
+            key={index}
+            className={
+              styles[
+                kategori === index ? "statusSelected" : "statusNotSelected"
+              ]
+            }
+            onClick={() => setKategori(index)}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+      <div className={styles["daftarProduk"]}>
+        {inventarisQuery.isLoading && <div>Loading...</div>}
+
+        {inventarisQuery.isError && <div>Error...</div>}
+
+        {inventarisQuery.isSuccess &&
+          inventarisQuery.data?.map((item, index) => (
+            <CardProduct
+              key={index}
+              product={item}
+              addToCart={() => handleAddToCart(item)}
+            />
+          ))}
+      </div>
+    </div>
   );
 };

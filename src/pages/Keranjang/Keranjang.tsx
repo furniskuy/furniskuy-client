@@ -1,7 +1,7 @@
 import { useLayout } from "@/context/LayoutProvider";
 import { useEffect } from "react";
-import { Checkout } from "./Checkout";
 import Header from "./Header";
+import { KeranjangList } from "./KerangjangList";
 
 export const Keranjang = () => {
   const layout = useLayout();
@@ -16,7 +16,7 @@ export const Keranjang = () => {
   return (
     <div>
       <Header />
-      <Checkout />
+      <KeranjangList />
     </div>
   );
 };

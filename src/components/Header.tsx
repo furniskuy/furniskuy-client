@@ -16,16 +16,25 @@ type Props = {
 const CartIcon = () => {
   const keranjangs = useKeranjangs();
 
-  const count = useMemo(
-    () => keranjangs.data?.data.reduce((acc, curr) => acc + curr.jumlah, 0),
+  const countKeranjang = useMemo(
+    () => keranjangs.data?.reduce((acc, curr) => acc + curr.jumlah, 0),
     [keranjangs]
+  );
+
+  const isShowCount = useMemo(
+    () => countKeranjang && countKeranjang > 0,
+    [countKeranjang]
   );
 
   return (
     <div className={styles["cartCount"]}>
       <Link to="/keranjang">
         <IoMdCart />
-        {count && count > 0 && <div className={styles["count"]}>{count}</div>}
+        {!isShowCount ? (
+          <></>
+        ) : (
+          <div className={styles["count"]}>{countKeranjang}</div>
+        )}
       </Link>
     </div>
   );

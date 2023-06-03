@@ -1,4 +1,4 @@
-import { ApiResponse, Inventaris, SearchApiParams } from "@/types/api";
+import { Inventaris, SearchApiParams } from "@/types/api";
 import { UseQueryOptions, useQuery } from "@tanstack/react-query";
 import { api } from "./baseApi";
 
@@ -11,9 +11,9 @@ export const inventarisKey = {
 
 export const useInventaris = (
   params: SearchApiParams,
-  queryOptions?: UseQueryOptions<ApiResponse<Inventaris[]>, unknown>
+  queryOptions?: UseQueryOptions<Inventaris[], unknown>
 ) => {
-  return useQuery<ApiResponse<Inventaris[]>>({
+  return useQuery<Inventaris[]>({
     queryKey: inventarisKey.all,
     queryFn: () => api.get(baseURL, { params }),
     ...queryOptions,
@@ -22,9 +22,9 @@ export const useInventaris = (
 
 export const useInventarisById = (
   id: string | undefined,
-  queryOptions?: UseQueryOptions<ApiResponse<Inventaris>, unknown>
+  queryOptions?: UseQueryOptions<Inventaris, unknown>
 ) => {
-  return useQuery<ApiResponse<Inventaris>>({
+  return useQuery<Inventaris>({
     enabled: !!id,
     queryKey: inventarisKey.byId(id as string),
     queryFn: () => api.get(`${baseURL}/${id}`),

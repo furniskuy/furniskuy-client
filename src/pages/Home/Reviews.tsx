@@ -50,8 +50,9 @@ export const Reviews = () => {
           </div>
         </div>
         <div className={styles.reviewList}>
-          {reviews.map((review) => (
+          {reviews.map((review, index) => (
             <div
+              key={index}
               className={styles.cardReview}
               style={{ backgroundImage: `url('${review.background}')` }}
             >

@@ -1,156 +1,160 @@
-.content{
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 70px;
-    margin: 50px 30px;
-    background-color: white;
+.content {
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 70px;
+  margin: 50px 30px;
+  background-color: white;
 }
 
-.kiriAtas{
-    display: flex;
-    flex-direction: row;
+.kiriAtas {
+  display: flex;
+  flex-direction: row;
 }
 
-.kanan{
-    float: right;
-    display: flex;
-    flex-direction: column;
-    text-align: end;
+.kanan {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
 }
 
-.namaBarang > p{
-    font-weight: 400;
-    font-size: x-large;
-    padding: 0 50px;
-    margin-left: 200px;
+.namaBarang > p {
+  font-weight: 400;
+  font-size: x-large;
+  padding: 0 50px;
+  margin-left: 200px;
 }
 
-.statusPesanan{
-    font-weight: 500;
-    margin-top: 150px;
+.statusPesanan {
+  font-weight: 500;
+  margin-top: 150px;
 }
 
-.hargaBarang{
-    font-size: x-large;
-    font-weight: 400;
-    color: #ff8000;
-    padding: 60px 0;
+.hargaBarang {
+  font-size: x-large;
+  font-weight: 400;
+  color: #ff8000;
+  padding: 60px 0;
 }
 
-.totalPesanan{
-    font-size: x-large;
-    font-weight: 400;
+.totalPesanan {
+  font-size: x-large;
+  font-weight: 400;
 }
 
-.totalPesanan .totalBayar{
-    color: #ff8000;
-    margin-left: 30px;
+.totalPesanan .totalBayar {
+  color: #ff8000;
+  margin-left: 30px;
 }
 
-.button{
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
+.button {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.chatPenjual{
-    font-weight: 500;
-    padding: 0 20px;
-    color: white;
-    font-size: medium;
-    border-radius: 5px;
-    border-style: hidden;
-    background-color: #ff8000;
-    cursor: pointer;
+.chatPenjual {
+  font-weight: 500;
+  padding: 0 20px;
+  color: white;
+  font-size: medium;
+  border-radius: 5px;
+  border-style: hidden;
+  background-color: #ff8000;
+  cursor: pointer;
 }
 
-.batalkanPesanan{
-    font-weight: 500;
-    padding: 0 20px;
-    color: black;
-    font-size: medium;
-    border-radius: 5px;
-    border-style: hidden;
-    background-color: #e6e6e6;
-    cursor: pointer;
+.batalkanPesanan {
+  font-weight: 500;
+  padding: 0 20px;
+  color: black;
+  font-size: medium;
+  border-radius: 5px;
+  border-style: hidden;
+  background-color: #e6e6e6;
+  cursor: pointer;
 }
 
-.gambar{
-    position: absolute;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.gambar {
+  position: absolute;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.emptyContent{
-    display: flex;
-    justify-content: center;
-    margin: 50px auto;
-    width: fit-content;
-    padding: 0 30px;
-    background-color: white;
-    border-radius: 5px;
-
+.gambar img {
+  max-width: 200px;
+  max-height: 200px;
 }
 
-.status2{
-    font-weight: 500;
-    color: #0f6fff;
-    display: flex;
-    justify-content: center;
-    padding: 0 15px;
-    margin-left: 250px;
-    width: fit-content;
-    background-color: #d2f2ff;
-    border-radius: 5px;
+.emptyContent {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  width: fit-content;
+  padding: 0 30px;
+  background-color: white;
+  border-radius: 5px;
 }
 
-.status3{
-    font-weight: 500;
-    color: #AD00FF;
-    display: flex;
-    justify-content: center;
-    padding: 0 20px;
-    margin-left: 250px;
-    width: fit-content;
-    background-color: #F3CFFF;
-    border-radius: 5px;
+.status2 {
+  font-weight: 500;
+  color: #0f6fff;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  margin-left: 250px;
+  width: fit-content;
+  background-color: #d2f2ff;
+  border-radius: 5px;
 }
 
-.status4{
-    font-weight: 500;
-    color: #CC6600;
-    display: flex;
-    justify-content: center;
-    padding: 0 25px;
-    margin-left: 250px;
-    width: fit-content;
-    background-color: #FFD9B6;
-    border-radius: 5px;
+.status3 {
+  font-weight: 500;
+  color: #ad00ff;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-left: 250px;
+  width: fit-content;
+  background-color: #f3cfff;
+  border-radius: 5px;
 }
 
-.status5{
-    font-weight: 500;
-    color: #39B100;
-    display: flex;
-    justify-content: center;
-    padding: 0 20px;
-    margin-left: 250px;
-    width: fit-content;
-    background-color: #E6FFDD;
-    border-radius: 5px;
+.status4 {
+  font-weight: 500;
+  color: #cc6600;
+  display: flex;
+  justify-content: center;
+  padding: 0 25px;
+  margin-left: 250px;
+  width: fit-content;
+  background-color: #ffd9b6;
+  border-radius: 5px;
 }
 
-.status6{
-    font-weight: 500;
-    color: #ff3a3a;
-    display: flex;
-    justify-content: center;
-    padding: 0 15px;
-    margin-left: 250px;
-    width: fit-content;
-    background-color: #ffe3e3;
-    border-radius: 5px;
+.status5 {
+  font-weight: 500;
+  color: #39b100;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-left: 250px;
+  width: fit-content;
+  background-color: #e6ffdd;
+  border-radius: 5px;
+}
+
+.status6 {
+  font-weight: 500;
+  color: #ff3a3a;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  margin-left: 250px;
+  width: fit-content;
+  background-color: #ffe3e3;
+  border-radius: 5px;
 }

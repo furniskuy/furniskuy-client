@@ -15,7 +15,7 @@ const ProdukPesanan = () => {
       {inventarisQuery.isError && <p>Error...</p>}
 
       {inventarisQuery.isSuccess &&
-        inventarisQuery.data?.data.map((item) => (
+        inventarisQuery.data.map((item) => (
           <div className={styles["outerPesanan"]}>
             <img src={getImageUrl(item.image)} className={styles["gambar"]} />
             <div className={styles["nama-jumlah"]}>

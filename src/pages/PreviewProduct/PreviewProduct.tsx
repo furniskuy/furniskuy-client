@@ -22,7 +22,7 @@ export const PreviewProduct = () => {
   const handleAddToCart = (quantity: number) => {
     if (!product) return;
     addToCart.mutate({
-      id_barang: product?.data.id,
+      id_barang: product?.id,
       jumlah: quantity,
     });
   };
@@ -42,9 +42,9 @@ export const PreviewProduct = () => {
         className="row"
         style={{ marginTop: 56, gap: 140, marginBottom: 24 }}
       >
-        <ProductDetailImage image={getImageUrl(product.data.image)} />
+        <ProductDetailImage image={getImageUrl(product.image)} />
         <div className="column" style={{ gap: 24 }}>
-          <ProductHead product={product.data} />
+          <ProductHead product={product} />
           <ProductAction
             addToCart={handleAddToCart}
             loading={addToCart.isLoading}

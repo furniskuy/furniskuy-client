@@ -5,6 +5,9 @@ export const api = axios.create({
 });
 
 api.interceptors.response.use((response) => {
+  if (response.statusText === "OK") {
+    return response.data.data;
+  }
   return response.data;
 });
 

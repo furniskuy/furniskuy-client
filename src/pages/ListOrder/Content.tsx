@@ -23,7 +23,7 @@ const Content = ({ halaman }: { halaman: number }) => {
       {inventarisQuery.isLoading && <p>Loading...</p>}
 
       {inventarisQuery.isSuccess &&
-        inventarisQuery.data.data.map((item, index) => {
+        inventarisQuery.data.map((item, index) => {
           if (halaman === 1 || halaman === 1) {
             countContent++;
 
@@ -82,10 +82,7 @@ const Content = ({ halaman }: { halaman: number }) => {
             );
           }
 
-          if (
-            index === inventarisQuery.data.data.length - 1 &&
-            countContent === 0
-          ) {
+          if (index === inventarisQuery.data.length - 1 && countContent === 0) {
             return (
               <div className={styles["emptyContent"]}>
                 <h1>Anda Belum Memiliki Pesanan</h1>

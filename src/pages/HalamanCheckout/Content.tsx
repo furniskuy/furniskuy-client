@@ -13,7 +13,7 @@ const Content = () => {
       {inventarisQuery.isError && <div>Error...</div>}
 
       {inventarisQuery.isSuccess &&
-        inventarisQuery.data?.data.map((item) => (
+        inventarisQuery.data.map((item) => (
           <div className={styles["content"]}>
             <div className={styles["gambar"]}>
               <img

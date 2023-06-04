@@ -1,21 +1,32 @@
-.content{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.content {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.namaBarang{
-    font-size: large;
-    padding-bottom: 50px;
+.namaBarang {
+  font-size: large;
+  padding-bottom: 50px;
 }
 
-.quantity-harga{
-    display: flex;
-    gap: 400px;
+.quantity-harga {
+  display: flex;
+  gap: 400px;
 }
 
-.harga{
-    color: #FF8000;
+.harga {
+  color: #ff8000;
+}
+
+.gambar-content {
+  max-width: 203px;
+  max-height: 203px;
+}
+
+.gambar-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

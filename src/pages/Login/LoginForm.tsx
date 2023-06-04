@@ -1,10 +1,15 @@
-import * as Form from "@radix-ui/react-form";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { FunctionComponent } from "react";
 
 import { useLogin } from "@/api/auth";
 import { useAuth } from "@/context/AuthProvider";
 
-import styles from "./LoginForm.module.css";
+import { LoginPayload } from "@/types/api";
+
+const initialValues: LoginPayload = {
+  email: "",
+  password: "",
+};
 
 export const LoginForm: FunctionComponent = () => {
   const auth = useAuth();
@@ -15,64 +20,82 @@ export const LoginForm: FunctionComponent = () => {
     },
   });
 
-  const handleSubmit = (event: React.SyntheticEvent) => {
-    const target = event.target as typeof event.target & {
-      email: { value: string };
-      password: { value: string };
-    };
+  const handleSubmit = (value: LoginPayload) => {
     login.mutate({
-      email: target.email.value,
-      password: target.password.value,
+      email: value.email,
+      password: value.password,
     });
-    event.preventDefault();
+  };
+
+  const validateForm = (values: LoginPayload) => {
+    const errors: { [key: string]: string } = {};
+
+    if (!values.email) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = "Invalid email address";
+    }
+
+    if (!values.password) {
+      errors.password = "Password is required";
+    } else if (values.password.length < 6) {
+      errors.password = "Password must be at least 6 characters long";
+    }
+
+    return errors;
   };
 
   return (
-    <Form.Root className={styles["FormRoot"]} onSubmit={handleSubmit}>
-      <Form.Field className={styles["FormField"]} name="email">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Form.Label className={styles["FormLabel"]}>Email</Form.Label>
-          <Form.Message className={styles["FormMessage"]} match="valueMissing">
-            Please enter your email
-          </Form.Message>
-          <Form.Message className={styles["FormMessage"]} match="typeMismatch">
-            Please provide a valid email
-          </Form.Message>
-        </div>
-        <Form.Control asChild>
-          <input className={styles["Input"]} type="email" required />
-        </Form.Control>
-      </Form.Field>
-      <Form.Field className={styles["FormField"]} name="password">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Form.Label className={styles["FormLabel"]}>Password</Form.Label>
-          <Form.Message className={styles["FormMessage"]} match="valueMissing">
-            Please enter a password
-          </Form.Message>
-        </div>
-        <Form.Control asChild>
-          <input className={styles["Input"]} type="password" required />
-        </Form.Control>
-      </Form.Field>
-      <Form.Submit asChild>
-        <button
-          className="btn btn-primary"
-          style={{ marginTop: 10 }}
-          disabled={login.isLoading}
-        >
-          {login.isLoading ? "Loading" : "Masuk"}
-        </button>
-      </Form.Submit>
-    </Form.Root>
+    <div className="max-w-md mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Login</h1>
+      <Formik
+        initialValues={initialValues}
+        validate={validateForm}
+        onSubmit={handleSubmit}
+      >
+        <Form>
+          <div className="mb-4">
+            <label htmlFor="email" className="block font-semibold mb-1">
+              Email
+            </label>
+            <Field
+              type="email"
+              id="email"
+              name="email"
+              className="w-full border border-gray-300 rounded px-3 py-2"
+            />
+            <ErrorMessage
+              name="email"
+              component="div"
+              className="text-red-500 text-sm"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="password" className="block font-semibold mb-1">
+              Password
+            </label>
+            <Field
+              type="password"
+              id="password"
+              name="password"
+              className="w-full border border-gray-300 rounded px-3 py-2"
+            />
+            <ErrorMessage
+              name="password"
+              component="div"
+              className="text-red-500 text-sm"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+          >
+            Login
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };

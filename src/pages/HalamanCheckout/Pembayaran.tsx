@@ -1,22 +1,45 @@
-import BCA from "@/assets/BCA.png";
-import BNI from "@/assets/BNI.png";
-import BRI from "@/assets/BRI.png";
+import { FunctionComponent } from "react";
+
+import { useMetodePembayaran } from "@/api/misc";
+import { DEFAULT_BANKS_LOGO } from "@/types/misc";
 import styles from "./Pembayaran.module.css";
 
-const Pembayaran = () => {
+type Props = {
+  selected: number | null;
+  setSelected: (value: number) => void;
+};
+
+const Pembayaran: FunctionComponent<Props> = ({ selected, setSelected }) => {
+  const metodePembayaran = useMetodePembayaran();
+
   return (
     <div>
       <div className={styles["boxBank"]}>
-        <button className={styles["buttonBNI"]}>
-          <img src={BNI} className={styles["bankBNI"]} />
-        </button>
-        <button className={styles["buttonBRI"]}>
-          <img src={BRI} className={styles["bankBRI"]} />
-        </button>
-        <button className={styles["buttonBCA"]}>
-          <img src={BCA} className={styles["bankBCA"]} />
-        </button>
+        {metodePembayaran.isSuccess &&
+          metodePembayaran.data.map((item, index) => (
+            <button
+              key={index}
+              onClick={() => setSelected(item.id)}
+              className={`${styles["buttonBank"]} ${
+                styles[selected === item.id ? "selected" : ""]
+              }`}
+            >
+              <img
+                src={item.logo}
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null;
+                  currentTarget.src = DEFAULT_BANKS_LOGO[item.nama_bank];
+                }}
+              />
+            </button>
+          ))}
       </div>
+
+      {selected === null && (
+        <p className={styles["noSelectedBank"]}>
+          Pilih salah satu metode pembayaran
+        </p>
+      )}
     </div>
   );
 };

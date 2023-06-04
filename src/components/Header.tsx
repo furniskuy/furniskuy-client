@@ -1,12 +1,13 @@
 import { IconContext } from "react-icons";
-import { FaArrowLeft, FaHistory, FaSearch } from "react-icons/fa";
-import { IoMdCart } from "react-icons/io";
+import { FaArrowLeft, FaCartPlus, FaHistory, FaSearch } from "react-icons/fa";
+
 import { Link, useNavigate } from "react-router-dom";
 
 import { useKeranjangs } from "@/api/keranjang";
 import Logo from "@/assets/Furniskuy.png";
 import { FunctionComponent, useMemo } from "react";
 import styles from "./Header.module.css";
+import { ProfileDropdown } from "./ProfileDropdown";
 
 type Props = {
   showBackButton?: boolean;
@@ -29,7 +30,7 @@ const CartIcon = () => {
   return (
     <div className={styles["cartCount"]}>
       <Link to="/keranjang">
-        <IoMdCart />
+        <FaCartPlus />
         {!isShowCount ? (
           <></>
         ) : (
@@ -75,6 +76,7 @@ export const Header: FunctionComponent<Props> = ({
             <Link to="/search">
               <FaSearch />
             </Link>
+            <ProfileDropdown />
           </IconContext.Provider>
         </div>
       )}

@@ -45,6 +45,7 @@
 }
 
 ul {
+  list-style: initial !important;
   padding-left: 15px;
 }
 

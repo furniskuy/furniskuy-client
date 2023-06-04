@@ -1,7 +1,8 @@
 import { useUser } from "@/api/auth";
 import { useCheckout, useKeranjangs } from "@/api/keranjang";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Alamat from "./Alamat";
 import Content from "./Content";
 import Header from "./Header";
@@ -12,13 +13,17 @@ import Subtotal from "./Subtotal";
 import TotalButtonPesanan from "./TotalButtonPesanan";
 
 export const HalamanCheckout = () => {
+  const [showDialogPesanan, setShowDialogPesanan] = useState(false);
+
   const navigate = useNavigate();
+  const [selectedBank, setSelectedBank] = useState<number | null>(null);
 
   const user = useUser();
   const keranjangs = useKeranjangs();
   const checkout = useCheckout({
     onSuccess: (data) => {
       navigate("/status/" + data.id);
+      setShowDialogPesanan(false);
     },
   });
 
@@ -29,7 +34,12 @@ export const HalamanCheckout = () => {
   }, [keranjangs.data]);
 
   const createTransaction = () => {
-    checkout.mutateAsync();
+    if (selectedBank === null) {
+      toast.error("Pilih bank terlebih dahulu");
+      setShowDialogPesanan(false);
+      return;
+    }
+    checkout.mutateAsync(selectedBank);
   };
 
   const isCheckoutDisable = useMemo(() => {
@@ -47,12 +57,17 @@ export const HalamanCheckout = () => {
         <Subtotal />
         {/* <Voucher /> */}
         <HeaderPembayaran />
-        <Pembayaran />
+        <Pembayaran
+          selected={selectedBank}
+          setSelected={(value) => setSelectedBank(value)}
+        />
         <RincianPembayaran
           pengiriman={10000}
           totalHarga={totalHargaSelected ?? 0}
         />
         <TotalButtonPesanan
+          showDialogPesanan={showDialogPesanan}
+          setShowDialogPesanan={setShowDialogPesanan}
           totalHarga={totalHargaSelected ?? 0}
           buatPesanan={createTransaction}
           disabled={isCheckoutDisable}

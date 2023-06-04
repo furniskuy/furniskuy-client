@@ -1,5 +1,6 @@
 import { Inventaris } from "@/types/api";
 
+import { productPlaceHolderURL } from "@/util/image";
 import { FunctionComponent } from "react";
 import styles from "./BestProduct.module.css";
 
@@ -67,6 +68,10 @@ export const BestProduct: FunctionComponent<Props> = ({ action }) => {
             src={bestProduct.foto}
             alt={bestProduct.nama}
             className={styles["gambarSofa"]}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null;
+              currentTarget.src = productPlaceHolderURL;
+            }}
           />
         </div>
       </div>

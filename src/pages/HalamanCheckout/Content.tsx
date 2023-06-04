@@ -1,5 +1,5 @@
 import { useKeranjangs } from "@/api/keranjang";
-import { getImageUrl } from "@/util/image";
+import { getImageUrl, productPlaceHolderURL } from "@/util/image";
 import { idrFormat } from "@/util/number";
 import styles from "./Content.module.css";
 
@@ -21,6 +21,10 @@ const Content = () => {
                 <img
                   src={getImageUrl(item.barang.foto)}
                   className={styles["gambar-content"]}
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = productPlaceHolderURL;
+                  }}
                 />
               </div>
               <div className={styles["namaBarang"]}>

@@ -12,7 +12,7 @@ export const StatusPembayaran = () => {
   const { id } = useParams<{ id: string }>();
   const transaksi = useTransaksiById(id);
 
-  if (transaksi.isLoading) {
+  if (transaksi.isLoading || !transaksi.data) {
     return <Loading />;
   }
 
@@ -20,8 +20,8 @@ export const StatusPembayaran = () => {
     <div className={styles["petunjukContainer"]}>
       <Header />
       <DeadlineBayar deadline={transaksi.data?.tenggat_waktu ?? ""} />
-      <KodeBayar />
-      <MetodePembayaran />
+      <KodeBayar metode={transaksi.data.metode} />
+      <MetodePembayaran metode={transaksi.data.metode} />
     </div>
   );
 };

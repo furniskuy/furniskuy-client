@@ -1,37 +1,27 @@
-.boxBank{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    gap: 70px;
+.boxBank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 70px;
 }
 
-.buttonBNI{
-    background-color: white;
-    border: #0014C7 solid 0.5px;
-    border-radius: 30px;
+.buttonBank {
+  border-radius: 30px;
+  width: 300px;
+  height: 120px;
 }
 
-.bankBNI{
-    margin: 20px 30px;
+.boxBank > button.selected {
+  width: 300px;
+  height: 120px;
+
+  border: 2px solid #ff8000;
+  border-radius: 30px;
+  object-fit: contain;
 }
 
-.buttonBRI{
-    background-color: #00529C;
-    border: #0014C7 solid 0.5px;
-    border-radius: 30px;
-}
-
-.bankBRI{
-    margin: 20px 20px;
-}
-
-.buttonBCA{
-    background-color: #0060AF;
-    border: #0014C7 solid 0.5px;
-    border-radius: 30px;
-}
-
-.bankBCA{
-    margin: 20px 30px;
+.noSelectedBank {
+  color: red;
+  text-align: center;
 }

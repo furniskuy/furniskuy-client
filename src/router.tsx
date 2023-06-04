@@ -9,6 +9,8 @@ import { Keranjang } from "./pages/Keranjang/Keranjang";
 import { ListOrder } from "./pages/ListOrder/ListOrder";
 import { Login } from "./pages/Login/Login";
 import { PreviewProduct } from "./pages/PreviewProduct/PreviewProduct";
+import { ProfilePage } from "./pages/Profile/Profile";
+import { Register } from "./pages/Register.tsx/Register";
 import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
 import { StatusPembayaran } from "./pages/StatusPembayaran/StatusPembayaran";
 
@@ -20,6 +22,7 @@ const router = createHashRouter([
         element: <AuthLayout />,
         children: [
           { index: true, element: <Home /> },
+          { path: "/profile", element: <ProfilePage /> },
           { path: "/produk/:id", element: <PreviewProduct /> },
           { path: "/keranjang", element: <Keranjang /> },
           { path: "/checkout", element: <HalamanCheckout /> },
@@ -30,7 +33,10 @@ const router = createHashRouter([
       },
       {
         element: <GuestLayout />,
-        children: [{ path: "/login", element: <Login /> }],
+        children: [
+          { path: "/login", element: <Login /> },
+          { path: "/register", element: <Register /> },
+        ],
       },
     ],
   },

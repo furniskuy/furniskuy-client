@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { toast } from "react-toastify";
 
 type Props = {
   quantity: number;
@@ -14,12 +15,25 @@ export const QuantityButtons: FunctionComponent<Props> = ({
   disabled = false,
 }) => {
   const onAdd = () => {
-    if (quantity === maxQuantity) return;
+    if (quantity === maxQuantity) {
+      toast.info(
+        "Tidak bisa menambah jumlah product lebih dari " + maxQuantity,
+        {
+          position: "top-center",
+        }
+      );
+      return;
+    }
     setQuantity(quantity + 1);
   };
 
   const onSubtract = () => {
-    if (quantity === 1) return;
+    if (quantity === 1) {
+      toast.info("Tidak bisa mengurangi jumlah produk sampai 0", {
+        position: "top-center",
+      });
+      return;
+    }
     setQuantity(quantity - 1);
   };
 

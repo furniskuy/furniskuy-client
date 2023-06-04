@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import { Footer } from "./Footer";
 import { Header } from "./Header";
@@ -21,6 +22,7 @@ export const AuthLayout = () => {
         <Outlet />
       </div>
       <Footer />
+      <ToastContainer />
     </div>
   );
 };

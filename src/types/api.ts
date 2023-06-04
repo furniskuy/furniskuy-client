@@ -35,6 +35,7 @@ export type Keranjang = {
 };
 
 export type ProfileUser = {
+  nama: string;
   jenis_kelamin: string;
   alamat: string;
   no_hp: string;
@@ -94,6 +95,6 @@ export type Transaksi = {
   waktu_pembayaran: string | null;
   waktu_pengiriman: string | null;
 
-  metode_pembayaran: MetodePembayaran;
+  metode: MetodePembayaran;
   list_barang: Inventaris[];
 };

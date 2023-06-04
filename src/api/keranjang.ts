@@ -99,10 +99,11 @@ export const useUpdateKeranjangItem = (
 };
 
 export const useCheckout = (
-  mutationOptions?: UseMutationOptions<Transaksi, unknown>
+  mutationOptions?: UseMutationOptions<Transaksi, unknown, number>
 ) => {
   return useMutation({
-    mutationFn: (_data) => api.post(`${baseURL}/checkout`),
+    mutationFn: (metode_pembayaran) =>
+      api.post(`${baseURL}/checkout`, { metode_pembayaran: metode_pembayaran }),
     ...mutationOptions,
   });
 };

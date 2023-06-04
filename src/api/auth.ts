@@ -1,6 +1,7 @@
 import {
   AuthSignResponse,
   LoginPayload,
+  ProfileUser,
   RegisterPayload,
   User,
 } from "@/types/api";
@@ -9,6 +10,7 @@ import {
   UseQueryOptions,
   useMutation,
   useQuery,
+  useQueryClient,
 } from "@tanstack/react-query";
 
 import { api } from "./baseApi";
@@ -53,5 +55,19 @@ export const useUser = (queryOptions?: UseQueryOptions<User, unknown>) => {
     queryKey: authKey.user,
     queryFn: (_data) => api.get("/auth/user"),
     ...queryOptions,
+  });
+};
+
+export const useProfile = (
+  mutationOptions?: UseMutationOptions<User, unknown, ProfileUser>
+) => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (data) => api.post("/auth/profile", data),
+    ...mutationOptions,
+    onSuccess: (data, ...params) => {
+      queryClient.setQueryData(authKey.user, data);
+      mutationOptions?.onSuccess?.(data, ...params);
+    },
   });
 };

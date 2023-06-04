@@ -3,7 +3,7 @@ import { FaArrowRight, FaSpinner } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import { Inventaris } from "@/types/api";
-import { getImageUrl } from "@/util/image";
+import { getImageUrl, productPlaceHolderURL } from "@/util/image";
 import { idrFormat } from "@/util/number";
 
 import { useAddKeranjangItem } from "@/api/keranjang";
@@ -30,7 +30,14 @@ export const CardProduct: FunctionComponent<Props> = ({ product }) => {
       <div className={styles["cardHeader"]}>
         <div></div>
         <div className={styles["productImage"]}>
-          <img src={getImageUrl(product.foto)} alt={product.nama} />
+          <img
+            src={getImageUrl(product.foto)}
+            alt={product.nama}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null;
+              currentTarget.src = productPlaceHolderURL;
+            }}
+          />
         </div>
         <div className={styles["addToCartContainer"]}>
           {addToCart.isLoading ? (

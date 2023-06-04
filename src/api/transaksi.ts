@@ -1,5 +1,11 @@
 import { Transaksi } from "@/types/api";
-import { useQuery, UseQueryOptions } from "@tanstack/react-query";
+import {
+  useMutation,
+  UseMutationOptions,
+  useQuery,
+  useQueryClient,
+  UseQueryOptions,
+} from "@tanstack/react-query";
 import { api } from "./baseApi";
 
 export const transaksiKey = {
@@ -28,5 +34,26 @@ export const useTransaksiById = (
     queryKey: transaksiKey.byId(id as string),
     queryFn: (_data) => api.get(`${baseURL}/${id}`),
     ...queryOptions,
+  });
+};
+
+export const useDeleteTransaksi = (
+  mutationOptions?: UseMutationOptions<Transaksi, unknown, number>
+) => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (id) => api.delete(`${baseURL}/${id}`),
+    ...mutationOptions,
+    onSuccess: (data, id, ...params) => {
+      queryClient.setQueryData<Transaksi[]>(transaksiKey.all, (oldData) => {
+        if (oldData) {
+          return oldData.filter((item) => item.id !== id);
+        }
+        return oldData;
+      });
+
+      mutationOptions?.onSuccess?.(data, id, params);
+    },
   });
 };

@@ -1,19 +1,23 @@
+import { useUser } from "@/api/auth";
 import styles from "./AlamatPengiriman.module.css";
 
 const AlamatPengiriman = () => {
+  const user = useUser();
+
+  if (user.isLoading || !user.data) {
+    return <></>;
+  }
+
   return (
     <>
       <div className={styles["outerAlamat"]}>
         <h2>Alamat Pengiriman</h2>
         <div className={styles["nama-noTelp"]}>
-          <p>Jerome</p>
-          <p className={styles["noTelp"]}>081247986534</p>
+          <p>{user.data.name}</p>
+          <p className={styles["noTelp"]}>{user.data.profile?.no_hp}</p>
         </div>
         <div>
-          <span>
-            Perumahan Graha Raya Blok C2/12, Sukolilo, Surabaya, Jawa Timur
-            60118
-          </span>
+          <span>{user.data.profile?.alamat}</span>
         </div>
       </div>
     </>

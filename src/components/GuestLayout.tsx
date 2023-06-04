@@ -3,6 +3,9 @@ import { Outlet } from "react-router-dom";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import styles from "./Layout.module.css";
 
 export const GuestLayout = () => {
@@ -13,6 +16,7 @@ export const GuestLayout = () => {
         <Outlet />
       </div>
       <Footer />
+      <ToastContainer />
     </div>
   );
 };

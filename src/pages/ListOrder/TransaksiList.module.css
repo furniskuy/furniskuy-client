@@ -71,7 +71,7 @@
 
 .chatPenjual {
   font-weight: 500;
-  padding: 0 20px;
+  padding: 8px 20px;
   color: white;
   font-size: medium;
   border-radius: 5px;
@@ -87,7 +87,7 @@
   font-size: medium;
   border-radius: 5px;
   border-style: hidden;
-  background-color: #e6e6e6;
+  background-color: #e6e6e6 !important;
   cursor: pointer;
 }
 

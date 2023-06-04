@@ -14,10 +14,16 @@ export type Inventaris = {
   id: number;
   nama: string;
   deskripsi?: string;
-  image: string;
+  foto: string;
   jumlah: number;
   harga: number;
   id_supplier: number;
+
+  pivot?: {
+    id_inventaris: number;
+    id_transaksi: number;
+    jumlah: number;
+  };
 };
 
 export type Keranjang = {
@@ -25,12 +31,23 @@ export type Keranjang = {
   id_pembeli: number;
   jumlah: number;
   barang: Inventaris;
+  selected: boolean;
+};
+
+export type ProfileUser = {
+  jenis_kelamin: string;
+  alamat: string;
+  no_hp: string;
+  tanggal_lahir: string;
+  pembeli_baru: boolean;
 };
 
 export type User = {
   id: number;
   name: string;
   email: string;
+  role: number;
+  profile: ProfileUser | null;
 };
 
 export type Pembeli = {
@@ -57,4 +74,26 @@ export type RegisterPayload = {
   email: string;
   password: string;
   password_confirmation: string;
+};
+
+export type MetodePembayaran = {
+  id: number;
+  logo: string;
+  nama_bank: string;
+  no_rek: string;
+  atas_nama: string;
+};
+
+export type Transaksi = {
+  id: number;
+  tanggal_transaksi: string;
+  total_harga: number;
+  status: number;
+  status_transaksi: string;
+  tenggat_waktu: string;
+  waktu_pembayaran: string | null;
+  waktu_pengiriman: string | null;
+
+  metode_pembayaran: MetodePembayaran;
+  list_barang: Inventaris[];
 };

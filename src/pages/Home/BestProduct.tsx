@@ -11,8 +11,7 @@ export const BestProduct: FunctionComponent<Props> = ({ action }) => {
   const bestProduct: Inventaris = {
     id: 1,
     nama: "Bangku Sofa",
-    image:
-      "https://sbwasjlgfngcwfkvqqin.supabase.co/storage/v1/object/public/furniskuy/public/uploads/best-product.png",
+    foto: "https://sbwasjlgfngcwfkvqqin.supabase.co/storage/v1/object/public/furniskuy/public/uploads/best-product.png",
     jumlah: 1,
     harga: 1000000,
     id_supplier: 1,
@@ -65,7 +64,7 @@ export const BestProduct: FunctionComponent<Props> = ({ action }) => {
         </div>
         <div className={styles["gambar"]}>
           <img
-            src={bestProduct.image}
+            src={bestProduct.foto}
             alt={bestProduct.nama}
             className={styles["gambarSofa"]}
           />

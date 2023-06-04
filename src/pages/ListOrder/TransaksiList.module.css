@@ -1,9 +1,22 @@
+.cardTransaksiContainer {
+  padding: 30px 70px;
+  margin: 50px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
 .content {
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
   padding: 30px 70px;
-  margin: 50px 30px;
+  margin: 0px 30px;
   background-color: white;
 }
 
@@ -50,8 +63,10 @@
 
 .button {
   margin-top: 50px;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
+  gap: 16px;
 }
 
 .chatPenjual {
@@ -99,7 +114,7 @@
   border-radius: 5px;
 }
 
-.status2 {
+.status1 {
   font-weight: 500;
   color: #0f6fff;
   display: flex;
@@ -111,7 +126,7 @@
   border-radius: 5px;
 }
 
-.status3 {
+.status2 {
   font-weight: 500;
   color: #ad00ff;
   display: flex;
@@ -123,7 +138,7 @@
   border-radius: 5px;
 }
 
-.status4 {
+.status3 {
   font-weight: 500;
   color: #cc6600;
   display: flex;
@@ -135,7 +150,7 @@
   border-radius: 5px;
 }
 
-.status5 {
+.status4 {
   font-weight: 500;
   color: #39b100;
   display: flex;
@@ -147,7 +162,7 @@
   border-radius: 5px;
 }
 
-.status6 {
+.status5 {
   font-weight: 500;
   color: #ff3a3a;
   display: flex;

@@ -2,8 +2,6 @@ import { useState } from "react";
 
 import { useInventaris } from "@/api/inventaris";
 
-import { useAddKeranjangItem } from "@/api/keranjang";
-import { Inventaris } from "@/types/api";
 import { CardProduct } from "./CardProduct";
 import styles from "./ProductListing.module.css";
 
@@ -13,14 +11,6 @@ export const ProductListing = () => {
   const [kategori, setKategori] = useState(0);
 
   const inventarisQuery = useInventaris({ limit: 8 });
-  const addToCart = useAddKeranjangItem();
-
-  const handleAddToCart = (product: Inventaris) => {
-    addToCart.mutate({
-      id_barang: product.id,
-      jumlah: 1,
-    });
-  };
 
   return (
     <div>
@@ -53,11 +43,7 @@ export const ProductListing = () => {
 
         {inventarisQuery.isSuccess &&
           inventarisQuery.data?.map((item, index) => (
-            <CardProduct
-              key={index}
-              product={item}
-              addToCart={() => handleAddToCart(item)}
-            />
+            <CardProduct key={index} product={item} />
           ))}
       </div>
     </div>

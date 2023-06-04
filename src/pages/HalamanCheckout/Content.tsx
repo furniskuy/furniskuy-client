@@ -1,35 +1,39 @@
-import { useInventaris } from "@/api/inventaris";
+import { useKeranjangs } from "@/api/keranjang";
 import { getImageUrl } from "@/util/image";
 import { idrFormat } from "@/util/number";
 import styles from "./Content.module.css";
 
 const Content = () => {
-  const inventarisQuery = useInventaris({ limit: 2 });
+  const keranjangs = useKeranjangs();
 
   return (
     <>
-      {inventarisQuery.isLoading && <div>Loading...</div>}
+      {keranjangs.isLoading && <div>Loading...</div>}
 
-      {inventarisQuery.isError && <div>Error...</div>}
+      {keranjangs.isError && <div>Error...</div>}
 
-      {inventarisQuery.isSuccess &&
-        inventarisQuery.data.map((item) => (
-          <div className={styles["content"]}>
-            <div className={styles["gambar"]}>
-              <img
-                src={getImageUrl(item.image)}
-                className={styles["gambar-content"]}
-              />
-            </div>
-            <div className={styles["namaBarang"]}>
-              <p>{item.nama}</p>
-              <div className={styles["quantity-harga"]}>
-                <p>x1</p>
-                <p className={styles["harga"]}>{idrFormat(item.harga)} </p>
+      {keranjangs.isSuccess &&
+        keranjangs.data
+          .filter((item) => item.selected)
+          .map((item) => (
+            <div className={styles["content"]}>
+              <div className={styles["gambar"]}>
+                <img
+                  src={getImageUrl(item.barang.foto)}
+                  className={styles["gambar-content"]}
+                />
+              </div>
+              <div className={styles["namaBarang"]}>
+                <p>{item.barang.nama}</p>
+                <div className={styles["quantity-harga"]}>
+                  <p>x{item.jumlah}</p>
+                  <p className={styles["harga"]}>
+                    {idrFormat(item.barang.harga)}{" "}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
     </>
   );
 };

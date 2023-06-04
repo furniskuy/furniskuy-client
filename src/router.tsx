@@ -3,14 +3,14 @@ import { createHashRouter } from "react-router-dom";
 import { App } from "./App";
 import { AuthLayout } from "./components/AuthLayout";
 import { GuestLayout } from "./components/GuestLayout";
+import { HalamanCheckout } from "./pages/HalamanCheckout/HalamanCheckout";
 import { Home } from "./pages/Home/Home";
-import { KeranjangList } from "./pages/Keranjang/KerangjangList";
 import { Keranjang } from "./pages/Keranjang/Keranjang";
 import { ListOrder } from "./pages/ListOrder/ListOrder";
 import { Login } from "./pages/Login/Login";
-import { PetunjukPembayaran } from "./pages/PetunjukPembayaran/PetunjukPembayaran";
 import { PreviewProduct } from "./pages/PreviewProduct/PreviewProduct";
 import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
+import { StatusPembayaran } from "./pages/StatusPembayaran/StatusPembayaran";
 
 const router = createHashRouter([
   {
@@ -22,9 +22,9 @@ const router = createHashRouter([
           { index: true, element: <Home /> },
           { path: "/produk/:id", element: <PreviewProduct /> },
           { path: "/keranjang", element: <Keranjang /> },
-          { path: "/checkout", element: <KeranjangList /> },
-          { path: "/rincianpesanan", element: <RincianPesanan /> },
-          { path: "/petunjuk-pembayaran/:id", element: <PetunjukPembayaran /> },
+          { path: "/checkout", element: <HalamanCheckout /> },
+          { path: "/status/:id", element: <StatusPembayaran /> },
+          { path: "/rincian/:id", element: <RincianPesanan /> },
           { path: "/orders", element: <ListOrder /> },
         ],
       },

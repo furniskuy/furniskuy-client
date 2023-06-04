@@ -42,7 +42,7 @@ export const PreviewProduct = () => {
         className="row"
         style={{ marginTop: 56, gap: 140, marginBottom: 24 }}
       >
-        <ProductDetailImage image={getImageUrl(product.image)} />
+        <ProductDetailImage image={getImageUrl(product.foto)} />
         <div className="column" style={{ gap: 24 }}>
           <ProductHead product={product} />
           <ProductAction

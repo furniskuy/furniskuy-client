@@ -1,7 +1,15 @@
+import { useUser } from "@/api/auth";
+import { Loading } from "@/components/Loading";
 import { HiMapPin } from "react-icons/hi2";
 import styles from "./Alamat.module.css";
 
 const Alamat = () => {
+  const user = useUser();
+
+  if (user.isLoading) {
+    return <Loading />;
+  }
+
   return (
     <>
       <div className={styles["boxAlamat"]}>
@@ -11,17 +19,17 @@ const Alamat = () => {
         <div className={styles["boxnama-noTelp"]}>
           <div className={styles["nama-noTelp"]}>
             <div className={styles["nama"]}>
-              <p>Jerome</p>
+              <p>{user.data?.name}</p>
             </div>
             <div className={styles["noTelp"]}>
-              <p>081247986534</p>
+              <p>{user.data?.profile?.no_hp}</p>
             </div>
           </div>
           <div className={styles["alamat"]}>
-            <p>
-              Perumahan Graha Raya Blok C2/12, Sukolilo, Surabaya, Jawa Timur
-              60118
-            </p>
+            <p>{user.data?.profile?.alamat}</p>
+            {!user.data?.profile?.alamat && (
+              <p style={{ color: "red" }}>Alamat belum diisi</p>
+            )}
           </div>
         </div>
       </div>

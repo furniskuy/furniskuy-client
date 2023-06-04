@@ -1,4 +1,4 @@
-import { Keranjang } from "@/types/api";
+import { Keranjang, Transaksi } from "@/types/api";
 import {
   UseMutationOptions,
   UseQueryOptions,
@@ -49,6 +49,7 @@ export const useAddKeranjangItem = (
             });
             return oldData;
           }
+          return [...oldData, data];
         }
         return oldData;
       });
@@ -94,5 +95,14 @@ export const useUpdateKeranjangItem = (
         return oldData;
       });
     },
+  });
+};
+
+export const useCheckout = (
+  mutationOptions?: UseMutationOptions<Transaksi, unknown>
+) => {
+  return useMutation({
+    mutationFn: (_data) => api.post(`${baseURL}/checkout`),
+    ...mutationOptions,
   });
 };

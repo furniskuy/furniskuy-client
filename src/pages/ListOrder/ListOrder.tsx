@@ -1,17 +1,17 @@
 import { useState } from "react";
 
 import { PageTitle } from "@/components/PageTitle";
-import Content from "./Content";
 import Status from "./Status";
+import { TransaksiList } from "./TransaksiList";
 
 export const ListOrder = () => {
-  const [halaman, setHalaman] = useState(1);
+  const [statusTransaksi, setStatusTransaksi] = useState(0);
 
   return (
     <div>
       <PageTitle>Pesanan Saya</PageTitle>
-      <Status halaman={halaman} setHalaman={setHalaman} />
-      <Content halaman={halaman} />
+      <Status status={statusTransaksi} setStatus={setStatusTransaksi} />
+      <TransaksiList status={statusTransaksi} />
     </div>
   );
 };

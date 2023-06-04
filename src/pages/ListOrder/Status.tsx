@@ -1,76 +1,29 @@
+import { STATUS_MAPPING } from "@/types/misc";
 import { Dispatch, SetStateAction } from "react";
 import styles from "./Status.module.css";
 
 const Status = ({
-  halaman,
-  setHalaman,
+  status,
+  setStatus,
 }: {
-  halaman: number;
-  setHalaman: Dispatch<SetStateAction<number>>;
+  status: number;
+  setStatus: Dispatch<SetStateAction<number>>;
 }) => {
   return (
     <>
       <div className={styles["statusBar"]}>
-        <div
-          className={
-            styles[halaman === 1 ? "statusSelected" : "statusNotSelected"]
-          }
-          onClick={() => {
-            setHalaman(1);
-          }}
-        >
-          Semua
-        </div>
-        <div
-          className={
-            styles[halaman === 2 ? "statusSelected" : "statusNotSelected"]
-          }
-          onClick={() => {
-            setHalaman(2);
-          }}
-        >
-          Belum Bayar
-        </div>
-        <div
-          className={
-            styles[halaman === 3 ? "statusSelected" : "statusNotSelected"]
-          }
-          onClick={() => {
-            setHalaman(3);
-          }}
-        >
-          Sedang Dikemas
-        </div>
-        <div
-          className={
-            styles[halaman === 4 ? "statusSelected" : "statusNotSelected"]
-          }
-          onClick={() => {
-            setHalaman(4);
-          }}
-        >
-          Dikirim
-        </div>
-        <div
-          className={
-            styles[halaman === 5 ? "statusSelected" : "statusNotSelected"]
-          }
-          onClick={() => {
-            setHalaman(5);
-          }}
-        >
-          Selesai
-        </div>
-        <div
-          className={
-            styles[halaman === 6 ? "statusSelected" : "statusNotSelected"]
-          }
-          onClick={() => {
-            setHalaman(6);
-          }}
-        >
-          Dibatalkan
-        </div>
+        {STATUS_MAPPING.map((item, index) => (
+          <div
+            className={
+              styles[status === index ? "statusSelected" : "statusNotSelected"]
+            }
+            onClick={() => {
+              setStatus(index);
+            }}
+          >
+            {item}
+          </div>
+        ))}
       </div>
     </>
   );

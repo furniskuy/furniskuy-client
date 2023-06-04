@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import {
   useDeleteKeranjangItem,
@@ -12,38 +12,33 @@ import { Keranjang } from "@/types/api";
 import { getImageUrl } from "@/util/image";
 import { idrFormat } from "@/util/number";
 
+import { Link } from "react-router-dom";
 import styles from "./KeranjangList.module.css";
 
 export const KeranjangList = () => {
-  const [selected, setSelected] = useState<number[]>([]);
-
   const keranjangs = useKeranjangs();
   const updateKerangjang = useUpdateKeranjangItem();
   const deleteKeranjang = useDeleteKeranjangItem();
 
-  const handleUpdateQuantity = (value: number, keranjang: Keranjang) => {
+  const handleUpdateQuantity = (keranjang: Keranjang, value: number) => {
     updateKerangjang.mutate({ ...keranjang, jumlah: value });
+  };
+
+  const handleUpdateSelected = (keranjang: Keranjang, selected: boolean) => {
+    updateKerangjang.mutate({ ...keranjang, selected });
   };
 
   const handleDeleteKeranjang = (id: number) => {
     deleteKeranjang.mutate(id);
   };
 
-  const handleSelect = (id: number) => {
-    if (selected.indexOf(id) === -1) {
-      setSelected((prev) => [...prev, id]);
-    } else {
-      setSelected((prev) => prev.filter((item) => item !== id));
-    }
-  };
-
   const handleSelectAll = () => {
-    if (!keranjangs.data) return;
-    if (selected.length === keranjangs.data.length) {
-      setSelected([]);
-    } else {
-      setSelected(keranjangs.data.map((item) => item.id));
-    }
+    const selected = !isAllKeranjangSelected;
+    Promise.all<any>(
+      keranjangs.data?.map((item) =>
+        updateKerangjang.mutateAsync({ ...item, selected })
+      )
+    );
   };
 
   const isLoading = useMemo(
@@ -65,11 +60,19 @@ export const KeranjangList = () => {
     [keranjangs]
   );
 
+  const isAllKeranjangSelected = useMemo(() => {
+    if (!keranjangs.data) return false;
+    return (
+      keranjangs.data?.length > 0 &&
+      keranjangs.data.every((item) => item.selected)
+    );
+  }, [keranjangs.data]);
+
   const totalHargaSelected = useMemo(() => {
     return keranjangs.data
-      ?.filter((item) => selected.indexOf(item.id) !== -1)
+      ?.filter((item) => item.selected)
       .reduce((acc, curr) => acc + curr.jumlah * curr.barang.harga, 0);
-  }, [keranjangs.data, selected]);
+  }, [keranjangs.data]);
 
   if (isLoading) {
     return <Loading />;
@@ -88,12 +91,14 @@ export const KeranjangList = () => {
                       id="checkbox_id"
                       type="checkbox"
                       className={styles.checkboxInput}
-                      checked={selected.indexOf(keranjang.id) !== -1}
-                      onChange={() => handleSelect(keranjang.id)}
+                      checked={keranjang.selected}
+                      onChange={() =>
+                        handleUpdateSelected(keranjang, !keranjang.selected)
+                      }
                     />
                   </td>
                   <td>
-                    <img src={getImageUrl(keranjang.barang.image)} alt="" />
+                    <img src={getImageUrl(keranjang.barang.foto)} alt="" />
                   </td>
                   <td>
                     <p>{keranjang.barang.nama}</p>
@@ -108,7 +113,7 @@ export const KeranjangList = () => {
                       quantity={keranjang.jumlah}
                       maxQuantity={999}
                       setQuantity={(value) => {
-                        handleUpdateQuantity(value, keranjang);
+                        handleUpdateQuantity(keranjang, value);
                       }}
                       disabled={isLoading}
                     />
@@ -139,7 +144,7 @@ export const KeranjangList = () => {
           <input
             type="checkbox"
             className={styles.checkboxInput}
-            checked={selected.length === keranjangs.data?.length}
+            checked={isAllKeranjangSelected}
             onChange={() => handleSelectAll()}
           />
           <p>Pilih Semua ({countKeranjang}) :</p>
@@ -147,7 +152,14 @@ export const KeranjangList = () => {
 
         <div className={styles.hrgcheck}>
           <p className={styles.harga}>{idrFormat(totalHargaSelected ?? 0)}</p>
-          <button className={styles.btncheckout}>Checkout</button>
+          <Link to="/checkout">
+            <button
+              className={styles.btncheckout}
+              disabled={totalHargaSelected === 0}
+            >
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,20 +1,19 @@
+import { FunctionComponent } from "react";
 import styles from "./FurniskuyInvoice.module.css";
 
+type Props = {
+  id: string;
+};
 
-
-// import React from "react";
-
-const FurniskuyInvoice = () => {
+const FurniskuyInvoice: FunctionComponent<Props> = ({ id }) => {
   return (
     <>
-      <div className={ styles.InvoiceJudul}>  
-        
+      <div className={styles.InvoiceJudul}>
         <p className={styles.Furniskuy}>FURNISKUY-invoice</p>
-       <div className={styles.Invoice}>
-       <span>invoice  ID #J250523</span>
-       <span>Resi : 230518395FT5DX</span>
-       </div>
-
+        <div className={styles.Invoice}>
+          <span>invoice ID #{id}</span>
+          <span>Resi : {id}</span>
+        </div>
       </div>
     </>
   );

@@ -1,6 +1,16 @@
+import { useUser } from "@/api/auth";
+import { dateTimeFull } from "@/util/date";
+import { FunctionComponent } from "react";
 import styles from "./Alamat.module.css";
 
-const Alamat = () => {
+type Props = {
+  tanggalTransaksi: string;
+};
+
+const Alamat: FunctionComponent<Props> = ({ tanggalTransaksi }) => {
+  const user = useUser();
+  if (!user) return <></>;
+
   return (
     <>
       <div className={styles.Alamat}>
@@ -11,26 +21,23 @@ const Alamat = () => {
           </tr>
           <tr>
             <td>Pembeli</td>
-            <td>: Jerome</td>
+            <td>: {user.data?.profile?.nama}</td>
           </tr>
           <tr>
             <td>Tanggal Beli</td>
-            <td>: 25-05-2023</td>
+            <td>: {dateTimeFull(tanggalTransaksi)}</td>
           </tr>
           <tr>
             <td>Alamat</td>
-            <td>
-              : Perumahan Graha Raya Blok C2/12, Sukolilo, Surabaya, Jawa Timur
-              60118
-            </td>
+            <td>: {user.data?.profile?.alamat}</td>
           </tr>
           <tr>
             <td>Telepon</td>
-            <td>: 081247986534</td>
+            <td>: {user.data?.profile?.no_hp}</td>
           </tr>
           <tr>
             <td>Email</td>
-            <td>: Jeromepolin@gmail.com</td>
+            <td>: {user.data?.email}</td>
           </tr>
         </table>
       </div>

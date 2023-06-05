@@ -14,6 +14,7 @@ const Status = ({
       <div className={styles["statusBar"]}>
         {STATUS_MAPPING.map((item, index) => (
           <div
+            key={index}
             className={
               styles[status === index ? "statusSelected" : "statusNotSelected"]
             }

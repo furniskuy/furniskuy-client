@@ -38,8 +38,8 @@ export const LoginForm: FunctionComponent = () => {
 
     if (!values.password) {
       errors.password = "Password is required";
-    } else if (values.password.length < 6) {
-      errors.password = "Password must be at least 6 characters long";
+    } else if (values.password.length < 5) {
+      errors.password = "Password must be at least 5 characters long";
     }
 
     return errors;
@@ -91,8 +91,9 @@ export const LoginForm: FunctionComponent = () => {
           <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+            disabled={login.isLoading}
           >
-            Login
+            {login.isLoading ? "Loading" : "Login"}
           </button>
         </Form>
       </Formik>

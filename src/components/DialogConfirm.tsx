@@ -7,8 +7,9 @@ type Props = {
   setIsOpen: (value: boolean) => void;
   title: string;
   description: string;
-  triggerComponent?: ReactNode;
   onConfirm: () => void;
+  triggerComponent?: ReactNode;
+  isLoading: boolean;
 };
 
 export const DialogConfirm: FunctionComponent<PropsWithChildren<Props>> = ({
@@ -18,6 +19,7 @@ export const DialogConfirm: FunctionComponent<PropsWithChildren<Props>> = ({
   description,
   onConfirm,
   triggerComponent,
+  isLoading,
   children,
 }) => (
   <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
@@ -44,7 +46,7 @@ export const DialogConfirm: FunctionComponent<PropsWithChildren<Props>> = ({
             onClick={onConfirm}
             className="bg-green4 text-green11 hover:bg-green5 focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none"
           >
-            Confirm
+            {isLoading ? "Loading" : "Confirm"}
           </button>
         </div>
         <Dialog.Close asChild>

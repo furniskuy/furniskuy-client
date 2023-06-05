@@ -3,6 +3,7 @@ import { createHashRouter } from "react-router-dom";
 import { App } from "./App";
 import { AuthLayout } from "./components/AuthLayout";
 import { GuestLayout } from "./components/GuestLayout";
+import CetakInvoice from "./pages/CetakInvoice/CetakInvoice";
 import { HalamanCheckout } from "./pages/HalamanCheckout/HalamanCheckout";
 import { Home } from "./pages/Home/Home";
 import { Keranjang } from "./pages/Keranjang/Keranjang";
@@ -28,6 +29,7 @@ const router = createHashRouter([
           { path: "/checkout", element: <HalamanCheckout /> },
           { path: "/status/:id", element: <StatusPembayaran /> },
           { path: "/rincian/:id", element: <RincianPesanan /> },
+          { path: "/invoice/:id", element: <CetakInvoice /> },
           { path: "/orders", element: <ListOrder /> },
         ],
       },

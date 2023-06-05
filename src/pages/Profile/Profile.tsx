@@ -3,10 +3,15 @@ import { ProfileUser } from "@/types/api";
 import { Field, Form, Formik } from "formik";
 import moment from "moment";
 import React from "react";
+import { toast } from "react-toastify";
 
 export const ProfilePage: React.FC = () => {
   const user = useUser();
-  const profile = useProfile();
+  const profile = useProfile({
+    onSuccess: () => {
+      toast.success("Profile updated");
+    },
+  });
 
   const handleSubmit = (value: ProfileUser) => {
     value.tanggal_lahir = moment(value.tanggal_lahir).format("YYYY-MM-DD");
@@ -28,7 +33,9 @@ export const ProfilePage: React.FC = () => {
             alamat: user.data.profile?.alamat ?? "",
             no_hp: user.data.profile?.no_hp ?? "",
             jenis_kelamin: user.data.profile?.jenis_kelamin ?? "L",
-            tanggal_lahir: user.data.profile?.tanggal_lahir ?? "",
+            tanggal_lahir: user.data.profile?.tanggal_lahir
+              ? moment(user.data.profile?.tanggal_lahir).format("YYYY-MM-DD")
+              : "",
             pembeli_baru: user.data.profile?.pembeli_baru ?? false,
           } as ProfileUser
         }
@@ -116,7 +123,7 @@ export const ProfilePage: React.FC = () => {
             className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
             disabled={profile.isLoading}
           >
-            Save
+            {profile.isLoading ? "Loading" : "Save"}
           </button>
         </Form>
       </Formik>

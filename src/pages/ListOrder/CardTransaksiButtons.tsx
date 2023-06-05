@@ -10,6 +10,7 @@ type Props = {
   setShowDialogBatalPesanan: (value: boolean) => void;
   batalPesanan: () => void;
   transaksi: Transaksi;
+  isLoading: boolean;
 };
 
 export const CardBarangTransaksiButtons: FunctionComponent<Props> = ({
@@ -17,6 +18,7 @@ export const CardBarangTransaksiButtons: FunctionComponent<Props> = ({
   setShowDialogBatalPesanan,
   batalPesanan,
   transaksi,
+  isLoading,
 }) => {
   return (
     <>
@@ -52,6 +54,7 @@ export const CardBarangTransaksiButtons: FunctionComponent<Props> = ({
             title="Batalkan Pesanan"
             description="Apakah anda yakin ingin membatalkan pesanan?"
             onConfirm={batalPesanan}
+            isLoading={isLoading}
             triggerComponent={
               <button
                 className={`${styles["tombol"]} ${styles["batalkanPesanan"]}`}

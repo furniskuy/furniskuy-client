@@ -29,6 +29,7 @@ const TotalButtonPesanan: FunctionComponent<Props> = ({
           title="Buat Pesanan"
           description="Apakah anda yakin ingin membuat pesanan?"
           onConfirm={buatPesanan}
+          isLoading={disabled ?? false}
           triggerComponent={
             <button
               className={styles["buttonBuatPesanan"]}

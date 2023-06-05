@@ -1,6 +1,13 @@
+import { Transaksi } from "@/types/api";
+import { idrFormat } from "@/util/number";
+import { FunctionComponent } from "react";
 import styles from "./DaftarPesanan.module.css";
 
-const DaftarPesanan = () => {
+type Props = {
+  transaksi: Transaksi;
+};
+
+const DaftarPesanan: FunctionComponent<Props> = ({ transaksi }) => {
   return (
     <>
       <div className={styles.DaftarPesanan}>
@@ -12,56 +19,25 @@ const DaftarPesanan = () => {
             <p>TOTAL</p>
           </div>
 
-          <div className={styles.header1}>
-            <p>Sofa Ruang TV - BLACK</p>
-            <p>1</p>
-            <p>Rp.2.000.000</p>
-            <p>Rp.2.000.000</p>
-          </div>
-
-          <div className={styles.header1}>
-            <p>Bed Set - GREY</p>
-            <p>1</p>
-            <p>Rp.4.000.000</p>
-            <p>Rp.4.000.000</p>
-          </div>
+          {transaksi.list_barang.map((item, index) => (
+            <div key={index} className={styles.header1}>
+              <p>{item.nama}</p>
+              <p>{item.pivot?.jumlah}</p>
+              <p>{idrFormat(item.harga)}</p>
+              <p>{idrFormat(item.harga * (item.pivot?.jumlah ?? 1))}</p>
+            </div>
+          ))}
         </div>
-        {/* <table className={styles.tabel1}>
-          <thead>
-            <th className={styles.underline}>
-              <td>DAFTAR PESANAN</td>
-              <td>JUMLAH</td>
-              <td>HARGA SATUAN</td>
-              <td>TOTAL</td>
-            </th>
-          </thead>
-          <tbody>
-            <tr>
-              
-            </tr>
-            <tr>
-             
-            </tr>
-          </tbody>
-        </table> */}
       </div>
       <div className={styles.Subtotal}>
         <table className={styles.tabel2}>
           <tr>
             <td>SUBTOTAL</td>
-            <td>:Rp.6.000.000</td>
+            <td>: {idrFormat(transaksi.total_harga)}</td>
           </tr>
           <tr>
             <td>PENGIRIMAN</td>
-            <td>:Rp.100.000</td>
-          </tr>
-          <tr>
-            <td>DISKON</td>
-            <td>:-Rp.10.000</td>
-          </tr>
-          <tr>
-            <td>BIAYA LAYANAN</td>
-            <td>:Rp.2.000</td>
+            <td>: {idrFormat(10000)}</td>
           </tr>
         </table>
       </div>

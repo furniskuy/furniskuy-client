@@ -64,6 +64,7 @@ export const CardTransaksi: FunctionComponent<Props> = ({ transaksi }) => {
         setShowDialogBatalPesanan={setShowDialogBatalPesanan}
         batalPesanan={handleBatalPesanan}
         transaksi={transaksi}
+        isLoading={batalPesanan.isLoading}
       />
     </div>
   );

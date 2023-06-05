@@ -51,7 +51,11 @@ export const KeranjangItem: FunctionComponent<Props> = ({
           className={styles.checkboxInput}
           checked={keranjang.selected}
           onChange={() => handleUpdateSelected(keranjang, !keranjang.selected)}
-          disabled={isLoading}
+          disabled={
+            isLoading ||
+            keranjang.barang.jumlah < 1 ||
+            keranjang.barang.jumlah < keranjang.jumlah
+          }
         />
       </td>
       <td style={{ width: "203px", height: "203px" }}>
@@ -70,6 +74,7 @@ export const KeranjangItem: FunctionComponent<Props> = ({
       </td>
       <td>
         <p>{keranjang.barang.nama}</p>
+        <p>Stok: x{keranjang.barang.jumlah}</p>
       </td>
       <td>
         <p className={styles.harga}>{idrFormat(keranjang.barang.harga)}</p>
@@ -77,11 +82,11 @@ export const KeranjangItem: FunctionComponent<Props> = ({
       <td>
         <QuantityButtons
           quantity={keranjang.jumlah}
-          maxQuantity={999}
+          maxQuantity={keranjang.barang.jumlah}
           setQuantity={(value) => {
             handleUpdateQuantity(keranjang, value);
           }}
-          disabled={isLoading}
+          disabled={isLoading || keranjang.barang.jumlah < 1}
         />
       </td>
       <td>

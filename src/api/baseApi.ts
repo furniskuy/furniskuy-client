@@ -7,7 +7,7 @@ export const api = axios.create({
 
 api.interceptors.response.use(
   (response) => {
-    return response.data.data;
+    return Promise.resolve(response.data.data);
   },
   (error) => {
     if (error.response.status === 401) {
@@ -15,6 +15,7 @@ api.interceptors.response.use(
       localStorage.clear();
       window.location.href = "/#/login";
     }
+    return Promise.reject(error.response.data);
   }
 );
 

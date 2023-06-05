@@ -25,6 +25,10 @@ export const CardTransaksi: FunctionComponent<Props> = ({ transaksi }) => {
         position: "top-center",
       });
     },
+    onError: (error: any) => {
+      toast.error(error.message, { position: "top-center" });
+      setShowDialogBatalPesanan(false);
+    },
   });
 
   const handleBatalPesanan = () => {

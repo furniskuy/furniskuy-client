@@ -1,8 +1,13 @@
+import { Inventaris } from "@/types/api";
 import { useState } from "react";
 import { ProductDescription } from "./ProductDescription";
 import { ProductReview } from "./ProductReview";
 
-export const ProductContent = () => {
+type Props = {
+  product: Inventaris;
+};
+
+export const ProductContent: React.FC<Props> = ({ product }) => {
   const [showDescription, setShowDescription] = useState(true);
 
   return (
@@ -26,7 +31,11 @@ export const ProductContent = () => {
           Penilaian
         </button>
       </div>
-      {showDescription ? <ProductDescription /> : <ProductReview />}
+      {showDescription ? (
+        <ProductDescription deskripsi={product.deskripsi ?? ""} />
+      ) : (
+        <ProductReview />
+      )}
     </div>
   );
 };

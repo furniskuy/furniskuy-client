@@ -1,5 +1,6 @@
 import { useUser } from "@/api/auth";
-import { useCheckout, useKeranjangs } from "@/api/keranjang";
+import { keranjangKey, useCheckout, useKeranjangs } from "@/api/keranjang";
+import { useQueryClient } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -18,11 +19,18 @@ export const HalamanCheckout = () => {
   const navigate = useNavigate();
   const [selectedBank, setSelectedBank] = useState<number | null>(null);
 
+  const queryClient = useQueryClient();
   const user = useUser();
   const keranjangs = useKeranjangs();
   const checkout = useCheckout({
     onSuccess: (data) => {
+      toast.success("Pesanan berhasil dibuat", { position: "top-center" });
       navigate("/status/" + data.id);
+      setShowDialogPesanan(false);
+      queryClient.invalidateQueries(keranjangKey.all);
+    },
+    onError: (error: any) => {
+      toast.error(error.message, { position: "top-center" });
       setShowDialogPesanan(false);
     },
   });

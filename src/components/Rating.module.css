@@ -1,9 +1,6 @@
-.rate {
+.rating {
   display: flex;
   justify-content: center;
   gap: 8;
-}
-
-.star {
   color: #f6973f;
 }

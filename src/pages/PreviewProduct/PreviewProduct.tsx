@@ -51,7 +51,7 @@ export const PreviewProduct = () => {
           />
         </div>
       </div>
-      <ProductContent />
+      <ProductContent product={product} />
     </div>
   );
 };

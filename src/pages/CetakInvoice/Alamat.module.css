@@ -1,7 +1,13 @@
 .Alamat {
-    margin-left: 170px;
+    margin-top: 56px;
 }
 
 .Untuk {
     font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.titikDua{
+    padding: 0 24px;
 }

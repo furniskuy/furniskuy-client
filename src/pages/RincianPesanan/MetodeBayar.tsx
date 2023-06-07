@@ -11,11 +11,11 @@ const MetodeBayar: FunctionComponent<Props> = ({ transaksi }) => {
   return (
     <>
       <div className={styles["header"]}>
-        <h2>Metode Pembayaran</h2>
-        <h3 className={styles["bank"]}>{transaksi.metode.nama_bank}</h3>
+        <p>Metode Pembayaran</p>
+        <p className={styles["bank"]}>{transaksi.metode.nama_bank}</p>
       </div>
       <div className={styles["outerDesc"]}>
-        <table>
+        <table className={styles["tabel"]}>
           <tr>
             <td>No.Pesanan</td>
             <td className={styles["td"]}>{transaksi.id}</td>
@@ -39,6 +39,18 @@ const MetodeBayar: FunctionComponent<Props> = ({ transaksi }) => {
             </td>
           </tr>
         </table>
+        {/* <div>
+          <p>No.Pesanan</p>
+          <p>Waktu Pesanan</p>
+          <p>Waktu Pembayaran</p>
+          <p>Waktu Pengiriman</p>
+        </div>
+        <div className={styles["data"]}>
+          <p>{transaksi.id}</p>
+          <p>{dateTimeFull(transaksi.tanggal_transaksi ?? "")}</p>
+          <p>{dateTimeFull(transaksi.waktu_pembayaran ?? "")}</p>
+          <p>{dateTimeFull(transaksi.waktu_pengiriman ?? "")}</p>
+        </div> */}
       </div>
     </>
   );

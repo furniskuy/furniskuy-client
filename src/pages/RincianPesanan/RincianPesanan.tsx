@@ -7,6 +7,8 @@ import AlamatPengiriman from "./AlamatPengiriman";
 import MetodeBayar from "./MetodeBayar";
 import ProdukPesanan from "./ProdukPesanan";
 import StatusPesanan from "./StatusPesanan";
+import Pengiriman from "./Pengiriman";
+import ButtonCetakInv from "./ButtonCetakInv";
 
 export const RincianPesanan = () => {
   const { id } = useParams<{ id: string }>();
@@ -24,10 +26,11 @@ export const RincianPesanan = () => {
             moment(transaksi.data.waktu_pengiriman).add(3, "d").toString()
           )}
         />
-        {/* <Pengiriman /> */}
+        <Pengiriman />
         <AlamatPengiriman />
         <ProdukPesanan />
         <MetodeBayar transaksi={transaksi.data} />
+        <ButtonCetakInv />
       </div>
     </>
   );

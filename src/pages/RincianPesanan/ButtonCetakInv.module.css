@@ -1,0 +1,13 @@
+.tulisan {
+    font-size: 24px;
+    color: #006FBA;
+    font-weight: 500;
+}
+
+.outerButton {
+    margin-top: 60px;
+    border: 1px solid #006FBA;
+    border-radius: 12px;
+    padding: 15px 150px;
+    width: fit-content;
+}

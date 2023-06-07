@@ -11,7 +11,7 @@ const DaftarPesanan: FunctionComponent<Props> = ({ transaksi }) => {
   return (
     <>
       <div className={styles.DaftarPesanan}>
-        <div className={`${styles.head} ${styles.headeriistimewa}`}>
+        <div className={`${styles.head} ${styles.headeriistimewaAtas}`}>
           <div className={`${styles.header1} ${styles.headeriistimewa}`}>
             <p>DAFTAR PESANAN</p>
             <p>JUMLAH</p>
@@ -31,15 +31,49 @@ const DaftarPesanan: FunctionComponent<Props> = ({ transaksi }) => {
       </div>
       <div className={styles.Subtotal}>
         <table className={styles.tabel2}>
-          <tr>
-            <td>SUBTOTAL</td>
-            <td>: {idrFormat(transaksi.total_harga)}</td>
+          <tr className={styles.trTable}>
+            <td>Subtotal Untuk Produk</td>
+            <td className={styles.titikDua}>:</td>
+            <td>{idrFormat(transaksi.total_harga)}</td>
           </tr>
-          <tr>
-            <td>PENGIRIMAN</td>
-            <td>: {idrFormat(10000)}</td>
+          <tr className={styles.trTable}>
+            <td>Subtotal Pengiriman</td>
+            <td>: </td>
+            <td>{idrFormat(10000)}</td>
+          </tr>
+          <tr className={styles.trTable}>
+            <td>Vouncher Diskon</td>
+            <td>: </td>
+            <td>{idrFormat(10000)}</td>
+          </tr>
+          <tr className={styles.trTable}>
+            <td>Biaya Pelayanan</td>
+            <td>: </td>
+            <td>{idrFormat(10000)}</td>
+          </tr>
+          <tr className={styles.trTable}>
+            <td>Total Pembayaran</td>
+            <td>: </td>
+            <td>{idrFormat(10000)}</td>
           </tr>
         </table>
+      </div>
+
+      <div className="flex justify-evenly font-poppins text-2xl">
+        <div className="text-right">
+          <p className="text-neutral-500 font-semibold ">Kurir :</p>
+          <p className="text-black font-bold">JNE</p>
+        </div>
+        <div>
+          <p className="text-neutral-500 font-semibold ">Metode Pembayaran :</p>
+          <p className="text-black font-bold">BNI</p>
+        </div>
+      </div>
+
+<div className="flex justify-center text-blue-900 font-poppins text-2xl font-medium mt-48 mb-20">
+      <div className="py-3 px-24 border-2 border-blue-900 rounded-md">
+        Kembali Ke Beranda
+      </div>
       </div>
     </>
   );

@@ -5,7 +5,7 @@ const Pengiriman = () => {
     <>
       <div className={styles["boxPengiriman"]}>
         <div className={styles["paket"]}>
-          <p>Reguler</p>
+          <p className={styles["pilihanPaket"]}>Reguler</p>
           <p className={styles["tanggal"]}>Perkiraan Diterima Tanggal 27 Mei</p>
         </div>
         <div className={styles["ongkir"]}>

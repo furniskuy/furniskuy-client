@@ -113,6 +113,15 @@ export const KeranjangList = () => {
           </button>
         </div>
       </div>
+
+      <div className="flex justify-end gap-6">
+        <div>
+          <input type="text" placeholder="Masukan Voucher" className="bg-neutral-300 rounded-md py-3 px-14"/>
+        </div>
+        <div className="bg-neutral-500 rounded-md text-white py-3 px-12">
+          Gunakan
+        </div>
+      </div>
     </div>
   );
 };

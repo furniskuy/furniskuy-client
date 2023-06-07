@@ -1,10 +1,11 @@
 .tabelCheckout {
   display: flex;
   justify-content: center;
+  background-color: white;
 }
 
 .tabelCheckout > table td {
-  padding: 0 30px;
+  padding: 0 50px;
   font-size: 20px;
   font-weight: 400;
 }

@@ -43,7 +43,7 @@ export const KeranjangItem: FunctionComponent<Props> = ({
   );
 
   return (
-    <tr>
+    <tr  >
       <td>
         <input
           id="checkbox_id"
@@ -66,8 +66,7 @@ export const KeranjangItem: FunctionComponent<Props> = ({
             currentTarget.src = productPlaceHolderURL;
           }}
           style={{
-            width: "100%",
-            height: "100%",
+            width: "80px",
             objectFit: "cover",
           }}
         />

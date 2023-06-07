@@ -4,7 +4,7 @@ const HeaderPengiriman = () => {
   return (
     <>
       <div className={styles["judulPengiriman"]}>
-        <h2>Pengiriman</h2>
+        <p>Pengiriman</p>
       </div>
     </>
   );

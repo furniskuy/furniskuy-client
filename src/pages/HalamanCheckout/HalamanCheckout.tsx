@@ -9,7 +9,10 @@ import Content from "./Content";
 import Header from "./Header";
 import HeaderPembayaran from "./HeaderPembayaran";
 import Pembayaran from "./Pembayaran";
+import HeaderPengiriman from "./HeaderPengiriman";
+import Pengiriman from "./Pengiriman";
 import RincianPembayaran from "./RincianPembayaran";
+import Voucher from "./Voucher";
 import Subtotal from "./Subtotal";
 import TotalButtonPesanan from "./TotalButtonPesanan";
 
@@ -60,10 +63,10 @@ export const HalamanCheckout = () => {
         <Header />
         <Alamat />
         <Content />
-        {/* <HeaderPengiriman />
-        <Pengiriman /> */}
+        <HeaderPengiriman />
+        <Pengiriman />
         <Subtotal />
-        {/* <Voucher /> */}
+        <Voucher />
         <HeaderPembayaran />
         <Pembayaran
           selected={selectedBank}

@@ -1,12 +1,13 @@
 .subTotal{
     display: flex;
-    margin-top: 10px;
-    margin-left: 800px;
-    align-items: center;
-    gap: 17px;
+    justify-content: end;
+    margin-right: 60px;
+    margin-top: 30px;
+    font-size: 24px;
+    gap: 30px;
 }
 
 .hargaTotal{
     color: #FF8000;
-    font-size: large;
+    font-weight: 600;
 }

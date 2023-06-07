@@ -2,24 +2,30 @@
     display: flex;
     background-color: white;
     padding-left: 30px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 12px;
     height: fit-content;
     border: solid 1px;
-    margin: 0 300px;
+    margin: 0 60px;
     gap: 350px;
+    padding: 20px 30px;
 }
 
 .paket{
-    margin: 10px 0;
+    font-size: 24px;
+}
+
+.pilihanPaket{
+    font-weight: 600;
 }
 
 .tanggal{
     color: #838383;
-    margin: 5px 0;
+    margin: 20px 0;
 }
 
 .ongkir{
-    font-size: large;
+    font-size: 24px;
+    font-weight: 600;
 }

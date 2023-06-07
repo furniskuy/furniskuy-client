@@ -39,17 +39,7 @@ const DaftarPesanan: FunctionComponent<Props> = ({ transaksi }) => {
           <tr className={styles.trTable}>
             <td>Subtotal Pengiriman</td>
             <td>: </td>
-            <td>{idrFormat(10000)}</td>
-          </tr>
-          <tr className={styles.trTable}>
-            <td>Vouncher Diskon</td>
-            <td>: </td>
-            <td>{idrFormat(10000)}</td>
-          </tr>
-          <tr className={styles.trTable}>
-            <td>Biaya Pelayanan</td>
-            <td>: </td>
-            <td>{idrFormat(10000)}</td>
+            <td>{idrFormat(100000)}</td>
           </tr>
           <tr className={styles.trTable}>
             <td>Total Pembayaran</td>
@@ -70,10 +60,10 @@ const DaftarPesanan: FunctionComponent<Props> = ({ transaksi }) => {
         </div>
       </div>
 
-<div className="flex justify-center text-blue-900 font-poppins text-2xl font-medium mt-48 mb-20">
-      <div className="py-3 px-24 border-2 border-blue-900 rounded-md">
-        Kembali Ke Beranda
-      </div>
+      <div className="flex justify-center text-blue-900 font-poppins text-2xl font-medium mt-48 mb-20">
+        <div className="py-3 px-24 border-2 border-blue-900 rounded-md">
+          Kembali Ke Beranda
+        </div>
       </div>
     </>
   );

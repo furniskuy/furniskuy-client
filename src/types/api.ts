@@ -2,6 +2,8 @@ export type SearchApiParams = {
   search?: string;
   skip?: number;
   limit?: number;
+  popular?: boolean;
+  kategori?: number;
 };
 
 export type ApiResponse<T> = {

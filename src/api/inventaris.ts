@@ -7,6 +7,7 @@ const baseURL = "/inventaris";
 export const inventarisKey = {
   all: ["inventaris"],
   byId: (id: string) => [...inventarisKey.all, id],
+  listing: (params: SearchApiParams) => [...inventarisKey.all, params],
 };
 
 export const useInventaris = (
@@ -14,7 +15,7 @@ export const useInventaris = (
   queryOptions?: UseQueryOptions<Inventaris[], unknown>
 ) => {
   return useQuery<Inventaris[]>({
-    queryKey: inventarisKey.all,
+    queryKey: inventarisKey.listing(params),
     queryFn: () => api.get(baseURL, { params }),
     ...queryOptions,
   });

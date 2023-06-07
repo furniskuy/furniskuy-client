@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { useInventaris } from "@/api/inventaris";
 
+import { Loading } from "@/components/Loading";
 import { CardProduct } from "./CardProduct";
 import styles from "./ProductListing.module.css";
 
@@ -10,7 +11,7 @@ const KategoriProduct = ["Semua", "Sofa", "Kasur", "Kursi", "Meja", "Rak"];
 export const ProductListing = () => {
   const [kategori, setKategori] = useState(0);
 
-  const inventarisQuery = useInventaris({ limit: 8 });
+  const inventarisQuery = useInventaris({ limit: 8, popular: true, kategori });
 
   return (
     <div>
@@ -37,7 +38,7 @@ export const ProductListing = () => {
         ))}
       </div>
       <div className={styles["daftarProduk"]}>
-        {inventarisQuery.isLoading && <div>Loading...</div>}
+        {inventarisQuery.isLoading && <Loading />}
 
         {inventarisQuery.isError && <div>Error...</div>}
 

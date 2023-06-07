@@ -14,7 +14,6 @@ import Pengiriman from "./Pengiriman";
 import RincianPembayaran from "./RincianPembayaran";
 import Subtotal from "./Subtotal";
 import TotalButtonPesanan from "./TotalButtonPesanan";
-import Voucher from "./Voucher";
 
 export const HalamanCheckout = () => {
   const [showDialogPesanan, setShowDialogPesanan] = useState(false);
@@ -28,7 +27,7 @@ export const HalamanCheckout = () => {
   const checkout = useCheckout({
     onSuccess: (data) => {
       toast.success("Pesanan berhasil dibuat", { position: "top-center" });
-      navigate("/status/" + data.id);
+      navigate("/pembayaran/" + data.id);
       setShowDialogPesanan(false);
       queryClient.invalidateQueries(keranjangKey.all);
     },
@@ -66,7 +65,7 @@ export const HalamanCheckout = () => {
         <HeaderPengiriman />
         <Pengiriman />
         <Subtotal />
-        <Voucher />
+        {/* <Voucher /> */}
         <HeaderPembayaran />
         <Pembayaran
           selected={selectedBank}

@@ -33,7 +33,7 @@ export const CardBarangTransaksiButtons: FunctionComponent<Props> = ({
         </a>
         {transaksi.status === 1 && (
           <Link
-            to={`/status/${transaksi.id}`}
+            to={`/pembayaran/${transaksi.id}`}
             className={`${styles["tombol"]} ${styles["chatPenjual"]}`}
           >
             <p>Pembayaran</p>
@@ -41,7 +41,7 @@ export const CardBarangTransaksiButtons: FunctionComponent<Props> = ({
         )}
         {(transaksi.status === 2 || transaksi.status === 3) && (
           <Link
-            to={`/rincian/${transaksi.id}`}
+            to={`/status/${transaksi.id}`}
             className={`${styles["tombol"]} ${styles["chatPenjual"]}`}
           >
             <p>Cek Status</p>

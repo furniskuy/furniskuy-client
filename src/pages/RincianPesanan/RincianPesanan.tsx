@@ -4,11 +4,11 @@ import { dateTimeFull } from "@/util/date";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 import AlamatPengiriman from "./AlamatPengiriman";
+import ButtonCetakInv from "./ButtonCetakInv";
 import MetodeBayar from "./MetodeBayar";
+import Pengiriman from "./Pengiriman";
 import ProdukPesanan from "./ProdukPesanan";
 import StatusPesanan from "./StatusPesanan";
-import Pengiriman from "./Pengiriman";
-import ButtonCetakInv from "./ButtonCetakInv";
 
 export const RincianPesanan = () => {
   const { id } = useParams<{ id: string }>();
@@ -30,7 +30,7 @@ export const RincianPesanan = () => {
         <AlamatPengiriman />
         <ProdukPesanan />
         <MetodeBayar transaksi={transaksi.data} />
-        <ButtonCetakInv />
+        <ButtonCetakInv transaksiId={transaksi.data.id} />
       </div>
     </>
   );

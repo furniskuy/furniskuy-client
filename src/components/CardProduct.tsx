@@ -58,7 +58,9 @@ export const CardProduct: FunctionComponent<Props> = ({ product }) => {
       <Link to={"/produk/" + product.id}>
         <div className={styles["cardContent"]}>
           <div>
-            <p className={styles["productName"]}>{product.nama}</p>
+            <p className={styles["productName"] + " line-clamp-1"}>
+              {product.nama}
+            </p>
             <p className={styles["productPrice"]}>{idrFormat(product.harga)}</p>
           </div>
           <div className={styles["arrowProduct"]}>

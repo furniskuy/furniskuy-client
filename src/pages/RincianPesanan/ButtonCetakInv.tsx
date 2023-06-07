@@ -1,15 +1,21 @@
-import React from "react";
+import { FunctionComponent } from "react";
+import { Link } from "react-router-dom";
+
 import styles from "./ButtonCetakInv.module.css";
 
-const ButtonCetakInv = () => {
+type Props = {
+  transaksiId: number;
+};
+
+const ButtonCetakInv: FunctionComponent<Props> = ({ transaksiId }) => {
   return (
-    <>
-      <div className={styles["outerButton"]}>
+    <div className={styles["outerButton"]}>
+      <Link to={"/invoice/" + transaksiId}>
         <button>
           <p className={styles["tulisan"]}>Cetak Invoice</p>
         </button>
-      </div>
-    </>
+      </Link>
+    </div>
   );
 };
 

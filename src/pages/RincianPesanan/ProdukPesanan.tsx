@@ -17,7 +17,7 @@ const ProdukPesanan = () => {
     <>
       <p className={styles["header"]}>Produk Pesanan</p>
 
-      {transaksi.isLoading && <p>Loading...</p>}
+      {transaksi.isLoading && <Loading />}
 
       {transaksi.isError && <p>Error...</p>}
 

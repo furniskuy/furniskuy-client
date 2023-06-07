@@ -36,8 +36,29 @@
 }
 
 .daftarProduk {
-  display: flex;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
   flex-wrap: wrap;
   overflow-x: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+  .daftarProduk {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .daftarProduk {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
 }

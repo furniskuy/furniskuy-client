@@ -1,6 +1,7 @@
 import { Transaksi } from "@/types/api";
 import { idrFormat } from "@/util/number";
 import { FunctionComponent } from "react";
+import { Link } from "react-router-dom";
 import styles from "./DaftarPesanan.module.css";
 
 type Props = {
@@ -44,7 +45,7 @@ const DaftarPesanan: FunctionComponent<Props> = ({ transaksi }) => {
           <tr className={styles.trTable}>
             <td>Total Pembayaran</td>
             <td>: </td>
-            <td>{idrFormat(10000)}</td>
+            <td>{idrFormat(transaksi.total_harga)}</td>
           </tr>
         </table>
       </div>
@@ -56,14 +57,16 @@ const DaftarPesanan: FunctionComponent<Props> = ({ transaksi }) => {
         </div>
         <div>
           <p className="text-neutral-500 font-semibold ">Metode Pembayaran :</p>
-          <p className="text-black font-bold">BNI</p>
+          <p className="text-black font-bold">{transaksi.metode.nama_bank}</p>
         </div>
       </div>
 
       <div className="flex justify-center text-blue-900 font-poppins text-2xl font-medium mt-48 mb-20">
-        <div className="py-3 px-24 border-2 border-blue-900 rounded-md">
-          Kembali Ke Beranda
-        </div>
+        <Link to="/beranda">
+          <div className="py-3 px-24 border-2 border-blue-900 rounded-md">
+            Kembali Ke Beranda
+          </div>
+        </Link>
       </div>
     </>
   );

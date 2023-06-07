@@ -1,4 +1,5 @@
 import { useTransaksi } from "@/api/transaksi";
+import { Loading } from "@/components/Loading";
 import { FunctionComponent } from "react";
 import { CardTransaksi } from "./CardTransaksi";
 import styles from "./TransaksiList.module.css";
@@ -12,7 +13,7 @@ export const TransaksiList: FunctionComponent<Props> = ({ status }) => {
 
   return (
     <>
-      {transaksi.isLoading && <p>Loading...</p>}
+      {transaksi.isLoading && <Loading />}
 
       {transaksi.isSuccess &&
         transaksi.data
@@ -21,7 +22,7 @@ export const TransaksiList: FunctionComponent<Props> = ({ status }) => {
             return <CardTransaksi key={index} transaksi={item} />;
           })}
 
-      {!transaksi.data && (
+      {!transaksi.isLoading && !transaksi.data && (
         <div className={styles["emptyContent"]}>
           <h1>Anda Belum Memiliki Pesanan</h1>
         </div>

@@ -1,5 +1,5 @@
 .DaftarPesanan {
-    margin-top: 50px;
+    margin-top: 56px;
     display: flex;
     justify-content: end;
     width: 100%;
@@ -8,7 +8,7 @@
 
 .head {
     width: 70%;
-    margin-right: 30px;
+    /* margin-right: 30px; */
    
 }
 
@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     flex: 3;
-    padding: 0 10px;
+    padding: 12px 10px ;
     font-weight: 600;   
     
 }
@@ -39,21 +39,33 @@
 .Subtotal {
     display: flex;
     justify-content: end;
-    
+padding-top: 50px;    
 
 }
+
+.Subtotal table tr td {
+    padding-top: 30px;
+}
+
+.titikDua{
+    padding: 0 10px;
+}
+/* .trTable{
+    padding-top: 50px;
+} */
 
 
 
 .tabel2 td {
     font-weight: 600;
-   
-     border-spacing: -20px 0;
+     /* border-spacing: -20px 0; */
 }
 
 .tabel2 {
    
-    border-spacing: 50px 20px;
+    /* border-spacing: 50px 20px; */
+    text-align: right;
+    /* padding-top: 50px; */
 }
 
 
@@ -62,4 +74,10 @@
    border-bottom:  5px solid #FFC34F;
 
 }
+
+.headeriistimewaAtas {
+    border-bottom:  5px solid #FFC34F;
+    padding-bottom: 126px;
+ 
+ }
 

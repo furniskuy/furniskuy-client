@@ -115,6 +115,7 @@ export const ProfilePage: React.FC = () => {
               id="tanggal_lahir"
               name="tanggal_lahir"
               className="w-full border border-gray-300 rounded px-3 py-2"
+              max={new Date().toJSON().split("T")[0]}
             />
           </div>
 

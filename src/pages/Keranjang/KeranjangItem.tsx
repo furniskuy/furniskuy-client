@@ -58,7 +58,7 @@ export const KeranjangItem: FunctionComponent<Props> = ({
           }
         />
       </td>
-      <td style={{ width: "203px", height: "203px" }}>
+      <td style={{ width: "180px", height: "180px" }}>
         <img
           src={getImageUrl(keranjang.barang.foto)}
           onError={({ currentTarget }) => {

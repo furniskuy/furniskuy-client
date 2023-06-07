@@ -4,7 +4,7 @@ const HeaderPembayaran = () => {
   return (
     <div>
       <div className={styles["judulMetode"]}>
-        <h2>Metode Pembayaran</h2>
+        <p>Metode Pembayaran</p>
       </div>
     </div>
   );

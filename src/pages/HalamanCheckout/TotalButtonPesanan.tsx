@@ -21,8 +21,10 @@ const TotalButtonPesanan: FunctionComponent<Props> = ({
   return (
     <>
       <div className={styles["boxTotal-Button"]}>
-        <h3>Total: </h3>
-        <p className={styles["totalHarga"]}>{idrFormat(totalHarga)}</p>
+        <div className={styles["boxKiri"]}>
+          <p className={styles["total"]}>Total: </p>
+          <p className={styles["totalHarga"]}>{idrFormat(totalHarga)}</p>
+        </div>
         <DialogConfirm
           isOpen={showDialogPesanan}
           setIsOpen={setShowDialogPesanan}

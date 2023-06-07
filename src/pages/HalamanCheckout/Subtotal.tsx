@@ -4,7 +4,7 @@ const Subtotal = () => {
   return (
     <>
       <div className={styles["subTotal"]}>
-        <h3>2 items, Subtotal:</h3>
+        <p>2 items, Subtotal:</p>
         <p className={styles["hargaTotal"]}>Rp 6.000.000</p>
       </div>
     </>

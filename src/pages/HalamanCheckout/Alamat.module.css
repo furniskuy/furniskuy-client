@@ -3,11 +3,11 @@
     background-color: white;
     justify-content: start;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 12px;
     height: fit-content;
     border: solid 1px;
-    margin: 30px 300px;
-    padding: 10px 0;
+    margin: 30px 60px;
+    padding: 20px 0;
 }
 
 .boxnama-noTelp{
@@ -27,5 +27,18 @@
 }
 
 .noTelp{
+    font-size: 24px;
+    font-weight: 400;
+    color: #006FBA;
+}
+
+.nama{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.alamat{
+    font-size: 24px;
+    font-weight: 400;
     color: #838383;
 }

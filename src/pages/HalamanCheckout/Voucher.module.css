@@ -1,32 +1,29 @@
 .boxVoucher{
     display: flex;
-    gap: 10px;
-    margin: 10px 325px;
     justify-content: end;
+    margin-top: 30px;
+    margin-right: 80px;
+    gap: 15px;
 }
 
 .kodeVoucher{
-    background-color: #E6E6E6;
-    border: 0px;
-    border-radius: 5px;
-    font-weight: 500;
-    padding: 10px 10px;
-    width: 210px;
+    background-color: #DEDEDE;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 15px 40px;
 }
 
 .notifVoucher{
     font-size: small;
     color: #006FBA;
-    margin-left: 5px;
     margin-bottom: 30px;
 }
 
 .buttonVoucher{
-    border: solid 0.5px;
-    border-radius: 5px;
-    background-color: #B7B7B7;
-    box-shadow: 0 1px 2px;
-    padding: 10px 10px;
+    border-radius: 12px;
+    background-color: #84848D;
+    padding: 15px 40px;
+    color: white;
 }
 
 .tulisan{

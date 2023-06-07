@@ -4,17 +4,15 @@ const Pengiriman = () => {
   return (
     <>
       <div className={styles["outerPengiriman"]}>
-        <div>
-          <h2>Informasi Pengiriman</h2>
-          <p>JNE - JNEID032373844746</p>
-          <p>
-            <ul>
-              <li>Sedang Dikemas 25-05-2023 17:18</li>
-            </ul>
-          </p>
+        <div className={styles["header"]}>
+          <p className={styles["judul"]}>Informasi Pengiriman</p>
+          <a href="" className={styles["link"]}>
+            Lacak
+          </a>
         </div>
-        <div className={styles["link"]}>
-          <a href="">Lacak</a>
+        <div className={styles["pengiriman"]}>
+          <p>JNE - JNEID032373844746</p>
+          <p>Sedang Dikemas (25-05-2023 17:18)</p>
         </div>
       </div>
     </>

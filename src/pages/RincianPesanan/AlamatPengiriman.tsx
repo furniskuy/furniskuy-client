@@ -11,12 +11,12 @@ const AlamatPengiriman = () => {
   return (
     <>
       <div className={styles["outerAlamat"]}>
-        <h2>Alamat Pengiriman</h2>
+        <p className={styles["header"]}>Alamat Pengiriman</p>
         <div className={styles["nama-noTelp"]}>
           <p>{user.data.name}</p>
           <p className={styles["noTelp"]}>{user.data.profile?.no_hp}</p>
         </div>
-        <div>
+        <div className={styles["alamat"]}>
           <span>{user.data.profile?.alamat}</span>
         </div>
       </div>

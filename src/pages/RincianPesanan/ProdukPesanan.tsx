@@ -15,7 +15,7 @@ const ProdukPesanan = () => {
 
   return (
     <>
-      <h2 className={styles["header"]}>Produk Pesanan</h2>
+      <p className={styles["header"]}>Produk Pesanan</p>
 
       {transaksi.isLoading && <p>Loading...</p>}
 
@@ -34,9 +34,11 @@ const ProdukPesanan = () => {
                 }}
               />
             </div>
-            <div className={styles["nama-jumlah"]}>
-              <p>{item.nama}</p>
-              <p>x{item.pivot?.jumlah}</p>
+            <div className={styles["outerBarang"]}>
+              <div className={styles["nama-jumlah"]}>
+                <p className={styles["namaBarang"]}>{item.nama}</p>
+                <p className={styles["jumlahBarang"]}>x{item.pivot?.jumlah}</p>
+              </div>
             </div>
             <div className={styles["harga"]}>
               <p>{idrFormat(item.harga)}</p>

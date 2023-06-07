@@ -2,11 +2,13 @@ import { QuantityButtons } from "@/components/QuantityButtons";
 import { FunctionComponent, useState } from "react";
 
 type Props = {
+  maxQuantity: number;
   addToCart: (quantity: number) => void;
   loading?: boolean;
 };
 
 export const ProductAction: FunctionComponent<Props> = ({
+  maxQuantity,
   addToCart,
   loading,
 }) => {
@@ -20,11 +22,11 @@ export const ProductAction: FunctionComponent<Props> = ({
         <QuantityButtons
           quantity={quantity}
           setQuantity={setQuantity}
-          maxQuantity={10}
+          maxQuantity={maxQuantity}
           disabled={loading}
         />
 
-        <p>tersisa 3 buah</p>
+        <p>tersisa {maxQuantity} buah</p>
       </div>
 
       <button

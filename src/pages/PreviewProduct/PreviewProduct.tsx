@@ -46,6 +46,7 @@ export const PreviewProduct = () => {
         <div className="column" style={{ gap: 24 }}>
           <ProductHead product={product} />
           <ProductAction
+            maxQuantity={product.jumlah}
             addToCart={handleAddToCart}
             loading={addToCart.isLoading}
           />

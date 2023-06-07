@@ -66,8 +66,8 @@ export const KeranjangItem: FunctionComponent<Props> = ({
             currentTarget.src = productPlaceHolderURL;
           }}
           style={{
-            width: "100%",
-            height: "100%",
+            width: 180,
+            height: 180,
             objectFit: "contain",
           }}
         />

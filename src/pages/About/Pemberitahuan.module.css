@@ -1,0 +1,8 @@
+.warning {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+}

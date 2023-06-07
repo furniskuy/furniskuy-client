@@ -1,0 +1,15 @@
+.outerKK {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #FF9A34;
+    padding: 50px 40px;
+}
+
+.slogan {
+    font-size: xx-large;
+}
+
+.paragraph {
+    text-align: justify;
+}

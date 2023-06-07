@@ -1,0 +1,20 @@
+.gambar {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    font-size: large;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.header {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}

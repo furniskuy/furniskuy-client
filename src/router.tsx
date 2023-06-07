@@ -15,6 +15,7 @@ import { Register } from "./pages/Register.tsx/Register";
 import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
 import { SearchPage } from "./pages/Search/SearchPage";
 import { StatusPembayaran } from "./pages/StatusPembayaran/StatusPembayaran";
+import { About } from "./pages/About/About";
 
 const router = createHashRouter([
   {
@@ -33,6 +34,7 @@ const router = createHashRouter([
           { path: "/rincian/:id", element: <RincianPesanan /> },
           { path: "/invoice/:id", element: <CetakInvoice /> },
           { path: "/orders", element: <ListOrder /> },
+          { path: "/about", element: <About /> },
         ],
       },
       {

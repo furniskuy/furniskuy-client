@@ -50,15 +50,15 @@
 .sosmed {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 20px;
 }
 
 .fb,
-.twt,
-.ig {
+.twt{
   display: flex;
   align-items: center;
   gap: 4px;
+  color: #ff8000;
 }
 
 .footerEnd {
@@ -78,4 +78,8 @@
   font-size: small;
   color: #1e2833;
   opacity: 0.5;
+}
+
+.tulisan{
+  color: black;
 }

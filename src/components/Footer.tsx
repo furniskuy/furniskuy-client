@@ -1,4 +1,6 @@
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { HiPhone } from "react-icons/hi";
+import { MdEmail } from "react-icons/md";
 import styles from "./Footer.module.css";
 
 export const Footer = () => {
@@ -9,9 +11,8 @@ export const Footer = () => {
           <p>
             <span className={styles["footerOren"]}>Furniture</span>
           </p>
-          <p>The advantage of hiring a workspace</p>
-          <p>with us is that givees you comfortable</p>
-          <p>service and all-around facilites.</p>
+          <p>Temukan Kenyamanan dan Fasilitas Menakjubkan</p>
+          <p>dengan Membeli Furniture di Toko Kami.</p>
         </div>
 
         <div className={styles["footerKanan"]}>
@@ -19,36 +20,32 @@ export const Footer = () => {
             <p>
               <span className={styles["footerOren"]}>Furniture</span>
             </p>
-            <p>Beds</p>
-            <p>Chair</p>
-            <p>All</p>
+            <p>Sofa</p>
+            <p>Kasur</p>
+            <p>Lainnya</p>
           </div>
 
           <div className={styles["footerItem"]}>
             <p>
-              <span className={styles["footerOren"]}>Services</span>
+              <span className={styles["footerOren"]}>Tentang Kami</span>
             </p>
-            <p>Email Marketing</p>
-            <p>Campaigns</p>
-            <p>Branding</p>
+            <p>Syarat dan Ketentuan</p>
+            <p>Kebijkan dan Pengembalian</p>
+            <p>Kebijakan Privasi</p>
           </div>
 
           <div className={styles["footerItem"]}>
             <p>
-              <span className={styles["footerOren"]}>Follow Us</span>
+              <span className={styles["footerOren"]}>Kontak Kami</span>
             </p>
             <div className={styles["sosmed"]}>
               <div className={styles["fb"]}>
-                <FaFacebookF id="fb-logo" />
-                <span>Facebook</span>
+                <HiPhone id="fb-logo" />
+                <p className={styles["tulisan"]}>(022)855127689</p>
               </div>
               <div className={styles["twt"]}>
-                <FaTwitter id="twt-logo" />
-                <span>Twitter</span>
-              </div>
-              <div className={styles["ig"]}>
-                <FaInstagram id="ig-logo" />
-                <span>Instagram</span>
+                <MdEmail id="twt-logo" />
+                <p className={styles["tulisan"]}>furniskuy@gmail.com</p>
               </div>
             </div>
           </div>

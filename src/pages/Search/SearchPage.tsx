@@ -1,17 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useInventaris } from "@/api/inventaris";
 
+import { CardProduct } from "@/components/CardProduct";
 import { Loading } from "@/components/Loading";
-import { CardProduct } from "../../components/CardProduct";
-import styles from "./ProductListing.module.css";
+
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import styles from "./SearchPage.module.css";
 
 const KategoriProduct = ["Semua", "Sofa", "Kasur", "Kursi", "Meja", "Rak"];
 
-export const ProductListing = () => {
+export const SearchPage = () => {
   const [kategori, setKategori] = useState(0);
+  const [page, setPage] = useState(0);
+  const [maxPage, setMaxPage] = useState(10);
 
-  const inventarisQuery = useInventaris({ limit: 8, popular: true, kategori });
+  const inventarisQuery = useInventaris({
+    limit: 24,
+    skip: page * 24,
+    popular: true,
+    kategori,
+  });
+
+  useEffect(() => {
+    if (inventarisQuery.isSuccess) {
+      if (inventarisQuery.data?.length === 0) {
+        setMaxPage(page);
+        setPage(page - 1);
+      }
+    }
+  }, [inventarisQuery.data?.length, inventarisQuery.isSuccess, page]);
 
   return (
     <div>
@@ -46,6 +64,24 @@ export const ProductListing = () => {
           inventarisQuery.data?.map((item, index) => (
             <CardProduct key={index} product={item} />
           ))}
+      </div>
+
+      <div className={styles["pagination"]}>
+        <button
+          className={styles["paginationItem"]}
+          onClick={() => setPage(page - 1)}
+          disabled={page === 0}
+        >
+          <SlArrowLeft />
+        </button>
+        <div className={styles["paginationItem"]}>{page + 1}</div>
+        <button
+          className={styles["paginationItem"]}
+          onClick={() => setPage(page + 1)}
+          disabled={page === maxPage}
+        >
+          <SlArrowRight />
+        </button>
       </div>
     </div>
   );

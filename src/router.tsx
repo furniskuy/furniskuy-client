@@ -13,6 +13,7 @@ import { PreviewProduct } from "./pages/PreviewProduct/PreviewProduct";
 import { ProfilePage } from "./pages/Profile/Profile";
 import { Register } from "./pages/Register.tsx/Register";
 import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
+import { SearchPage } from "./pages/Search/SearchPage";
 import { StatusPembayaran } from "./pages/StatusPembayaran/StatusPembayaran";
 
 const router = createHashRouter([
@@ -25,6 +26,7 @@ const router = createHashRouter([
           { index: true, element: <Home /> },
           { path: "/profile", element: <ProfilePage /> },
           { path: "/produk/:id", element: <PreviewProduct /> },
+          { path: "/search", element: <SearchPage /> },
           { path: "/keranjang", element: <Keranjang /> },
           { path: "/checkout", element: <HalamanCheckout /> },
           { path: "/status/:id", element: <StatusPembayaran /> },

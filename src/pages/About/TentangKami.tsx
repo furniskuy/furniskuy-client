@@ -1,8 +1,7 @@
-import React from "react";
-import styles from "./TentangKami.module.css";
-import gambarSK from "../../assets/SyaratKetentuan.png";
-import gambarKPrivasi from "../../assets/KebijakanPrivasi.png";
 import gambarKPengembalian from "../../assets/KebijakanPengembalian.png";
+import gambarKPrivasi from "../../assets/KebijakanPrivasi.png";
+import gambarSK from "../../assets/SyaratKetentuan.png";
+import styles from "./TentangKami.module.css";
 
 const TentangKami = () => {
   return (

@@ -1,4 +1,3 @@
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { HiPhone } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
 import styles from "./Footer.module.css";

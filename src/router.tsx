@@ -3,6 +3,7 @@ import { createHashRouter } from "react-router-dom";
 import { App } from "./App";
 import { AuthLayout } from "./components/AuthLayout";
 import { GuestLayout } from "./components/GuestLayout";
+import { About } from "./pages/About/About";
 import CetakInvoice from "./pages/CetakInvoice/CetakInvoice";
 import { HalamanCheckout } from "./pages/HalamanCheckout/HalamanCheckout";
 import { Home } from "./pages/Home/Home";
@@ -15,7 +16,6 @@ import { Register } from "./pages/Register.tsx/Register";
 import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
 import { SearchPage } from "./pages/Search/SearchPage";
 import { StatusPembayaran } from "./pages/StatusPembayaran/StatusPembayaran";
-import { About } from "./pages/About/About";
 
 const router = createHashRouter([
   {

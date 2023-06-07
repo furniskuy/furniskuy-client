@@ -2,7 +2,6 @@ import { useProfile, useUser } from "@/api/auth";
 import { ProfileUser } from "@/types/api";
 import { Field, Form, Formik } from "formik";
 import moment from "moment";
-import React from "react";
 import { toast } from "react-toastify";
 
 export const ProfilePage: React.FC = () => {

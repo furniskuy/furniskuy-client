@@ -1,8 +1,7 @@
-import React from "react";
-import KisahKita from "./KisahKita";
-import TentangKami from "./TentangKami";
 import DeskripsiAturan from "./DeskripsiAturan";
+import KisahKita from "./KisahKita";
 import Pemberitahuan from "./Pemberitahuan";
+import TentangKami from "./TentangKami";
 
 export const About = () => {
   return (

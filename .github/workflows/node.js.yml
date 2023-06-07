@@ -25,7 +25,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         
-    - run: git set-url origin https://${{ secrets.USER }}:${{ secrets.TOKEN }}@github.com/furniskuy/furniskuy-client.git
+    - run: git remote set-url origin https://${{ secrets.USER }}:${{ secrets.TOKEN }}@github.com/furniskuy/furniskuy-client.git
+    - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
     - run: npm ci
     - run: npm run build
     - run: npm run deploy

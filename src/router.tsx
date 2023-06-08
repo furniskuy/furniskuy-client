@@ -15,6 +15,7 @@ import { Register } from "./pages/Register.tsx/Register";
 import { RincianPesanan } from "./pages/RincianPesanan/RincianPesanan";
 import { SearchPage } from "./pages/Search/SearchPage";
 import { StatusPembayaran } from "./pages/StatusPembayaran/StatusPembayaran";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 const router = createHashRouter([
   {
@@ -24,16 +25,22 @@ const router = createHashRouter([
         element: <Layout />,
         children: [
           { index: true, element: <Home /> },
-          { path: "/profile", element: <ProfilePage /> },
-          { path: "/produk/:id", element: <PreviewProduct /> },
-          { path: "/search", element: <SearchPage /> },
-          { path: "/keranjang", element: <Keranjang /> },
-          { path: "/checkout", element: <HalamanCheckout /> },
-          { path: "/pembayaran/:id", element: <StatusPembayaran /> },
-          { path: "/status/:id", element: <RincianPesanan /> },
-          { path: "/invoice/:id", element: <CetakInvoice /> },
-          { path: "/orders", element: <ListOrder /> },
           { path: "/about", element: <About /> },
+          { path: "/search", element: <SearchPage /> },
+
+          {
+            element: <ProtectedRoute />,
+            children: [
+              { path: "/profile", element: <ProfilePage /> },
+              { path: "/produk/:id", element: <PreviewProduct /> },
+              { path: "/keranjang", element: <Keranjang /> },
+              { path: "/checkout", element: <HalamanCheckout /> },
+              { path: "/pembayaran/:id", element: <StatusPembayaran /> },
+              { path: "/status/:id", element: <RincianPesanan /> },
+              { path: "/invoice/:id", element: <CetakInvoice /> },
+              { path: "/orders", element: <ListOrder /> },
+            ],
+          },
 
           { path: "/login", element: <Login /> },
           { path: "/register", element: <Register /> },

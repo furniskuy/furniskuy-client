@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import { AuthProvider } from "./context/AuthProvider";
 import { LayoutProvider } from "./context/LayoutProvider";
 
+import "react-toastify/dist/ReactToastify.min.css";
 import "./App.css";
 
 const queryClient = new QueryClient({

@@ -39,6 +39,7 @@ export const AuthProvider: FunctionComponent<PropsWithChildren> = ({
   // call this function to sign out logged in user
   const logout = () => {
     setAccessToken(null);
+    localStorage.removeItem("access_token");
     navigate("/login", { replace: true });
   };
 

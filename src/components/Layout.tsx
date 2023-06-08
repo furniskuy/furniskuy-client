@@ -7,9 +7,12 @@ import { Header } from "./Header";
 import { useAuth } from "@/context/AuthProvider";
 
 import styles from "./Layout.module.css";
+import { useMemo } from "react";
 
 export const Layout = () => {
   const auth = useAuth();
+
+  useMemo(() => !!auth?.accessToken, [auth]);
 
   return (
     <div className={styles["layoutContainer"]}>

@@ -1,4 +1,5 @@
 import { authKey, useLogout } from "@/api/auth";
+import { useAuth } from "@/context/AuthProvider";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { useQueryClient } from "@tanstack/react-query";
 import { FaUserCircle } from "react-icons/fa";
@@ -6,12 +7,14 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const ProfileDropdown = () => {
+  const auth = useAuth();
   const navigate = useNavigate();
 
   const queryClient = useQueryClient();
   const logout = useLogout({
     onSuccess: () => {
       queryClient.invalidateQueries(authKey.user);
+      auth?.logout();
       toast.success("Logout berhasil");
     },
   });

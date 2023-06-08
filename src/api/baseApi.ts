@@ -10,11 +10,11 @@ api.interceptors.response.use(
     return Promise.resolve(response.data.data);
   },
   (error) => {
-    if (error.response.status === 401) {
-      toast.error("Autentikasi gagal, silahkan login kembali");
-      localStorage.clear();
-      window.location.href = "/#/login";
-    }
+    // if (error.response.status === 401) {
+    //   toast.error("Autentikasi gagal, silahkan login kembali");
+    //   localStorage.clear();
+    //   window.location.href = "/#/login";
+    // }
     return Promise.reject(error.response.data);
   }
 );

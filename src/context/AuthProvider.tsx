@@ -45,6 +45,7 @@ export const AuthProvider: FunctionComponent<PropsWithChildren> = ({
   const value = useMemo(
     () => ({
       accessToken,
+      setAccessToken,
       login,
       logout,
     }),

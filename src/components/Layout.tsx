@@ -1,17 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from "@/context/AuthProvider";
 
 import styles from "./Layout.module.css";
 
-export const GuestLayout = () => {
+export const Layout = () => {
+  const auth = useAuth();
+
   return (
     <div className={styles["layoutContainer"]}>
-      <Header showBackButton={true} />
+      <Header isAuthenticated={!!auth?.accessToken} />
       <div className={styles["contentContainer"]}>
         <Outlet />
       </div>

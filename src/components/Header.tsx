@@ -65,7 +65,9 @@ export const Header: FunctionComponent<Props> = ({
       </div>
 
       {!isAuthenticated ? (
-        <div></div>
+        <Link to="/login">
+          <div>Login</div>
+        </Link>
       ) : (
         <div className="row" style={{ gap: 42 }}>
           <IconContext.Provider value={{ color: "black", size: "24px" }}>

@@ -12,12 +12,15 @@ import { IconContext } from "react-icons";
 
 import styles from "./CardProduct.module.css";
 import { toast } from "react-toastify";
+import { useAuth } from "@/context/AuthProvider";
 
 type Props = {
   product: Inventaris;
 };
 
 export const CardProduct: FunctionComponent<Props> = ({ product }) => {
+  const auth = useAuth();
+
   const addToCart = useAddKeranjangItem({
     onSuccess: () => {
       toast.success("Berhasil menambahkan ke keranjang");
@@ -25,6 +28,10 @@ export const CardProduct: FunctionComponent<Props> = ({ product }) => {
   });
 
   const handleAddToCart = () => {
+    if (!auth?.accessToken) {
+      toast.error("Silahkan login terlebih dahulu");
+      return;
+    }
     addToCart.mutate({
       id_barang: product.id,
       jumlah: 1,

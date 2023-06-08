@@ -1,8 +1,7 @@
 import { createHashRouter } from "react-router-dom";
 
 import { App } from "./App";
-import { AuthLayout } from "./components/AuthLayout";
-import { GuestLayout } from "./components/GuestLayout";
+import { Layout } from "./components/Layout";
 import { About } from "./pages/About/About";
 import CetakInvoice from "./pages/CetakInvoice/CetakInvoice";
 import { HalamanCheckout } from "./pages/HalamanCheckout/HalamanCheckout";
@@ -22,7 +21,7 @@ const router = createHashRouter([
     element: <App />,
     children: [
       {
-        element: <AuthLayout />,
+        element: <Layout />,
         children: [
           { index: true, element: <Home /> },
           { path: "/profile", element: <ProfilePage /> },
@@ -35,11 +34,7 @@ const router = createHashRouter([
           { path: "/invoice/:id", element: <CetakInvoice /> },
           { path: "/orders", element: <ListOrder /> },
           { path: "/about", element: <About /> },
-        ],
-      },
-      {
-        element: <GuestLayout />,
-        children: [
+
           { path: "/login", element: <Login /> },
           { path: "/register", element: <Register /> },
         ],

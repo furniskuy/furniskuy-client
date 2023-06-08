@@ -21,7 +21,7 @@ const KodeBayar: FunctionComponent<Props> = ({ metode, notlp }) => {
             currentTarget.src = DEFAULT_BANKS_LOGO[metode.nama_bank];
           }}
         />
-        <p className={styles["VA"]}>{metode.no_rek}</p>
+        <p className={styles["VA"]}>{metode.prefix + notlp}</p>
         <button
           className={styles["buttonSalin"]}
           onClick={() => {

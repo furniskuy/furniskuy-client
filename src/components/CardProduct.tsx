@@ -11,13 +11,18 @@ import AddToCartIcon from "@/assets/add-to-cart-icon.png";
 import { IconContext } from "react-icons";
 
 import styles from "./CardProduct.module.css";
+import { toast } from "react-toastify";
 
 type Props = {
   product: Inventaris;
 };
 
 export const CardProduct: FunctionComponent<Props> = ({ product }) => {
-  const addToCart = useAddKeranjangItem();
+  const addToCart = useAddKeranjangItem({
+    onSuccess: () => {
+      toast.success("Berhasil menambahkan ke keranjang");
+    },
+  });
 
   const handleAddToCart = () => {
     addToCart.mutate({

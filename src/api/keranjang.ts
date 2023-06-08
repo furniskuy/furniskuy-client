@@ -36,7 +36,7 @@ export const useAddKeranjangItem = (
   return useMutation({
     mutationFn: (data) => api.post(baseURL, data),
     ...mutationOptions,
-    onSuccess: (data) => {
+    onSuccess: (data, ...params) => {
       queryClient.setQueryData<Keranjang[]>(keranjangKey.all, (oldData) => {
         if (oldData) {
           const dataExist = oldData.find((item) => item.id === data.id);
@@ -53,6 +53,7 @@ export const useAddKeranjangItem = (
         }
         return oldData;
       });
+      mutationOptions?.onSuccess?.(data, ...params);
     },
   });
 };
@@ -64,13 +65,15 @@ export const useDeleteKeranjangItem = (
   return useMutation({
     mutationFn: (id) => api.delete(`${baseURL}/${id}`),
     ...mutationOptions,
-    onSuccess: (data) => {
+    onSuccess: (data, ...params) => {
       queryClient.setQueryData<Keranjang[]>(keranjangKey.all, (oldData) => {
         if (oldData) {
           return oldData.filter((item) => item.id !== data.id);
         }
         return oldData;
       });
+
+      mutationOptions?.onSuccess?.(data, ...params);
     },
   });
 };
@@ -82,7 +85,7 @@ export const useUpdateKeranjangItem = (
   return useMutation({
     mutationFn: (data) => api.put(`${baseURL}/${data.id}`, data),
     ...mutationOptions,
-    onSuccess: (data) => {
+    onSuccess: (data, ...params) => {
       queryClient.setQueryData<Keranjang[]>(keranjangKey.all, (oldData) => {
         if (oldData) {
           return oldData.map((item) => {
@@ -94,6 +97,8 @@ export const useUpdateKeranjangItem = (
         }
         return oldData;
       });
+
+      mutationOptions?.onSuccess?.(data, ...params);
     },
   });
 };

@@ -14,6 +14,7 @@ import Pengiriman from "./Pengiriman";
 import RincianPembayaran from "./RincianPembayaran";
 import Subtotal from "./Subtotal";
 import TotalButtonPesanan from "./TotalButtonPesanan";
+import { pengirimanFixed } from "@/types/misc";
 
 export const HalamanCheckout = () => {
   const [showDialogPesanan, setShowDialogPesanan] = useState(false);
@@ -22,6 +23,7 @@ export const HalamanCheckout = () => {
   const [selectedBank, setSelectedBank] = useState<number | null>(null);
 
   const queryClient = useQueryClient();
+
   const user = useUser();
   const keranjangs = useKeranjangs();
   const checkout = useCheckout({
@@ -44,11 +46,7 @@ export const HalamanCheckout = () => {
   }, [keranjangs.data]);
 
   const createTransaction = () => {
-    if (selectedBank === null) {
-      toast.error("Pilih bank terlebih dahulu");
-      setShowDialogPesanan(false);
-      return;
-    }
+    if (!selectedBank) return;
     checkout.mutateAsync(selectedBank);
   };
 
@@ -72,15 +70,28 @@ export const HalamanCheckout = () => {
           setSelected={(value) => setSelectedBank(value)}
         />
         <RincianPembayaran
-          pengiriman={10000}
+          pengiriman={pengirimanFixed}
           totalHarga={totalHargaSelected ?? 0}
         />
         <TotalButtonPesanan
           showDialogPesanan={showDialogPesanan}
           setShowDialogPesanan={setShowDialogPesanan}
-          totalHarga={totalHargaSelected ?? 0}
+          totalHarga={
+            totalHargaSelected ? totalHargaSelected + pengirimanFixed : 0
+          }
           buatPesanan={createTransaction}
           disabled={isCheckoutDisable}
+          onDisableCheckout={() => {
+            if (selectedBank === null) {
+              toast.error("Pilih metode pembayaran terlebih dahulu");
+              return;
+            }
+
+            if (!user.data?.profile?.alamat) {
+              toast.error("Alamat belum diisi");
+              return;
+            }
+          }}
         />
       </div>
     </>

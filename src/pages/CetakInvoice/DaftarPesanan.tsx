@@ -3,6 +3,7 @@ import { idrFormat } from "@/util/number";
 import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 import styles from "./DaftarPesanan.module.css";
+import { pengirimanFixed } from "@/types/misc";
 
 type Props = {
   transaksi: Transaksi;
@@ -40,12 +41,12 @@ const DaftarPesanan: FunctionComponent<Props> = ({ transaksi }) => {
           <tr className={styles.trTable}>
             <td>Subtotal Pengiriman</td>
             <td>: </td>
-            <td>{idrFormat(100000)}</td>
+            <td>{idrFormat(pengirimanFixed)}</td>
           </tr>
           <tr className={styles.trTable}>
             <td>Total Pembayaran</td>
             <td>: </td>
-            <td>{idrFormat(transaksi.total_harga)}</td>
+            <td>{idrFormat(transaksi.total_harga + pengirimanFixed)}</td>
           </tr>
         </table>
       </div>

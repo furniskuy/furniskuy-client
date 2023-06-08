@@ -7,12 +7,15 @@ import MetodePembayaran from "./MetodePembayaran";
 import { Loading } from "@/components/Loading";
 import { useParams } from "react-router-dom";
 import styles from "./StatusPembayaran.module.css";
+import { useUser } from "@/api/auth";
 
 export const StatusPembayaran = () => {
   const { id } = useParams<{ id: string }>();
+
+  const user = useUser();
   const transaksi = useTransaksiById(id);
 
-  if (transaksi.isLoading || !transaksi.data) {
+  if (user.isLoading || transaksi.isLoading || !transaksi.data) {
     return <Loading />;
   }
 
@@ -20,7 +23,10 @@ export const StatusPembayaran = () => {
     <div className={styles["petunjukContainer"]}>
       <Header />
       <DeadlineBayar deadline={transaksi.data?.tenggat_waktu ?? ""} />
-      <KodeBayar metode={transaksi.data.metode} />
+      <KodeBayar
+        metode={transaksi.data.metode}
+        notlp={user.data?.profile?.no_hp ?? ""}
+      />
       <MetodePembayaran metode={transaksi.data.metode} />
     </div>
   );

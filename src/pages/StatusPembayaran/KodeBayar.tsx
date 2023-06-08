@@ -6,9 +6,10 @@ import styles from "./KodeBayar.module.css";
 
 type Props = {
   metode: MetodePembayaran;
+  notlp: string;
 };
 
-const KodeBayar: FunctionComponent<Props> = ({ metode }) => {
+const KodeBayar: FunctionComponent<Props> = ({ metode, notlp }) => {
   return (
     <div>
       <div className={styles["boxKodeBayar"]}>
@@ -24,7 +25,7 @@ const KodeBayar: FunctionComponent<Props> = ({ metode }) => {
         <button
           className={styles["buttonSalin"]}
           onClick={() => {
-            navigator.clipboard.writeText(metode.no_rek);
+            navigator.clipboard.writeText(metode.prefix + notlp);
             toast.info("Berhasil di copy ke clipboard", {
               position: "top-center",
             });

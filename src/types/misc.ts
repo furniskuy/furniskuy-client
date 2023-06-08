@@ -2,6 +2,8 @@ import BCA from "@/assets/BCA.png";
 import BNI from "@/assets/BNI.png";
 import BRI from "@/assets/BRI.png";
 
+export const pengirimanFixed = 100_000;
+
 export const STATUS_MAPPING = [
   "Semua",
   "Belum Bayar",

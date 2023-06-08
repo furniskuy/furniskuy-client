@@ -2,6 +2,7 @@ import { DialogConfirm } from "@/components/DialogConfirm";
 import { idrFormat } from "@/util/number";
 import { FunctionComponent } from "react";
 import styles from "./TotalButtonPesanan.module.css";
+import { pengirimanFixed } from "@/types/misc";
 
 type Props = {
   showDialogPesanan: boolean;
@@ -9,6 +10,7 @@ type Props = {
   buatPesanan: () => void;
   totalHarga: number;
   disabled?: boolean;
+  onDisableCheckout: () => void;
 };
 
 const TotalButtonPesanan: FunctionComponent<Props> = ({
@@ -17,17 +19,26 @@ const TotalButtonPesanan: FunctionComponent<Props> = ({
   disabled,
   showDialogPesanan,
   setShowDialogPesanan,
+  onDisableCheckout,
 }) => {
   return (
     <>
       <div className={styles["boxTotal-Button"]}>
         <div className={styles["boxKiri"]}>
           <p className={styles["total"]}>Total: </p>
-          <p className={styles["totalHarga"]}>{idrFormat(totalHarga)}</p>
+          <p className={styles["totalHarga"]}>
+            {idrFormat(totalHarga + pengirimanFixed)}
+          </p>
         </div>
         <DialogConfirm
           isOpen={showDialogPesanan}
-          setIsOpen={setShowDialogPesanan}
+          setIsOpen={(value) => {
+            if (disabled) {
+              onDisableCheckout();
+              return;
+            }
+            setShowDialogPesanan(value);
+          }}
           title="Buat Pesanan"
           description="Apakah anda yakin ingin membuat pesanan?"
           onConfirm={buatPesanan}

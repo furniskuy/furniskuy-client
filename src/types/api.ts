@@ -85,6 +85,7 @@ export type MetodePembayaran = {
   nama_bank: string;
   no_rek: string;
   atas_nama: string;
+  prefix: string;
 };
 
 export type Transaksi = {

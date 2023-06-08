@@ -1,4 +1,3 @@
-import { useAuth } from "@/context/AuthProvider";
 import axios from "axios";
 import { toast } from "react-toastify";
 

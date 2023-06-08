@@ -1,4 +1,3 @@
-import { Transaksi } from "@/types/api";
 import styles from "./Subtotal.module.css";
 import { FunctionComponent } from "react";
 import { idrFormat } from "@/util/number";

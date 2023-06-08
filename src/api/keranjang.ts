@@ -7,6 +7,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { api } from "./baseApi";
+import { transaksiKey } from "./transaksi";
 
 const baseURL = "/keranjangs";
 
@@ -106,9 +107,20 @@ export const useUpdateKeranjangItem = (
 export const useCheckout = (
   mutationOptions?: UseMutationOptions<Transaksi, unknown, number>
 ) => {
+  const queryClient = useQueryClient();
+
   return useMutation({
     mutationFn: (metode_pembayaran) =>
       api.post(`${baseURL}/checkout`, { metode_pembayaran: metode_pembayaran }),
     ...mutationOptions,
+    onSuccess: (data, ...params) => {
+      queryClient.setQueryData<Transaksi[]>(transaksiKey.all, (oldData) => {
+        if (oldData) {
+          oldData.push(data);
+        }
+        return oldData;
+      });
+      mutationOptions?.onSuccess?.(data, ...params);
+    },
   });
 };

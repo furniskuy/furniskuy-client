@@ -40,3 +40,7 @@
   align-self: stretch;
   flex-grow: 0;
 }
+
+pre {
+  white-space: pre-wrap;
+}

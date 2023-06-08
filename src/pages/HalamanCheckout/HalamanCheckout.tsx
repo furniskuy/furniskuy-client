@@ -51,8 +51,12 @@ export const HalamanCheckout = () => {
   };
 
   const isCheckoutDisable = useMemo(() => {
-    return !user.data?.profile?.alamat || checkout.isLoading;
-  }, [checkout.isLoading, user.data?.profile?.alamat]);
+    return (
+      !user.data?.profile?.alamat ||
+      checkout.isLoading ||
+      totalHargaSelected === 0
+    );
+  }, [checkout.isLoading, totalHargaSelected, user.data?.profile?.alamat]);
 
   return (
     <>
@@ -62,7 +66,10 @@ export const HalamanCheckout = () => {
         <Content />
         <HeaderPengiriman />
         <Pengiriman />
-        <Subtotal />
+        <Subtotal
+          jumlah={keranjangs.data?.filter((item) => item.selected).length ?? 0}
+          totalHarga={totalHargaSelected ?? 0}
+        />
         {/* <Voucher /> */}
         <HeaderPembayaran />
         <Pembayaran
@@ -89,6 +96,11 @@ export const HalamanCheckout = () => {
 
             if (!user.data?.profile?.alamat) {
               toast.error("Alamat belum diisi");
+              return;
+            }
+
+            if (totalHargaSelected === 0) {
+              toast.error("Keranjang masih kosong");
               return;
             }
           }}

@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 
 export const ProfileDropdown = () => {
   const auth = useAuth();
+
   const navigate = useNavigate();
 
   const queryClient = useQueryClient();
@@ -16,6 +17,10 @@ export const ProfileDropdown = () => {
       queryClient.invalidateQueries(authKey.user);
       auth?.logout();
       toast.success("Logout berhasil");
+    },
+    onError: () => {
+      toast.error("Autentikasi gagal, silahkan login kembali");
+      auth?.logout();
     },
   });
 

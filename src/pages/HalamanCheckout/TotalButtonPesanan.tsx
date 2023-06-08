@@ -2,7 +2,6 @@ import { DialogConfirm } from "@/components/DialogConfirm";
 import { idrFormat } from "@/util/number";
 import { FunctionComponent } from "react";
 import styles from "./TotalButtonPesanan.module.css";
-import { pengirimanFixed } from "@/types/misc";
 
 type Props = {
   showDialogPesanan: boolean;
@@ -26,9 +25,7 @@ const TotalButtonPesanan: FunctionComponent<Props> = ({
       <div className={styles["boxTotal-Button"]}>
         <div className={styles["boxKiri"]}>
           <p className={styles["total"]}>Total: </p>
-          <p className={styles["totalHarga"]}>
-            {idrFormat(totalHarga + pengirimanFixed)}
-          </p>
+          <p className={styles["totalHarga"]}>{idrFormat(totalHarga)}</p>
         </div>
         <DialogConfirm
           isOpen={showDialogPesanan}
@@ -46,7 +43,6 @@ const TotalButtonPesanan: FunctionComponent<Props> = ({
           triggerComponent={
             <button
               className={styles["buttonBuatPesanan"]}
-              disabled={disabled}
               style={{ cursor: disabled ? "not-allowed" : "pointer" }}
             >
               <span>Buat Pesanan</span>

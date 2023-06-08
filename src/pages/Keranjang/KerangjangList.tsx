@@ -83,6 +83,12 @@ export const KeranjangList = () => {
                   isLoadingListUpdate={isLoading}
                 />
               ))}
+
+            {!keranjangs.isFetched && !keranjangs.data && (
+              <div className={styles["emptyContent"]}>
+                <h1>Anda Belum Memiliki Pesanan</h1>
+              </div>
+            )}
           </tbody>
         </table>
       </div>

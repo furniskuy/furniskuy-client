@@ -1,11 +1,19 @@
+import { Transaksi } from "@/types/api";
 import styles from "./Subtotal.module.css";
+import { FunctionComponent } from "react";
+import { idrFormat } from "@/util/number";
 
-const Subtotal = () => {
+type Props = {
+  jumlah: number;
+  totalHarga: number;
+};
+
+const Subtotal: FunctionComponent<Props> = ({ jumlah, totalHarga }) => {
   return (
     <>
       <div className={styles["subTotal"]}>
-        <p>2 items, Subtotal:</p>
-        <p className={styles["hargaTotal"]}>Rp 6.000.000</p>
+        <p>{jumlah} items, Subtotal:</p>
+        <p className={styles["hargaTotal"]}>{idrFormat(totalHarga)}</p>
       </div>
     </>
   );

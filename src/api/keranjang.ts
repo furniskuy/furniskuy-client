@@ -50,6 +50,7 @@ export const useAddKeranjangItem = (
             });
             return oldData;
           }
+          data.selected = false;
           return [...oldData, data];
         }
         return oldData;

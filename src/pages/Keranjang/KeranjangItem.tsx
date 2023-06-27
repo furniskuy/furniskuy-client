@@ -22,8 +22,8 @@ export const KeranjangItem: FunctionComponent<Props> = ({
   const updateKerangjang = useUpdateKeranjangItem();
   const deleteKeranjang = useDeleteKeranjangItem();
 
-  const handleUpdateQuantity = (keranjang: Keranjang, value: number) => {
-    updateKerangjang.mutate({ ...keranjang, jumlah: value });
+  const handleUpdateQuantity = (keranjang: Keranjang, jumlah: number) => {
+    updateKerangjang.mutate({ ...keranjang, jumlah });
   };
 
   const handleUpdateSelected = (keranjang: Keranjang, selected: boolean) => {

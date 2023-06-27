@@ -14,17 +14,17 @@ export const ProfileDropdown = () => {
   const queryClient = useQueryClient();
   const logout = useLogout({
     onSuccess: () => {
-      queryClient.invalidateQueries(authKey.user);
-      auth?.logout();
       toast.success("Logout berhasil");
     },
     onError: () => {
       toast.error("Autentikasi gagal, silahkan login kembali");
-      auth?.logout();
     },
   });
 
   const handleLogout = () => {
+    queryClient.invalidateQueries(authKey.user);
+    auth?.logout();
+
     logout.mutate();
     navigate("/login");
   };

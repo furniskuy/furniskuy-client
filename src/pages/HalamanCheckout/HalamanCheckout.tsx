@@ -54,9 +54,15 @@ export const HalamanCheckout = () => {
     return (
       !user.data?.profile?.alamat ||
       checkout.isLoading ||
-      totalHargaSelected === 0
+      totalHargaSelected === 0 ||
+      !selectedBank
     );
-  }, [checkout.isLoading, totalHargaSelected, user.data?.profile?.alamat]);
+  }, [
+    checkout.isLoading,
+    selectedBank,
+    totalHargaSelected,
+    user.data?.profile?.alamat,
+  ]);
 
   return (
     <>

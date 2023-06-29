@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-query";
 import { api } from "./baseApi";
 import { transaksiKey } from "./transaksi";
+import { toast } from "react-toastify";
 
 const baseURL = "/keranjangs";
 
@@ -38,6 +39,8 @@ export const useAddKeranjangItem = (
     mutationFn: (data) => api.post(baseURL, data),
     ...mutationOptions,
     onSuccess: (data, ...params) => {
+      toast.success("Berhasil menambahkan ke keranjang");
+
       queryClient.setQueryData<Keranjang[]>(keranjangKey.all, (oldData) => {
         if (oldData) {
           const dataExist = oldData.find((item) => item.id === data.id);

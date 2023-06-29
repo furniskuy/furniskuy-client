@@ -21,11 +21,7 @@ type Props = {
 export const CardProduct: FunctionComponent<Props> = ({ product }) => {
   const auth = useAuth();
 
-  const addToCart = useAddKeranjangItem({
-    onSuccess: () => {
-      toast.success("Berhasil menambahkan ke keranjang");
-    },
-  });
+  const addToCart = useAddKeranjangItem();
 
   const handleAddToCart = () => {
     if (!auth?.accessToken) {
